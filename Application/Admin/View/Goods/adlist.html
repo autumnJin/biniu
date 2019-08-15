@@ -1,0 +1,108 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">已上传广告</strong>  <small></small></div>
+      </div>
+
+      <hr>
+
+      <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-6">
+          <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+              <a href="{:U('goods/add_goods1')}" type="button" class="am-btn am-btn-primary"><span class="am-icon-plus"></span> 新增</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <form class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th class="table-id">序号</th>
+                <th class="table-title">广告名称</th>
+                <th class="table-title">logo</th>
+                <th class="table-type">奖励</th>
+                <th class="table-set">创建时间</th>
+                <th class="table-set">操作</th>
+              </tr>
+              </thead>
+              <tbody>
+              <volist name="data" id="vo">
+                <tr>
+                  <td>{$vo['id']}</td>
+                  <td>{$vo['name']}</td>
+                  <td><img src="{$vo.logo}" style="width: 40px;height: 40px"></td>
+                  <td>{$vo['amount']}</td>
+
+
+                  <td>{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+
+                  <td>
+                    <div class="am-btn-toolbar">
+                      <div class="am-btn-group am-btn-group-xs">
+                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only xiajia"  g="{$vo['id']}"><span class="am-icon-trash-o"></span>删除</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </volist>
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 {$count} 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  {$page}
+                  <!--<li class="am-disabled"><a href="#">«</a></li>-->
+                  <!--<li class="am-active"><a href="#">1</a></li>-->
+                  <!--<li><a href="#">2</a></li>-->
+                  <!--<li><a href="#">3</a></li>-->
+                  <!--<li><a href="#">4</a></li>-->
+                  <!--<li><a href="#">5</a></li>-->
+                  <!--<li><a href="#">»</a></li>-->
+
+                </ul>
+              </div>
+            </div>
+            <hr />
+            <p>注：.....</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+
+  </div>
+
+</block>
+
+<block name="js">
+  <script>
+    $(function () {
+        $('.xiajia').click(function () {
+
+            var url = "{:U('del_goods1')}";
+            var g_id = $(this).attr('g');
+            $.post(url,{id:g_id},function (data) {
+                alert(data.msg);
+                if(data.code){
+                    return;
+                }else{
+                    window.location.href=data.data;
+                }
+            },'json')
+        });
+    })
+  </script>
+</block>

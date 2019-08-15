@@ -1,0 +1,208 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">{$title}</strong>  <small></small></div>
+      </div>
+      <hr/>
+      <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-8 am-u-md-push-1">
+          <form class="am-form am-form-horizontal" action="{:U('add_edit_user')}" method="post">
+            <input type="hidden" name="id" value="{$data['id']}">
+            <div class="am-form-group">
+              <label for="user-name" class="am-u-sm-3 am-form-label">会员用户名</label>
+              <div class="am-u-sm-9">
+                <input type="text" id="user-name" placeholder="" required name="username" value="{$data.username}" readonly>
+              </div>
+            </div>
+
+            <!--<div class="am-form-group">-->
+              <!--<label for="user-email" class="am-u-sm-3 am-form-label">会员姓名</label>-->
+              <!--<div class="am-u-sm-9">-->
+                <!--<input type="text" id="user-email" name="truename" required placeholder="" value="{$data.truename}">-->
+              <!--</div>-->
+            <!--</div>-->
+            <if condition="$data['id'] neq null">
+              <div class="am-form-group">
+                <label for="td_level" class="am-u-sm-3 am-form-label">团队级别</label>
+                <php>
+                  $role = C('td_level');
+                </php>
+                <div class="am-u-sm-9">
+                  <select data-am-selected="{btnSize: 'sm'}" name="td_level" id="td_level">
+                    <volist name="role" id="vo">
+                      <option value="{$key}" <php> if($data['td_level'] == $key) echo 'selected'</php>>{$vo}</option>
+                    </volist>
+                  </select>
+                </div>
+              </div>
+              <!--<div class="am-form-group">
+                <label for="agent_level" class="am-u-sm-3 am-form-label">代理级别</label>
+                <php>
+                  $agentLevel = C('agent_level');
+                </php>
+                <div class="am-u-sm-9">
+                  <select data-am-selected="{btnSize: 'sm'}" name="agent_level" id="agent_level">
+                    <volist name="agentLevel" id="vo">
+                      <option value="{$key}" <php> if($data['agent_level'] == $key) echo 'selected'</php>>{$vo}</option>
+                    </volist>
+                  </select>
+                </div>
+              </div>
+              <div class="am-form-group">
+                <label for="center_level" class="am-u-sm-3 am-form-label">中心级别</label>
+                <php>
+                  $centerLevel = C('center_level');
+                </php>
+                <div class="am-u-sm-9">
+                  <select data-am-selected="{btnSize: 'sm'}" name="center_level" id="center_level">
+                    <volist name="centerLevel" id="vo">
+                      <option value="{$key}" <php> if($data['center_level'] == $key) echo 'selected'</php>>{$vo}</option>
+                    </volist>
+                  </select>
+                </div>
+              </div>
+            </if>
+            <div class="am-form-group">
+              <label for="user-email" class="am-u-sm-3 am-form-label">会员身份证号</label>
+              <div class="am-u-sm-9">
+                <input type="text" id="user-phone1" name="id_card" required placeholder="" value="{$data.id_card}">
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label for="user-email" class="am-u-sm-3 am-form-label">微信号</label>
+              <div class="am-u-sm-9">
+                <input type="text" id="weixin" name="weixin" required placeholder="" value="{$data.weixin}">
+              </div>
+            </div>-->
+            <div class="am-form-group" id="region">
+              <label for="user-email" class="am-u-sm-3 am-form-label">区域</label>
+                <div class="am-u-sm-9">
+                  <!--<input type="text" id="user-kj3" name="data" required placeholder="" value="{$data.data}">-->
+                  <select id="pro" name="prince" data-am-selected>
+                    <volist name="p" id="vo">
+                      <option value="{$vo.provinceid}" <php>if($vo['provinceid'] == $data['province']) echo 'selected'</php> >{$vo.province}</option>
+                    </volist>
+                  </select>
+                  <select id="city" name="city" data-am-selected>
+                    <volist name="c" id="v">
+                      <option value="{$v.cityid}" <php>if($v['cityid'] == $data['city']) echo 'selected'</php>>{$v.city}</option>
+                    </volist>
+                  </select>
+                  <select id="area" name="area" data-am-selected>
+                    <volist name="a" id="v">
+                      <option value="{$v.areaid}" <php>if($v['areaid'] == $data['area']) echo 'selected'</php>>{$v.area}</option>
+                    </volist>
+                  </select>
+                </div>
+              </div>
+            </if>
+
+            <!--<div class="am-form-group">-->
+              <!--<label for="user-email" class="am-u-sm-3 am-form-label">镇区代理人</label>-->
+              <!--<div class="am-u-sm-9">-->
+                <!--<input type="text" id="user-phone1" name="" required placeholder="" value="{$data.zhen}" readonly>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="am-form-group">-->
+              <!--<label for="user-email" class="am-u-sm-3 am-form-label">县代理人</label>-->
+              <!--<div class="am-u-sm-9">-->
+                <!--<input type="text" id="user-phone1" name="" required placeholder="" value="{$data.area}" readonly>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="am-form-group">-->
+              <!--<label for="user-email" class="am-u-sm-3 am-form-label">市代理人</label>-->
+              <!--<div class="am-u-sm-9">-->
+                <!--<input type="text" id="user-phone1" name="" required placeholder="" value="{$data.city}" readonly>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="am-form-group">-->
+              <!--<label for="user-email" class="am-u-sm-3 am-form-label">省代理人</label>-->
+              <!--<div class="am-u-sm-9">-->
+                <!--<input type="text" id="user-phone1" name="" required placeholder="" value="{$data.province}" readonly>-->
+              <!--</div>-->
+            <!--</div>-->
+            <div class="am-form-group">
+              <div class="am-u-sm-9 am-u-sm-push-3">
+                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</block>
+<block name="js">
+  <script>
+    $(function () {
+        $("#region").hide();
+        $("#level").change(function(){
+            var level = $("#level").val();
+            if(level == 4){
+                $("#region").show();
+            }else{
+                $("#region").hide();
+            }
+        });
+
+        $("#pro").val($('#sale_type_chose1').val());
+        $("#city").val($('#sale_type_chose2').val());
+        $("#area").val($('#sale_type_chose3').val());
+
+
+
+
+        $('#pianqu').change(function(){
+            $.ajax({
+                type:"post",
+                url:"{:U('Public/province_choose')}",
+                data:'pianqu_id='+$('#pianqu').val(),
+                dataType:"json",
+                success:function(data){
+                    $('#pro').html(data);
+                }
+            });
+        });
+
+        $('#pro').change(function(){
+            $.ajax({
+                type:"post",
+                url:"{:U('Public/area_choose')}",
+                data:'pro_id='+$('#pro').val(),
+                dataType:"json",
+                success:function(data){
+                    $('#city').html(data);
+                }
+            });
+        });
+        $('#city').change(function(){
+            $.ajax({
+                type:"post",
+                url:"{:U('Public/city_choose')}",
+                data:'city_id='+$('#city').val(),
+                dataType:"json",
+                success:function(data){
+                    $('#area').html(data);
+                }
+            });
+        });
+        var form = $('form');
+
+        $('form').submit(function (e) {
+            e.preventDefault();
+            $.post(form.attr('action'),form.serialize(),function (data) {
+                layer.msg(data.msg,{time:1000},function () {
+                    if(data.code){
+                        return false;
+                    }else{
+                        window.location.href=data.data;
+                    }
+                })
+
+            },'json')
+        })
+    })
+  </script>
+</block>

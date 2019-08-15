@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="__CSS__/ming_common.css">
+  <link rel="stylesheet" href="__CSS__/ming.css">
+</head>
+
+<body>
+  <header class="header">
+    <a href='javascript:history.back(-1)'><img src="http://hb90508.zhongbkj.com/Public/Home/images/Return.png"
+        alt=""></a>
+    <p>转账</p>
+    <span class="kongge"></span>
+  </header>
+  <section class="zhuanzhang">
+    <div class="zhuanzhang_choose">
+      <div><img src="https://bbtcdn.8btc.com/data/attachment/common/c8/common_2_icon.svg" alt=""><span>BTC</span></div>
+      <div><img src="__IMG__/youjiantou.png" alt=""></div>
+    </div>
+    <div class="chongzhi">
+      <div><img src="__IMG__/ewm.png" alt=""></div>
+      <input type="text" readonly value="dsa1d23asd12a3d1a23s32132131312312321d1a23sd1as4564ds1a23d1a32s1d4">
+      <div class="copy_btn">点击复制地址</div>
+      <div class="copy_msg">
+        提示：提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示提示
+      </div>
+    </div>
+  </section>
+
+  <div class="dialog hide">
+    <div class="dialog_content">
+      <ul>
+        <li>
+          <div class="content_bi_list">
+            <div><img src="https://bbtcdn.8btc.com/data/attachment/common/c8/common_2_icon.svg" alt="">
+            </div>
+            <div class="">
+              <p class="content_bi_type"><span>BTC</span><span>0</span></p>
+              <p class="content_bi_money"><span>321321.123CNY</span><span>≈0CNY</span></p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="content_bi_list">
+            <div><img src="https://bbtcdn.8btc.com/data/attachment/common/32/common_72_icon.svg" alt="">
+            </div>
+            <div class="">
+              <p class="content_bi_type"><span>ETH</span><span>0</span></p>
+              <p class="content_bi_money"><span>321321.123CNY</span><span>≈0CNY</span></p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="content_bi_list">
+            <div><img src="https://bbtcdn.8btc.com/data/attachment/common/32/common_72_icon.svg" alt="">
+            </div>
+            <div class="">
+              <p class="content_bi_type"><span>ETH</span><span>0</span></p>
+              <p class="content_bi_money"><span>321321.123CNY</span><span>≈0CNY</span></p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="content_bi_list">
+            <div><img src="https://bbtcdn.8btc.com/data/attachment/common/32/common_72_icon.svg" alt="">
+            </div>
+            <div class="">
+              <p class="content_bi_type"><span>ETH</span><span>0</span></p>
+              <p class="content_bi_money"><span>321321.123CNY</span><span>≈0CNY</span></p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="content_bi_list">
+            <div><img src="https://bbtcdn.8btc.com/data/attachment/common/32/common_72_icon.svg" alt="">
+            </div>
+            <div class="">
+              <p class="content_bi_type"><span>ETH</span><span>0</span></p>
+              <p class="content_bi_money"><span>321321.123CNY</span><span>≈0CNY</span></p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $('body').on('click',function(){
+      $('.dialog').addClass('hide');
+    })
+    $(".zhuanzhang_choose").on('click', function (e) {
+      $(".dialog").removeClass('hide')
+      e.stopPropagation();
+    })
+    $(".dialog_content").on('click', function(e){
+      e.stopPropagation();
+    })
+  </script>
+</body>
+
+</html>

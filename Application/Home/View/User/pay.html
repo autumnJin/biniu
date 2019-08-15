@@ -1,0 +1,53 @@
+<include file="Public/head" />
+<style>
+#waitPay .exce a {
+    float: none;
+    margin: 0 auto;
+}
+#waitPay .fourth .p1 {
+    text-align: center;
+}
+</style>
+<div id="waitPay">
+    <form class="am-form-horizontal">
+        <div class="heads">
+            <div class="container">
+                <div class="p1">订单详情</div>
+                <a href="javascript:void(0);" id="goback"><img src="__WAPIMG__/arrowl.png"></a>
+            </div>
+        </div>
+        <section class="fourth">
+            <div class="container">
+                <div class="p1">
+                    订单编号：{$id}
+                    <input type="hidden" placeholder="" name="id" readonly value="{$id}">
+                </div>
+                <div class="p1">
+                    下单总金额: {$amount}
+                    <input type="hidden" placeholder="" name="amount" readonly value="{$amount}">
+                </div>
+                <div class="p1">
+                    支付总金额: {$pay_amount}
+                    <input type="hidden" placeholder="" name="pay_amount" readonly value="{$pay_amount}">
+                </div>
+            </div>
+        </section>
+        <div class="container">
+            <div class="exce">
+                <a href="#" id="sub" class="active">去付款</a>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+<script>
+$(function(){
+    var form = $('.am-form-horizontal');
+    $('#sub').click(function(){
+        ajax_sub_(form.attr('action'),form.serialize(),$('#btn'));
+    });
+})
+</script>
+<include file="Public/foot" />

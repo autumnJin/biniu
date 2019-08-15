@@ -1,0 +1,43 @@
+<include file="Public/head" />
+<div id="myteam">
+    <div class="heads">
+        <div class="container">
+            <div class="p1">我的团队</div>
+            <!--<a href="javascript:void(0);" id="goback"><img src="__WAPIMG__/arrowl.png"></a>-->
+            <a href="{:U('User/index')}" id="goback"><img src="__WAPIMG__/arrowl.png"></a>
+        </div>
+    </div>
+    <div class="content">
+        <ul>
+            <volist name="data" id="vo">
+            <li>
+                <div class="container">
+                    <a href="javascript:void(0);">
+                        <img src="__WAPIMG__/team.png" alt="">
+                        <div class="txt">
+                            <div class="p1">
+                                {$vo['username']}
+                                <span style="float: right;font-size: .22rem;margin-right: .5rem">配套等级：
+                                    <if condition="$vo.pt_level eq 1">100USDT
+                                        <elseif condition="$vo.pt_level eq 2"/>1000USDT
+                                        <elseif condition="$vo.pt_level eq 3"/>5000USDT
+                                        <elseif condition="$vo.pt_level eq 4"/>10000USDT
+                                        <else/>暂无配套
+                                    </if>
+                                </span>
+                            </div>
+                            <div class="p3">注册时间: {$vo['create_time']|date="Y年m月d日 H:i:s",###}</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            </volist>
+        </ul>
+    </div>
+</div>
+</div>
+</body>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+</html>

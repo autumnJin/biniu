@@ -1,0 +1,230 @@
+<extend name="Public/base"/>
+<block name="content">
+  <style>
+    .change-red {
+      color: red !important;
+    }
+  </style>
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">订单列表</strong>  <small></small></div>
+      </div>
+
+      <hr>
+
+      <form class="am-g" action="{:U('orderlist')}" method="get">
+
+
+        <div class="am-u-sm-12 am-u-md-2">
+          <input type="text" class="am-form-field" name="start_time"  value="{$start_time}" placeholder="开始时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <input type="text" class="am-form-field" name="end_time"  value="{$end_time}" placeholder="结束时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" name="username" value="{$username}" placeholder="消费者编号">
+          </div>
+        </div>
+
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" name="phone" value="{$phone}" placeholder="手机号">
+          </div>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" name="order_id" value="{$order_id}" placeholder="订单编号">
+          </div>
+        </div>
+
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-form-group">
+            <select data-am-selected="{btnSize: 'sm'}" name="status">
+              <option value="0">付款状态</option>
+              <option value="2" <php>if($status == 2) echo 'selected'</php>>已付款</option>
+              <option value="1" <php>if($status == 1) echo 'selected'</php>>未付款</option>
+            </select>
+          </div>
+        </div>
+
+        
+        <div class="am-u-sm-12 am-u-md-1">
+          <div class="am-input-group am-input-group-sm">
+            <input class="am-btn am-btn-primary" value="搜索" id="search" type="submit"/>
+            </span>
+          </div>
+        </div>
+
+        <div class="am-u-sm-12 am-u-md-1">
+          <div class="am-input-group am-input-group-sm">
+            <input class="am-btn am-btn-primary" value="导出" type="submit" id="export"/>
+            </span>
+          </div>
+        </div>
+      </form>
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <div class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th class="table-title">序号</th>
+                <th class="table-title">订单编号</th>
+                <th class="table-type">会员编号</th>
+                <th class="table-type">收货人</th>
+                <th class="table-type">订单金额</th>
+                <th class="table-author am-hide-sm-only">付款状态</th>
+                <th class="table-author am-hide-sm-only">发货状态</th>
+                <th class="table-author am-hide-sm-only">发货方</th>
+                <th class="table-date am-hide-sm-only">下单日期</th>
+                <th class="table-set">操作</th>
+              </tr>
+              </thead>
+              <tbody>
+              <php>
+                $orderstatus = C('ORDER');
+                $goods_type = C('goods_type');
+              </php>
+              <volist name="data" id="vo">
+                <tr>
+                  <td>{$key}</td>
+                  <td><a href="#">{$vo['order_id']}</a></td>
+                  <td>{$vo['username']}</td>
+                  <td>{$vo['receiver']}</td>
+                  <td>{$vo['amount']}</td>
+                  <td class="am-hide-sm-only">
+                    {$orderstatus[$vo['status']]}
+                  </td>
+                  <td>
+                    <php>echo $vo['wuliu_status'] == 4 ? '待发货':''</php>
+                    <php>echo $vo['wuliu_status'] == 5 ? '已发货':''</php>
+                    <php>echo $vo['wuliu_status'] == 6 ? '确认收货':''</php>
+                    <if condition="wuliu_status == 2">
+                      <a href="http://m.kuaidi100.com/result.jsp?nu={$vo['wuliu']}">(查看物流)</a>
+                    </if>
+                  </td>
+                  <td>
+                    <if condition="$vo.send_shop_id eq 0">
+                      平台
+                    <else />
+                      连锁店(<if condition="$vo.is_sign eq 0"><span class="change-red">平台未发货</span><else /><span class="change-red">平台已发货</span></if>)
+                    </if>
+                  </td>
+                  <td class="am-hide-sm-only">{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+                  <td>
+                    <div class="am-btn-toolbar">
+                      <div class="am-btn-group am-btn-group-xs">
+                        <a href="{:U('order/edit_order',array('id'=>$vo['id']))}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>订单处理</a>
+                        <a href="javascript:" class="del" user_id={$vo['id']} class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>删除</a>
+                        <if condition="$vo.pay_type egt 5">
+                          <if condition="$vo.status eq 2">
+                            <if condition="$vo.wuliu_status eq 4">
+                            <a href="javascript:" class="cancel" user_id={$vo['id']} class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>取消订单</a>
+                            </if>
+                          </if>
+                        </if>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </volist>
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 {$count} 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  {$page}
+                  <!--<li class="am-disabled"><a href="#">«</a></li>-->
+                  <!--<li class="am-active"><a href="#">1</a></li>-->
+                  <!--<li><a href="#">2</a></li>-->
+                  <!--<li><a href="#">3</a></li>-->
+                  <!--<li><a href="#">4</a></li>-->
+                  <!--<li><a href="#">5</a></li>-->
+                  <!--<li><a href="#">»</a></li>-->
+
+                </ul>
+              </div>
+            </div>
+            <hr/>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+
+  </div>
+
+</block>
+<block name="js">
+  <script>
+      $(function () {
+          var searchurl = "{:U('orderlist')}";
+          $('#search').click(function () {
+
+              $('form').attr('action',searchurl);
+          });
+
+          var exporturl = "{:U('exportOrder')}";
+          $('#export').click(function () {
+
+              $('form').attr('action',exporturl);
+          });
+
+          var url1 = "{:U('deleteOrder')}";
+          $('.del').click(function () {
+              var that = $(this);
+              if(confirm('确认删除此订单吗?')){
+                  $.post(url1,{id:$(this).attr('user_id')},function (data) {
+                      layer.msg(data.msg,{time:1000},function () {
+                          if(data.code){
+                              return false;
+                          }else{
+
+                              that.parents('tr').remove();
+
+                              if(data.data){
+                                  window.location.href=data.data;
+
+                              }
+                          }
+                      })
+                  },'json')
+              }
+          });
+
+
+        var url2 = "{:U('cancelOrder')}";
+        $('.cancel').click(function () {
+          var that = $(this);
+          if(confirm('确认取消此订单吗?')){
+            $.post(url2,{id:$(this).attr('user_id')},function (data) {
+              layer.msg(data.msg,{time:1000},function () {
+                if(data.code){
+                  return false;
+                }else{
+
+                  that.parents('tr').remove();
+
+                  if(data.data){
+                    window.location.href=data.data;
+
+                  }
+                }
+              })
+            },'json')
+          }
+
+        });
+      })
+  </script>
+</block>

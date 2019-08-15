@@ -1,0 +1,77 @@
+<include file="Public/head" />
+<div id="getMoney">
+    <div class="heads">
+        <div class="container">
+            <div class="p1">提现</div>
+            <!--<a href="javascript:void(0);" id="goback"><img src="__WAPIMG__/arrowl.png"></a>-->
+            <a href="{:U('User/index')}" id="goback"><img src="__WAPIMG__/arrowl.png"></a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="froms">
+            <div class="container">
+                <form action="{:U()}" id="cp" method="post">
+                    <div class="names">
+                        <label for="">提现金额</label>
+                        <input type="text" name="amount" placeholder="请输入提现金额">
+                    </div>
+                    <div class="names">
+                        <label for="">支付密码</label>
+                        <input type="password" name="password" placeholder="请输入支付密码">
+                    </div>
+                    <!--<div class="names">-->
+                        <!--<label for="">短信验证码</label>-->
+                        <!--<input type="hidden" id="phone" name="phone" value="{$data.username}" />-->
+                        <!--<input type="text" name="code" placeholder="请输入验证码">-->
+                        <!--<a href="javascript:void(0);" class="getcode" id="getCode">获取验证码</a>-->
+                    <!--</div>-->
+                    <div class="names">
+                        <label for="">提现到</label>
+                        <ul>
+                            <li>
+                                <div class="box">
+                                    <img src="__WAPIMG__/money.png" alt="" data-type="1" /><span>银行卡</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box">
+                                    <img src="__WAPIMG__/weixin.png" alt="" data-type="2" /><span>微信</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="box">
+                                    <img src="__WAPIMG__/zhifubao.png" alt="" data-type="3" /><span>支付宝</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <input type="button" id="btn" name="" value="确 认">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+<script>
+$(function(){
+    $('#get-money').change(function(){
+        $('.list-money').html($(this).val()*(100-'{$cf}')/100);
+    });
+    $('#btn').click(function () {
+        if($('.active img').attr('data-type') == undefined)
+        {
+            alert('请选择支付方式！');
+            return;
+        }
+
+        var form = $('form');
+        var data = form.serialize();
+        data = data + '&type=' + $('.active img').attr('data-type');
+        ajax_sub(form.attr('action'),data,$('.btn-sub'));
+    })
+});
+</script>
+</html>

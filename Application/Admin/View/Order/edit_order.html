@@ -1,0 +1,200 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">{$title}</strong>  <small></small></div>
+      </div>
+      <hr/>
+      <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-8 am-u-md-push-1">
+          <form class="am-form am-form-horizontal" action="{:U('edit_order')}" method="post">
+            <input type="hidden" name="id" id="orderid" value="{$order_info['id']}">
+            <div class="am-form-group">
+              <label for="user-name" class="am-u-sm-3 am-form-label">订单号</label>
+              <div class="am-u-sm-9">
+                <input type="text" id="user-name" placeholder="" required name="order_id" value="{$order_info.order_id}" readonly>
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label for="user-email" class="am-u-sm-3 am-form-label">商品信息</label>
+              <div class="am-u-sm-9">
+                <table class="am-table am-table-bordered am-table-radius am-table-striped">
+                  <thead>
+                  <tr>
+                    <th>商品ID</th>
+                    <th>商品名称</th>
+                    <th>数量</th>
+                    <th>类型</th>
+                    <th>单价</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <php>
+                    $goods_type = C('goods_type');
+
+                  </php>
+
+
+                  <volist name="goods_info" id="vo">
+                    <tr>
+                      <td>{$vo['id']|}</td>
+                      <td>{$vo['name']}</td>
+                      <td>{$vo['num']}</td>
+                      <td>{$goods_type[$order_info['order_type']]}</td>
+                      <td>{$vo['price']}</td>
+                    </tr>
+                  </volist>
+
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label for="user-email" class="am-u-sm-3 am-form-label">订单金额</label>
+              <div class="am-u-sm-9">
+                <table class="am-table am-table-bordered am-table-radius am-table-striped">
+                  <thead>
+                  <tr>
+                    <th>订单总金额</th>
+                    <th>订单状态</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      {$order_info['amount']}
+                    </td>
+                    <php>
+                      $orderstatus = C('ORDER');
+                    </php>
+                    <td>
+                      {$orderstatus[$order_info['status']]}
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label for="user-email" class="am-u-sm-3 am-form-label">收货信息</label>
+              <div class="am-u-sm-9">
+                <table class="am-table am-table-bordered am-table-radius am-table-striped">
+                  <thead>
+                  <tr>
+                    <th>会员用户名</th>
+                    <th>收货人</th>
+                    <th>收获地址</th>
+                    <th>联系电话</th>
+                    <th>买家留言</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>{$user_info['username']}</td>
+                    <td>{$order_info['receiver']}</td>
+                    <td>{$order_info['address']}</td>
+                    <php>
+                      $s = $user_info['phone'];
+                    </php>
+                    <td>{$order_info['phone']|default=$s}</td>
+                    <td>{$order_info['tips']|default='未填写'}</td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label for="user-name" class="am-u-sm-3 am-form-label">用户钱包地址</label>
+              <div class="am-u-sm-9">
+                <input type="text" id="wallet_address" placeholder="" required name="wallet_address" value="{$order_info.wallet_address}" readonly>
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label for="user-name" class="am-u-sm-3 am-form-label">备注</label>
+              <div class="am-u-sm-9">
+                <input type="text" id="tips" placeholder="" required name="tips" value="{$order_info.tips}" readonly>
+              </div>
+            </div>
+            <if condition="$order_info.send_shop_id eq 0">
+              <div class="am-form-group">
+                <label for="user-email" class="am-u-sm-3 am-form-label">物流公司</label>
+                <div class="am-u-sm-9">
+                  <input type="text" name="wuliu_company" id="wuliu1" required value="{$order_info['wuliu_company']}">
+                </div>
+              </div>
+              <div class="am-form-group">
+                <label for="user-email" class="am-u-sm-3 am-form-label">物流单号</label>
+                <div class="am-u-sm-9">
+                  <input type="text" name="wuliu" id="wuliu" required value="{$order_info['wuliu']}">
+                </div>
+              </div>
+            </if>
+          </form>
+          <if condition="$order_info.send_shop_id eq 0">
+            <div class="am-form-group">
+              <div class="am-u-sm-9 am-u-sm-push-3">
+                <button type="button" id="btn" class="am-btn am-btn-primary">确认发货</button>
+              </div>
+            </div>
+          </if>
+        </div>
+      </div>
+      <if condition="$order_info.send_shop_id neq 0">
+      <div class="am-form-group">
+        <div class="am-u-sm-9 am-u-sm-push-3">
+          <a id="self" href="#" data-order="{$order_info['id']}" class="am-btn am-btn-primary">标记平台发货</a>
+        </div>
+      </div>
+      </if>
+    </div>
+  </div>
+</block>
+<block name="js">
+  <script>
+      $(function () {
+          var form = $('form');
+          $('#self').click(function(){
+              console.log(1);
+              $.ajax({
+                  type:"post",
+                  url:"",
+                  data:{
+                      id:$('#orderid').val(),
+                      is_sign:1
+                  },
+                  dataType:"json",
+                  success:function(data){
+                      layer.msg(data.msg,{time:1000},function () {
+                          if(data.code){
+                              return false;
+                          }else{
+                              window.location.href=data.data;
+                          }
+                      })
+                  }
+              });
+          });
+
+          $('#btn').click(function () {
+              if($('#wuliu').val() == ''){
+                  layer.msg('请填写物流单号');
+                  return;
+              }
+              $.post(form.attr('action'),{id:$('#orderid').val(),wuliu:$('#wuliu').val(),wuliu_company:$('#wuliu1').val()},function (data) {
+                  layer.msg(data.msg,{time:1000},function () {
+                      if(data.code){
+                          return false;
+                      }else{
+                          window.location.href=data.data;
+                      }
+                  })
+
+              },'json')
+          });
+
+      })
+  </script>
+</block>

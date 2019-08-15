@@ -1,0 +1,105 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">数据备份</strong>  <small></small></div>
+      </div>
+
+      <hr>
+      <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-6">
+          <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+              <a href="{:U('index',array('Action'=>backup))}" type="button" class="am-btn am-btn-primary"><span class="am-icon-plus"></span>一键备份</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <div class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th class="table-id">序号</th>
+                <th class="table-title">文件名</th>
+                <th class="table-url">备份时间</th>
+                <th class="table-set">文件大小</th>
+              </tr>
+              </thead>
+              <tbody>
+              <empty name="lists">暂无备份数据</empty>
+
+
+              <foreach name="lists" key="key" item="row">
+                <if condition="$key gt 1">
+                  <tr>
+                    <td>{$key-1}</td>
+                    <td style="text-align: left"><a href="{:U('Bak/index',array('Action'=>'download','file'=>$row))}">{$row}</a></td>
+                    <td>{$row|getfiletime=$datadir}</td>
+                    <td>{$row|getfilesize=$datadir}</td>
+                    <td>
+                      <a href="{:U('Bak/index',array('Action'=>'download','file'=>$row))}">下载</a>
+                                                                   <a onclick="return confirm('确定将数据库还原到当前备份吗？')"href="{:U('Bak/index',array('Action'=>'RL','File'=>$row))}">还原</a>
+                      <a onclick="return confirm('确定删除该备份文件吗？')"href="{:U('Bak/index',array('Action'=>'Del','File'=>$row))}">删除</a>
+                    </td>
+                  </tr>
+                </if>
+              </foreach>
+
+              </tbody>
+            </table>
+            <!--<div class="am-cf">-->
+              <!--共 {$count} 条记录-->
+              <!--<div class="am-fr">-->
+                <!--<ul class="am-pagination">-->
+                  <!--{$show}-->
+                  <!--&lt;!&ndash;<li class="am-disabled"><a href="#">«</a></li>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li class="am-active"><a href="#">1</a></li>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li><a href="#">2</a></li>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li><a href="#">3</a></li>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li><a href="#">4</a></li>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li><a href="#">5</a></li>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li><a href="#">»</a></li>&ndash;&gt;-->
+
+                <!--</ul>-->
+              <!--</div>-->
+            <!--</div>-->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+
+  </div>
+
+</block>
+
+<block name="js">
+  <script>
+    $(function () {
+        var url ="{:U('bankDelete')}";
+      $('.delete').click(function () {
+          var b_id = $(this).attr('b_id');
+          if(confirm('您确定要删除吗?')){
+              $.post(url,{id:b_id},function (data) {
+                  layer.msg(data.msg);
+                  if(data.code){
+                      return;
+                  }else{
+                      window.location.href= data.data;
+                  }
+              },'json')
+          }
+      })
+    })
+  </script>
+</block>

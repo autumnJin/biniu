@@ -1,0 +1,101 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">银行列表</strong>  <small></small></div>
+      </div>
+
+      <hr>
+      <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-6">
+          <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+              <a href="{:U('add_bank')}" type="button" class="am-btn am-btn-primary"><span class="am-icon-plus"></span>新增</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <div class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th class="table-id">序号</th>
+                <th class="table-title">银行名称</th>
+                <th class="table-url">排序</th>
+                <th class="table-set">操作</th>
+              </tr>
+              </thead>
+              <tbody>
+              <volist name="data" id="vo">
+                <tr>
+                  <td>{$key}</td>
+                  <td><a href="#">{$vo.name}</a></td>
+                  <td><a href="#">{$vo.sort}</a></td>
+                  <td>
+                    <div class="am-btn-toolbar">
+                      <div class="am-btn-group am-btn-group-xs">
+                        <a href="{:U('edit_bank',array('id'=>$vo['id']))}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
+                        <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only delete"  b_id="{$vo['id']}"><span class="am-icon-trash-o"></span> 删除</button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </volist>
+              </tbody>
+            </table>
+            <!--<div class="am-cf">-->
+              <!--共 {$count} 条记录-->
+              <!--<div class="am-fr">-->
+                <!--<ul class="am-pagination">-->
+                  <!--{$show}-->
+                  <!--&lt;!&ndash;<li class="am-disabled"><a href="#">«</a></li>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li class="am-active"><a href="#">1</a></li>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li><a href="#">2</a></li>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li><a href="#">3</a></li>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li><a href="#">4</a></li>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li><a href="#">5</a></li>&ndash;&gt;-->
+                  <!--&lt;!&ndash;<li><a href="#">»</a></li>&ndash;&gt;-->
+
+                <!--</ul>-->
+              <!--</div>-->
+            <!--</div>-->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+
+  </div>
+
+</block>
+
+<block name="js">
+  <script>
+    $(function () {
+        var url ="{:U('bankDelete')}";
+      $('.delete').click(function () {
+          var b_id = $(this).attr('b_id');
+          if(confirm('您确定要删除吗?')){
+              $.post(url,{id:b_id},function (data) {
+                  layer.msg(data.msg);
+                  if(data.code){
+                      return;
+                  }else{
+                      window.location.href= data.data;
+                  }
+              },'json')
+          }
+      })
+    })
+  </script>
+</block>

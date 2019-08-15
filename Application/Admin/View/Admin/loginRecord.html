@@ -1,0 +1,101 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">管理员登录日志</strong>  <small></small></div>
+      </div>
+
+      <hr>
+
+      <form class="am-g" action="{:U()}" method="get">
+
+        <div class="am-u-sm-12 am-u-md-2">
+          <input type="text" class="am-form-field" name="start_time"  value="{$start_time}" placeholder="开始时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <input type="text" class="am-form-field" name="end_time"  value="{$end_time}" placeholder="结束时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" name="username" value="{$username}" placeholder="登录用户名">
+          </div>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+
+            <span class="am-input-group-btn">
+            <button class="am-btn am-btn-primary" type="submit">搜索</button>
+          </span>
+          </div>
+        </div>
+      </form>
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <div class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th class="table-title">序号</th>
+                <th class="table-title">登录用户名</th>
+                <th class="table-title">管理员姓名</th>
+                <th class="table-type">登录IP</th>
+                <th class="table-date am-hide-sm-only">登录时间</th>
+              </tr>
+              </thead>
+              <tbody>
+              <empty name="data">
+                <tr>
+                  <td>暂无数据</td>
+                </tr>
+              </empty>
+              <php>
+                $tixian = C('TIXIAN_STATUS');
+                $type = C('account_type');
+              </php>
+              <volist name="data" id="vo">
+                <tr>
+                  <td>{$key+1}</td>
+                  <td><a href="#">{$vo['username']}</a></td>
+                  <td>{$vo['truename']}</td>
+
+                  <td>{$vo['ip']}</td>
+
+                  <td class="am-hide-sm-only">{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+
+                </tr>
+              </volist>
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 {$count} 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  {$page}
+                  <!--<li class="am-disabled"><a href="#">«</a></li>-->
+                  <!--<li class="am-active"><a href="#">1</a></li>-->
+                  <!--<li><a href="#">2</a></li>-->
+                  <!--<li><a href="#">3</a></li>-->
+                  <!--<li><a href="#">4</a></li>-->
+                  <!--<li><a href="#">5</a></li>-->
+                  <!--<li><a href="#">»</a></li>-->
+
+                </ul>
+              </div>
+            </div>
+            <hr/>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+    </footer>
+
+  </div>
+
+</block>

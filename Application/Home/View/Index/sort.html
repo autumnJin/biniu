@@ -1,0 +1,62 @@
+<include file="Public/header" />
+
+<link href="__CSS__/sortstyle.css" rel="stylesheet" type="text/css" />
+
+    <include file="Public/search" />
+
+<div id="nav" class="navfull">
+    <div class="area clearfix">
+        <div class="category-content" id="guide_2">
+            <div class="long-title"><span class="all-goods">全部分类</span><span id="meauBack"><a href="{:U('Index/index')}">返回</a></span></div>
+            <div class="category">
+                <ul class="category-list" id="js_climit_li">
+                    <volist name="data" id="vo">
+                        <li class="appliance js_toggle relative first selected">
+                            <div class="category-info">
+                                <h3 class="category-name b-category-name"><i><img src="images/cake.png"></i><a class="ml-22" title="">{$vo['b_name']}</a></h3>
+                                <em>&gt;</em></div>
+                            <div class="menu-item menu-in top">
+                                <div class="area-in">
+                                    <div class="area-bg">
+                                        <div class="menu-srot">
+                                            <div class="sort-side">
+                                                <dl class="dl-sort">
+                                                    <dt><span title="{$vo['b_name']}">{$vo['b_name']}</span></dt>
+                                                <volist name="vo['children']" id="vv">
+                                                    <dd><a title="{$vv['name']}" href="{:U('goods/lists',array('type'=>$vv['id']))}"><span>{$vv['name']}</span></a></dd>
+                                                </volist>
+                                                </dl>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <b class="arrow"></b>
+                        </li>
+
+                    </volist>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("li").click(function() {
+            $(this).addClass("selected").siblings().removeClass("selected");
+        })
+    })
+</script>
+
+<include file="Public/foot_base" />
+<include file="Public/tips" />
+
+<!--<script>-->
+    <!--window.jQuery || document.write('<script src="basic/js/jquery.min.js "><\/script>');-->
+<!--</script>-->
+</body>
+</html>
+

@@ -1,0 +1,179 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">连锁店申请</strong>  <small></small></div>
+      </div>
+      <hr>
+      <!--<form class="am-g" action="{:U('userList')}" method="get">
+        &lt;!&ndash;<div class="am-u-sm-12 am-u-md-1">&ndash;&gt;
+          &lt;!&ndash;<div class="am-btn-toolbar">&ndash;&gt;
+            &lt;!&ndash;<div class="am-btn-group am-btn-group-xs">&ndash;&gt;
+              &lt;!&ndash;<a href="{:U('user/userAdd')}" type="button" class="am-btn am-btn-primary"><span class="am-icon-plus"></span>新增会员</a>&ndash;&gt;
+            &lt;!&ndash;</div>&ndash;&gt;
+          &lt;!&ndash;</div>&ndash;&gt;
+        &lt;!&ndash;</div>&ndash;&gt;
+        <div class="am-u-sm-12 am-u-md-1">
+          <input type="text" class="am-form-field" name="start_time"  value="{$start_time}" placeholder="开始时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-1">
+          <input type="text" class="am-form-field" name="end_time"  value="{$end_time}" placeholder="结束时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+
+
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" name="username" value="{$username}" placeholder="用户名精确查找">
+          </div>
+        </div>
+        &lt;!&ndash;<div class="am-u-sm-12 am-u-md-2">&ndash;&gt;
+          &lt;!&ndash;<div class="am-input-group am-input-group-sm">&ndash;&gt;
+            &lt;!&ndash;<input type="text" class="am-form-field" name="truename" value="{$truename}" placeholder="姓名查找">&ndash;&gt;
+          &lt;!&ndash;</div>&ndash;&gt;
+        &lt;!&ndash;</div>&ndash;&gt;
+        <php>
+          $reg_level = C('reg_level');
+        </php>
+
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-form-group">
+            <select data-am-selected="{btnSize: 'sm'}" name="level">
+              <option value="0">会员级别</option>
+              <volist name="reg_level" id="vo">
+                <option value="{$key}" <php>if($level == $key) echo 'selected'</php>>{$vo}</option>
+              </volist>
+            </select>
+          </div>
+        </div>
+
+
+
+        <div class="am-u-sm-12 am-u-md-1">
+          <div class="am-input-group am-input-group-sm">
+            <input class="am-btn am-btn-primary" value="搜索" id="search" type="submit"/>
+            </span>
+          </div>
+        </div>
+
+        <div class="am-u-sm-12 am-u-md-1">
+          <div class="am-input-group am-input-group-sm">
+            <input class="am-btn am-btn-primary" value="导出" type="submit" id="export"/>
+            </span>
+          </div>
+        </div>
+      </form>-->
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <div class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th>序号</th>
+                <th class="table-date am-hide-sm-only">姓名</th>
+                <th class="table-date am-hide-sm-only">申请连锁店级别</th>
+                <th class="table-date am-hide-sm-only">省份</th>
+                <th class="table-date am-hide-sm-only">市</th>
+                <th class="table-date am-hide-sm-only">区</th>
+                <th class="table-date am-hide-sm-only">地址</th>
+                <th class="table-date am-hide-sm-only">状态</th>
+                <!--<th class="table-date am-hide-sm-only">团队人数</th>-->
+                <!--<th class="table-date am-hide-sm-only">总业绩</th>-->
+                <th class="table-date am-hide-sm-only">申请时间</th>
+                <th class="table-set">操作</th>
+              </tr>
+              </thead>
+              <php>
+                $center_level = C('center_level');
+              </php>
+              <tbody>
+              <volist name="list" id="vo">
+                <tr>
+                  <td>{$key}</td>
+                  <td>{$vo['username']}</td>
+                  <td class="am-hide-sm-only">{$center_level[$vo['center_level']]}</td>
+                  <td>{$vo['provincename']}</td>
+                  <td class="am-hide-sm-only">{$vo['cityname']}</td>
+                  <td class="am-hide-sm-only">{$vo['areaname']}</td>
+                  <td class="am-hide-sm-only">{$vo['address']}</td>
+                  <td class="am-hide-sm-only">
+                    <if condition="$vo.status eq 0">
+                      待审核
+                    </if>
+                    <if condition="$vo.status eq 1">
+                      审核通过
+                    </if>
+                    <if condition="$vo.status eq 2">
+                      审核驳回
+                    </if>
+                  </td>
+                  <td class="am-hide-sm-only">{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+                  <td>
+                    <div class="am-btn-toolbar">
+                      <div class="am-btn-group am-btn-group-xs">
+                        <if condition="$vo.status eq 0">
+                          <a href="#" data-level="{$vo.center_level}" data-id="{$vo.user_id}" data-status="1" class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                            <span class="am-icon-pencil-square-o"></span>通过
+                          </a>
+                          <a href="#" data-level="{$vo.center_level}" data-id="{$vo.user_id}" data-status="2" class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                            <span class="am-icon-pencil-square-o"></span>驳回
+                          </a>
+                          <a href="#" data-level="{$vo.center_level}" data-id="{$vo.user_id}" data-status="3" class="am-btn am-btn-default am-btn-xs am-text-secondary">
+                            <span class="am-icon-pencil-square-o"></span>删除
+                          </a>
+                        </if>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </volist>
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 {$count} 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  {$page->show()}
+                </ul>
+              </div>
+            </div>
+            <hr />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</block>
+
+<block name="js">
+  <script>
+    $(function () {
+        //通过/驳回
+      $('.am-text-secondary').click(function(){
+          let checkStauts = $(this).attr('data-status'); //状态
+          let userId = $(this).attr('data-id'); //用户id
+          let level = $(this).attr('data-level'); //用户id
+          if(confirm("是否确认操作吗？"))
+          {
+              $.ajax({
+                  type : 'POST',
+                  url:"",
+                  dataType : 'json',
+                  data:{
+                      checkStauts: checkStauts,
+                      userId: userId,
+                      level: level
+                  },
+                  success : function(data){
+                      alert(data.msg);
+                      window.location.reload();
+                  }
+              });
+          }
+      });
+    })
+  </script>
+</block>

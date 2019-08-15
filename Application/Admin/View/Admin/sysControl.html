@@ -1,0 +1,79 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">数据管理</strong>  <small></small></div>
+      </div>
+
+      <hr>
+    <div style="width: 100%;margin: 0 0 0 45rem">
+          <button class="btn am-btn-lg am-btn-primary" id="jiesuan">模拟日结算</button>
+    </div>
+
+        <!--<div class="am-u-sm-12 am-u-md-1">-->
+          <!--<div class="am-btn-toolbar">-->
+            <!--<div class="am-btn-group am-btn-group-xs">-->
+              <!--<button class="btn am-btn-primary" id="jiesuan_">奖金月结</button>-->
+            <!--</div>-->
+
+          <!--</div>-->
+        <!--</div>-->
+        <div class="am-u-sm-12 am-u-md-10" style="width: 100%;margin: 3rem 0 0 44.2rem">
+          <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+              <button class="btn am-btn-primary am-btn-lg" id="drop">清空数据</button>
+            </div>
+          </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    </div>
+  </div>
+
+</block>
+
+<block name="js">
+  <script>
+    $(function () {
+        var url1 = "{:U('dropTable')}";
+
+        var url2 = "{:U('jiesuan')}";
+        var url3 = "{:U('jiesuan_')}";
+        
+        $('#drop').click(function () {
+
+
+            if(confirm('确认提交?')){
+                $.post(url1,{},function (data) {
+                  alert(data.msg);
+              },'json')
+            }
+        });
+
+        $('#jiesuan').click(function () {
+            if(confirm('确认提交?')){
+                $.post(url2,{},function (data) {
+                    alert(data.msg);
+                },'json')
+            }
+        });
+
+        $('#jiesuan_').click(function () {
+            if(confirm('确认提交?')){
+                $.post(url3,{},function (data) {
+                    alert(data.msg);
+                },'json')
+            }
+        });
+
+
+
+    })
+  </script>
+</block>

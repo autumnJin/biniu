@@ -1,0 +1,32 @@
+<include file="Public/head"/>
+<div id="detail">
+    <div class="heads">
+        <div class="container">
+            <div class="p1">财务明细</div>
+            <!--<a href="javascript:void(0);" id="goback"><img src="__WAPIMG__/arrowl.png"></a>-->
+            <a href="{:U('User/index')}" id="goback"><img src="__WAPIMG__/arrowl.png"></a>
+        </div>
+    </div>
+    <section class="second">
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <th>序号</th>
+                <th>金额</th>
+                <th>备注</th>
+                <th>创建时间</th>
+            </tr>
+            <volist name="data" id="vo">
+                <tr>
+                    <td>{$key}</td>
+                    <td>{$vo['flag']}{$vo['amount']}</td>
+                    <td>{$vo['tips']}</td>
+                    <td>{$vo['create_time']|date="y/m/d",###}</td>
+                </tr>
+            </volist>
+        </table>
+    </section>
+</div>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+<include file="Public/foot" />

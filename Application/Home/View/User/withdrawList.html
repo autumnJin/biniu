@@ -1,0 +1,35 @@
+<include file="Public/head"/>
+<div id="detail">
+    <div class="heads">
+        <div class="container">
+            <div class="p1">提现明细</div>
+            <!--<a href="javascript:void(0);" id="goback"><img src="__WAPIMG__/arrowl.png"></a>-->
+            <a href="{:U('User/index')}" id="goback"><img src="__WAPIMG__/arrowl.png"></a>
+        </div>
+    </div>
+    <section class="second">
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <th>金额</th>
+                <th>实际到账金额</th>
+                <th>提现状态</th>
+                <th>提交时间</th>
+            </tr>
+            <volist name="data" id="vo">
+                <php>
+                    $status = C('TIXIAN_STATUS');
+                </php>
+                <tr>
+                    <td>{$vo['amount']}</td>
+                    <td>{$vo['last']}</td>
+                    <td>{$status[$vo['status']]}</td>
+                    <td>{$vo['create_time']|date="y/m/d",###}</td>
+                </tr>
+            </volist>
+        </table>
+    </section>
+</div>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+<include file="Public/foot" />

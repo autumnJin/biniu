@@ -1,0 +1,47 @@
+<footer>
+    <div class="container">
+        <ul class="container-ul">
+            <li>
+                <a href="{:U('Index/index')}" data-href="Index/index">
+                    <img src="__WAPIMG__/nav1.png" alt="" />
+                    <img src="__WAPIMG__/nav1_a.png" alt="" />
+                    <span class="p1">首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="{:U('User/cart')}" data-href="User/cart">
+                    <img src="__WAPIMG__/nav2.png" alt="" />
+                    <img src="__WAPIMG__/nav2_a.png" alt="" />
+                    <span class="p1">购物车</span>
+                </a>
+            </li>
+            <li>
+                <a href="{:U('User/orderlist',array('status'=>0))}" data-href="User/orderlist">
+                    <img src="__WAPIMG__/nav3.png" alt="" />
+                    <img src="__WAPIMG__/nav3_a.png" alt="" />
+                    <span class="p1">订单</span>
+                </a>
+            </li>
+            <li>
+                <a href="{:U('User/index')}" data-href="User/index">
+                    <img src="__WAPIMG__/nav4.png" alt="" />
+                    <img src="__WAPIMG__/nav4_a.png" alt="" />
+                    <span class="p1">我的</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+</body>
+<script>
+$(function(){
+    //检测页面位置
+    $('.container-ul li').each(function () {
+        if($(this).children('a').attr('data-href') == '{$pos}')
+        {
+            $(this).addClass('active');
+        }
+    });
+});
+</script>
+</html>

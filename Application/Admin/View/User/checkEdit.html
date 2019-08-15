@@ -1,0 +1,90 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">商家申请</strong>  <small></small></div>
+      </div>
+      <hr/>
+      <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-8 am-u-md-push-1">
+          <form class="am-form am-form-horizontal" action="{:U('checkEdit')}" method="post">
+            <input type="hidden" name="id" value="{$data['id']}">
+            <div class="am-form-group">
+              <label for="user-name" class="am-u-sm-3 am-form-label">会员用户名</label>
+              <div class="am-u-sm-9">
+                <input type="text" id="user-name" placeholder="" required name="username" value="{$data.username}" readonly>
+              </div>
+            </div>
+
+
+
+
+
+            <!--<div class="am-form-group">-->
+              <!--<label for="user-email" class="am-u-sm-3 am-form-label">会员姓名</label>-->
+              <!--<div class="am-u-sm-9">-->
+                <!--<input type="text" id="user-phone1" name="" required placeholder="" value="{$data.truename}">-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--<div class="am-form-group">-->
+              <!--<label for="user-email" class="am-u-sm-3 am-form-label">手持身份证照片</label>-->
+              <!--<div class="am-u-sm-9">-->
+                <!--<img src="{$data.path}">-->
+              <!--</div>-->
+            <!--</div>-->
+
+
+            <div class="am-form-group">
+              <label for="user-QQ" class="am-u-sm-3 am-form-label">审核结果</label>
+
+              <div class="am-u-sm-9">
+                <select data-am-selected="{btnSize: 'sm'}" name="status">
+                  <option value="1">通过</option>
+                  <option value="2">退回</option>
+                </select>              </div>
+            </div>
+
+
+          <input type="hidden" name="id" value="{$data.id}">
+
+
+
+
+
+
+
+            <div class="am-form-group">
+              <div class="am-u-sm-9 am-u-sm-push-3">
+                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</block>
+<block name="js">
+  <script>
+    $(function () {
+
+        var form = $('form');
+
+        $('form').submit(function (e) {
+         
+            e.preventDefault();
+            $.post(form.attr('action'),form.serialize(),function (data) {
+                layer.msg(data.msg,{time:1000},function () {
+                    if(data.code){
+                        return false;
+                    }else{
+                        window.location.href=data.data;
+                    }
+                })
+
+            },'json')
+        })
+    })
+  </script>
+</block>

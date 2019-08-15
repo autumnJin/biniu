@@ -1,0 +1,86 @@
+<include file="Public/header" />
+<link href="__CSS__/personal.css" rel="stylesheet" type="text/css"/>
+<link href="__CSS__/stepstyle.css" rel="stylesheet" type="text/css"/>
+<style>
+    #qrcode img{
+        width: 200px;
+        height: 200px;
+    }
+
+    #wxzf{
+        width: 80%;
+        height: 60px;
+        padding: 5px 0;
+        background: rgb(81,195,50);
+        border-radius: 8px;
+        outline: none;
+        color: #fff;
+        font-size: 1.2em;
+        border:none;
+    }
+</style>
+<header>
+    <article>
+        <div class="mt-logo">
+            <include file="Public/search" />
+        </div>
+    </article>
+</header>
+
+<div class="nav-table">
+    <include file="Public/nav" />
+</div>
+<b class="line"></b>
+<div class="center">
+    <div class="col-main">
+        <div class="main-wrap">
+
+
+            <div class="am-cf am-padding">
+                <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">商家申请</strong>  <small></small></div>
+                <div class="am-fr am-cf"><a href="{:U('user_info')}"></a></div>            </div>
+            <hr/>
+            <!--进度条-->
+
+            <div class="am-cf am-padding" style="text-align: center;">
+
+                        <if condition="$data['status'] eq 1 ">
+                            <button id="wxzf" onclick="">已提交申请</button>
+
+                            <elseif condition="$data['status'] eq 2"/>
+                            <button id="wxzf" onclick="">审核通过</button>
+
+                            <else/>
+                            <form method="post" enctype="multipart/form-data" action="{:U('')}">
+                                <div class="info-btn" style="margin-top: 50px">
+                                    <button id="wxzf" onclick="" type="submit">申请商家</button>
+                                </div>
+                            </form>
+                        </if>
+
+
+
+
+
+
+
+            </div>
+        </div>
+        <include file="Public/footer"/>
+    </div>
+    <include file="Public/aside_menu"/>
+
+</div>
+<include file="Public/foot_base" />
+<script src="__COMMON__/js/common.js"></script>
+<script>
+    $('form').submit(function (e) {
+        e.preventDefault();
+        var form = $(this);
+        var data = form.serialize();
+        ajax_sub(form.attr('action'),data,$('.btn-sub'));
+    })
+</script>
+</body>
+
+</html>

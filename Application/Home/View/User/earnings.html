@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=0,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="__WAPCSS__/earnings.css">
+    <script src="__WAPJS__/1.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h2>我的收益</h2>
+        <a href="javascript:history.back(-1)">
+            <img src="__IMG__/Return.png" alt="">
+        </a>
+    </div>
+    <!--<div class="title">-->
+        <!--<div>推荐</div>-->
+        <!--<div>周返</div>-->
+        <!--<div>加速</div>-->
+    <!--</div>-->
+    <div class="intro">
+        <div>会员账户</div>
+        <div>时间</div>
+        <div>奖励点</div>
+    </div>
+    <ul>
+        <volist name="data" id="vo">
+            <li>
+                <div>{$vo.username}</div>
+                <!--<div>{$vo.create_time|date='Y-m-d H:i:s',###}</div>-->
+                <div>{$vo.create_time|date='Y-m-d H:i:s',###}</div>
+                <div>{$vo.amount}（{$vo.tips}）</div>
+            </li>
+        </volist>
+
+        <!--<li>-->
+            <!--<div>17398200290</div>-->
+            <!--<div>2019-04-10 12:20</div>-->
+            <!--<div>10.00（兑换）</div>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<div>17398200290</div>-->
+            <!--<div>2019-04-10 12:20</div>-->
+            <!--<div>10.00（兑换）</div>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<div>17398200290</div>-->
+            <!--<div>2019-04-10 12:20</div>-->
+            <!--<div>10.00（兑换）</div>-->
+        <!--</li>-->
+        <!--<li>-->
+            <!--<div>17398200290</div>-->
+            <!--<div>2019-04-10 12:20</div>-->
+            <!--<div>10.00（兑换）</div>-->
+        <!--</li>-->
+    </ul>
+</body>
+
+</html>

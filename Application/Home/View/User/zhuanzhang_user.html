@@ -1,0 +1,75 @@
+<include file="Public/header" />
+<link href="__CSS__/personal.css" rel="stylesheet" type="text/css"/>
+<link href="__CSS__/stepstyle.css" rel="stylesheet" type="text/css"/>
+
+<header>
+    <article>
+        <div class="mt-logo">
+            <include file="Public/search" />
+        </div>
+    </article>
+</header>
+
+<div class="nav-table">
+    <include file="Public/nav" />
+</div>
+<b class="line"></b>
+<div class="center">
+    <div class="col-main">
+        <div class="main-wrap">
+            <div class="am-cf am-padding">
+                <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">奖励积分互转</strong>  <small></small></div>
+            </div>
+            <hr/>
+            <!--进度条-->
+            <form class="am-form am-form-horizontal" action="{:U()}" id="cp">
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">积分余额</label>
+                    <div class="am-form-content">
+                        <input type="text" id="user-old-password1" placeholder="" name="" readonly value="{$data['z3']}">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">会员用户名</label>
+                    <div class="am-form-content">
+                        <input type="text" id="user-old-password2" placeholder=""   required name="username">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">数量</label>
+                    <div class="am-form-content">
+                        <input type="text" id="user-old-password" placeholder="" name="amount" required>
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label for="user-confirm-password" class="am-form-label">安全密码</label>
+                    <div class="am-form-content">
+                        <input type="password" id="user-confirm-password" required placeholder="" name="password">
+                    </div>
+                </div>
+                <div class="info-btn">
+                    <input class="am-btn am-btn-danger  btn-sub" type="submit" value="提交"/>
+                </div>
+
+            </form>
+        </div>
+        <include file="Public/footer"/>
+    </div>
+    <include file="Public/aside_menu"/>
+
+</div>
+<include file="Public/foot_base" />
+<script src="__COMMON__/js/common.js"></script>
+<script>
+    $('form').submit(function (e) {
+        e.preventDefault();
+        var form = $(this);
+        var data = form.serialize();
+        ajax_sub(form.attr('action'),data,$('.btn-sub'));
+    })
+</script>
+</body>
+
+</html>

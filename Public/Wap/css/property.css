@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+}
+body .mui-bar {
+  box-shadow: none;
+  background-color: #fff;
+  height: 0.8rem;
+  box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.05);
+}
+body .mui-bar .mui-tab-item {
+  position: relative;
+  line-height: 0.2rem;
+  vertical-align: bottom;
+}
+body .mui-bar .mui-tab-item img {
+  width: 0.4rem;
+  height: 0.4rem;
+  position: absolute;
+  top: 0.1rem;
+  left: 0.44rem;
+}
+body .mui-bar .mui-tab-item span {
+  font-size: 0.22rem;
+}
+body .header {
+  width: 100%;
+  height: 2.8rem;
+  background: url("../img/banner.png") no-repeat;
+  background-size: cover;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+body .header h2 {
+  font-size: 0.3rem;
+  color: #fff;
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+body .header i {
+  width: 0.35rem;
+  height: 0.35rem;
+  position: absolute;
+  top: 1.33rem;
+  left: 2.3rem;
+}
+body .header i img {
+  width: 100%;
+}
+body .header span {
+  color: #fff;
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-left: 0.55rem;
+}
+body .header p {
+  font-size: 0.45rem;
+  color: #fff;
+  margin-top: 0.4rem;
+}
+body .price {
+  width: 90%;
+  height: 1.2rem;
+  padding: 0.3rem 0;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  position: absolute;
+  top: 2.6rem;
+  left: 5%;
+}
+body .price div {
+  width: 49%;
+  height: 100%;
+  text-align: center;
+}
+body .price div span {
+  font-size: 0.25rem;
+  color: #4787cf;
+  display: block;
+}
+body .price div em {
+  font-size: 0.22rem;
+  color: #252525;
+  display: block;
+  font-style: normal;
+  margin-top: 0.1rem;
+}
+body .price div:nth-of-type(2) {
+  float: right;
+}
+body .price div:nth-of-type(1) {
+  float: left;
+  border-right: 1px solid #e8e8e8;
+}
+body .wfx,
+body .eth,
+body .btc,
+body .ltc {
+  width: 90%;
+  height: 1.4rem;
+  line-height: 0.5rem;
+  border-bottom: 1px solid #eeeeee;
+  border-radius: 0.2rem;
+  position: relative;
+  background-color: #fff;
+  margin: 0 auto;
+  margin-top: 0.2rem;
+  padding-top: 0.2rem;
+  box-sizing: border-box;
+}
+body .wfx a,
+body .eth a,
+body .btc a,
+body .ltc a {
+  text-decoration: none;
+  font-size: 0.28rem;
+  color: #222222;
+  display: block;
+  margin-left: 1.2rem;
+}
+body .wfx i,
+body .eth i,
+body .btc i,
+body .ltc i {
+  font-style: normal;
+  font-size: 0.27rem;
+  float: right;
+  color: #222222;
+  position: absolute;
+  top: 0.2rem;
+  right: 0.35rem;
+}
+body .wfx p,
+body .eth p,
+body .btc p,
+body .ltc p {
+  margin: 0;
+  color: #8a8d90;
+  font-size: 0.22rem;
+  margin-left: 1.2rem;
+  display: inline-block;
+}
+body .wfx img,
+body .eth img,
+body .btc img,
+body .ltc img {
+  position: absolute;
+  top: 0.3rem;
+  left: 0.3rem;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+body .wfx em,
+body .eth em,
+body .btc em,
+body .ltc em {
+  font-size: 0.22rem;
+  float: right;
+  font-style: normal;
+  display: inline-block;
+  margin-right: 0.3rem;
+  color: #8a8d90;
+}
+body .wfx {
+  margin-top: 1.2rem;
+}

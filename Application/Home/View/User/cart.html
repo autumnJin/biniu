@@ -1,0 +1,86 @@
+<include file="Public/head" />
+<div id="shoppingCart">
+    <div class="heads">
+        <div class="container">
+            <div class="p1">购物车</div>
+            <a href="javascript:void(0);" id="edit">编辑</a>
+        </div>
+    </div>
+    <div class="contents">
+        <volist name="data" id="vo">
+        <div class="boxs">
+            <div class="container">
+                <div class="one">
+                    <input type="checkbox" name="items" value="{$vo['c_id']}" />
+                </div>
+                <div class="two">
+                    <img src="__ROOT__{$vo.path}">
+                </div>
+                <div class="three">
+                    <div class="p1">{$vo.name}</div>
+                    <php>
+                        $format =C('format');
+                    </php>
+                    <div class="p3">规格：{$format[$vo['format']]}</div>
+                </div>
+                <div class="four">
+                    <div class="p1">￥{$vo.price}</div>
+                    <!--<div class="nums">
+                        <input type="button" name=""  value="+" id="add"/>
+                        <input type="number" name="nums"  value="1" id="nums"/>
+                        <input type="button" name=""   value="-" id="reduce"/>
+                    </div>-->
+                    <div class="p3" id="total">x1</div>
+                </div>
+            </div>
+        </div>
+        </volist>
+    </div>
+    <div class="cartpay">
+        <div class="one">
+            <input type="checkbox" id="chekall" name="">
+            <span>全选</span>
+        </div>
+        <!--<div class="two">
+            <div class="p1">合计：<span>￥36982</span></div>
+            <div class="p3">已优惠：￥350</div>
+        </div>-->
+        <div class="three">
+            <a href="#" class="active" id="balance">结算</a>
+            <a href="#" id="delete" >删除</a>
+        </div>
+    </div>
+</div>
+<script>
+$(function(){
+    $("#J_SelectAllCbx2").change(function(){
+        $('.check').prop("checked",this.checked);
+    });
+
+    $('#delete').click(function () {
+        var url = "{:U('deleteCart')}";
+        var p=[];
+        $('input[name="items"]:checked').each(function () {
+            p.push($(this).val());
+        });
+        $.post(url,{id:p},function (data) {
+            alert(data.msg);
+            if(data.code){
+                return;
+            }else{
+                window.location.href=data.data;
+            }
+        },'json')
+    })
+    $('#balance').click(function () {
+        var p=[];
+        $('input[name="items"]:checked').each(function () {
+            p.push($(this).val());
+        });
+
+        var url = "{:U('user/confirm_order')}";
+        ajax_sub(url,{c_id:p},$(this));
+    })
+});
+</script>
+<include file="Public/foot" />

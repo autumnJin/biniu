@@ -1,0 +1,243 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">连锁店列表</strong>  <small></small></div>
+      </div>
+      <hr>
+      <form class="am-g" action="{:U('chainStoreManger')}" method="get">
+        <!--<div class="am-u-sm-12 am-u-md-1">-->
+          <!--<div class="am-btn-toolbar">-->
+            <!--<div class="am-btn-group am-btn-group-xs">-->
+              <!--<a href="{:U('user/userAdd')}" type="button" class="am-btn am-btn-primary"><span class="am-icon-plus"></span>新增会员</a>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="am-u-sm-12 am-u-md-1">
+          <input type="text" class="am-form-field" name="start_time"  value="{$start_time}" placeholder="开始时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-1">
+          <input type="text" class="am-form-field" name="end_time"  value="{$end_time}" placeholder="结束时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+
+
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" name="username" value="{$username}" placeholder="用户名精确查找">
+          </div>
+        </div>-->
+        <!--<div class="am-u-sm-12 am-u-md-2">-->
+          <!--<div class="am-input-group am-input-group-sm">-->
+            <!--<input type="text" class="am-form-field" name="truename" value="{$truename}" placeholder="姓名查找">-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <div class="am-u-sm-12 am-u-md-4">
+            <select  id="pro" name="province">
+              <option value="">请选择省份</option>
+              <volist name="p" id="vo">
+                <option value="{$vo.provinceid}"  <php>if($vo['provinceid'] == $province) echo 'selected'</php>>{$vo.province}</option>
+              </volist>
+            </select>
+            <select id="city" name="city">
+              <if condition="$city neq ''">
+                <option value="{$city['areaID']}">{$city['area']}</option>
+              <else />
+                <option value="">请选择市</option>
+              </if>
+            </select>
+            <select id="area" name="area">
+              <if condition="$area neq ''">
+                <option value="{$area['areaID']}">{$area['area']}</option>
+                <else />
+                <option value="">请选择区</option>
+              </if>
+            </select>
+        </div>
+
+
+
+        <div class="am-u-sm-12 am-u-md-1">
+          <div class="am-input-group am-input-group-sm">
+            <input class="am-btn am-btn-primary" value="搜索" id="search" type="submit"/>
+            </span>
+          </div>
+        </div>
+
+        <!--<div class="am-u-sm-12 am-u-md-1">
+          <div class="am-input-group am-input-group-sm">
+            <input class="am-btn am-btn-primary" value="导出" type="submit" id="export"/>
+            </span>
+          </div>
+        </div>-->
+      </form>
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <div class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th>序号</th>
+                <th class="table-title">用户编号</th>
+                <th class="table-date am-hide-sm-only">姓名</th>
+                <th class="table-date am-hide-sm-only">连锁店级别</th>
+                <th class="table-date am-hide-sm-only">推荐人</th>
+                <th class="table-date am-hide-sm-only">积分余额</th>
+                <th class="table-date am-hide-sm-only">重销余额(点击可充值)</th>
+                <th class="table-date am-hide-sm-only">推荐人数</th>
+                <!--<th class="table-date am-hide-sm-only">团队人数</th>-->
+                <!--<th class="table-date am-hide-sm-only">总业绩</th>-->
+                <th class="table-date am-hide-sm-only">注册时间</th>
+                <!--<th class="table-set">操作</th>-->
+              </tr>
+              </thead>
+              <php>
+                $center_level = C('center_level');
+              </php>
+              <tbody>
+              <volist name="data" id="vo">
+                <tr>
+                  <td>{$key+1}</td>
+                  <td>{$vo['username']}</td>
+                  <td class="am-hide-sm-only">{$vo['truename']}</td>
+                  <td>{$center_level[$vo['center_level']]}</td>
+                  <td class="am-hide-sm-only">{$vo['higher_name']}</td>
+                  <td class="am-hide-sm-only"><a href="#" title="点击充值">{$vo['z1']}</a></td>
+                  <td class="am-hide-sm-only"><a href="{:U('rechargeByType',array('id'=>$vo['id'],'type'=>2))}" title="点击充值">{$vo['z2']}</a></td>
+                  <td class="am-hide-sm-only"><a href="#" title="点击充值">{$vo['tj_count']}</a></td>
+                  <!--<td class="am-hide-sm-only"><a href="#" title="点击充值">{$vo['tuandui']}</a></td>-->
+                  <!--<td class="am-hide-sm-only"><a href="#" title="点击充值">{$vo['zuo_zong']}</a></td>-->
+
+
+                  <td class="am-hide-sm-only">{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+                  <!--<td>
+                    <div class="am-btn-toolbar">
+                      <div class="am-btn-group am-btn-group-xs">
+                        <a  href="{:U('userEdit',array('id'=>$vo['id']))}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>查看详细</a>&nbsp;&nbsp;
+                        &lt;!&ndash;<if condition="$vo['status'] eq 1">&ndash;&gt;
+                          &lt;!&ndash;<a  href="javascript:" class="useractive" user_id={$vo['id']} class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>开通</a>&ndash;&gt;
+                        &lt;!&ndash;</if>&ndash;&gt;
+                        &lt;!&ndash;<a  href="{:U('Service/editService',array('id'=>$vo['id']))}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 设置商家</a>&nbsp;&nbsp;&ndash;&gt;
+                        &lt;!&ndash;<a  href="{:U('Service/add_daili',array('id'=>$vo['id']))}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 设置代理</a>&nbsp;&nbsp;&ndash;&gt;
+                        &lt;!&ndash;<a  href="{:U('userFront',array('id'=>$vo['id']))}" target="_blank" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>前台登录</a>&nbsp;&nbsp;&ndash;&gt;
+                        <php>
+                          $text = $vo['is_frozen'] == 1?'冻结':'解封';
+                        </php>
+                        <a  href="javascript:" class="dongjie" user_id={$vo['id']} class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>{$text}</a>
+                  <a  href="{:U('userFront',array('id'=>$vo['id']))}" target="_blank">登入前台</a>&nbsp;&nbsp;
+                        <a  href="javascript:" class="del" user_id={$vo['id']} class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>删除</a>
+
+
+                      </div>
+                    </div>
+                  </td>-->
+                </tr>
+              </volist>
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 {$count} 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  {$show}
+
+
+                </ul>
+              </div>
+            </div>
+            <hr />
+          </>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</block>
+
+<block name="js">
+  <script>
+    $(function () {
+        var url = "{:U('activeUser')}";
+        $('.useractive').click(function () {
+            $.post(url,{user_id:$(this).attr('user_id')},function (data) {
+                layer.msg(data.msg,{time:1000},function () {
+                    if(data.code){
+                        return false;
+                    }else{
+                        window.location.href=data.data;
+                    }
+                })
+            },'json')
+        })
+
+        var url1 = "{:U('dongjie')}";
+
+
+        $('.dongjie').click(function () {
+            $.post(url1,{id:$(this).attr('user_id')},function (data) {
+                layer.msg(data.msg,{time:1000},function () {
+                    if(data.code){
+                        return false;
+                    }else{
+                        window.location.href=data.data;
+                    }
+                })
+            },'json')
+        });
+
+        $('#pro').change(function(){
+            $.ajax({
+                type:"post",
+                url:"{:U('Public/area_choose')}",
+                data:'pro_id='+$('#pro').val(),
+                dataType:"json",
+                success:function(data){
+                    $('#city').html(data);
+                }
+            });
+        });
+        $('#city').change(function(){
+            $.ajax({
+                type:"post",
+                url:"{:U('Public/city_choose')}",
+                data:'city_id='+$('#city').val(),
+                dataType:"json",
+                success:function(data){
+                    $('#area').html(data);
+                }
+            });
+        });
+        var searchurl = "{:U('chainStoreManger')}";
+        $('#search').click(function () {
+
+            $('form').attr('action',searchurl);
+        });
+
+        var exporturl = "{:U('exportuser')}";
+        $('#export').click(function () {
+
+            $('form').attr('action',exporturl);
+        });
+
+        var url11 = "{:U('deleteUser')}";
+        $('.del').click(function () {
+
+            if(confirm('确认删除此会员吗?')){
+                $.post(url11,{id:$(this).attr('user_id')},function (data) {
+                    layer.msg(data.msg,{time:1000},function () {
+                        if(data.code){
+                            return false;
+                        }else{
+                            window.location.href=data.data;
+                        }
+                    })
+                },'json')
+            }
+
+        });
+    })
+  </script>
+</block>

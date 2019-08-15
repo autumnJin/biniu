@@ -1,0 +1,73 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">{$title}</strong> /<small>{$group_info['group_name']}</small></div>
+      </div>
+
+      <hr/>
+
+      <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-12 am-u-md-push-1">
+          <form class="am-form am-form-horizontal" action="{:U('doauth')}" method="post">
+            <input type="hidden" name="id" value="{$group_info['id']}">
+            <volist name="menulist" id="vo">
+              <div class="am-form-group">
+                <h3 for="user-QQ" class="am-box-hd pp" >
+                  <label class="am-checkbox-inline">
+                    <input type="checkbox" class="p_check" name='permission[]' value="{$vo['id']}" <php>if($vo['id'] && in_array($vo['id'],explode(',',$group_info['permission']))) echo 'checked'</php> data-am-ucheck/>{$vo['name']}
+                  </label>
+                </h3>
+                <hr/>
+                <div class="am-u-sm-9">
+                  <volist name="vo['children_menu']" id="vv">
+                    <label class="am-checkbox-inline">
+                      <input type="checkbox" class="c_check" <php>if($vv['id'] && in_array($vv['id'],explode(',',$group_info['permission']))) echo 'checked'</php> name='permission[]' value="{$vv['id']}" data-am-ucheck> {$vv['name']}
+                    </label>
+                  </volist>
+
+                </div>
+              </div>
+            </volist>
+            </div>
+            <div class="am-form-group">
+              <div class="am-u-sm-9 am-u-sm-push-3">
+                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</block>
+<block name="js">
+  <script>
+    $(function () {
+        $(".p_check").change(function(){
+            $(this).parents('.am-form-group').find('.c_check').prop("checked",this.checked);
+        });
+
+        $('.c_check').change(function () {
+            if($(this).prop("checked")){
+                $(this).parents('.am-form-group').find('.p_check').prop("checked",true);
+            }
+        });
+        var form = $('form');
+
+        form.submit(function (e) {
+            e.preventDefault();
+            $.post(form.attr('action'),form.serialize(),function(data){
+                layer.msg(data.msg,{time:1000},function () {
+                    if(data.code){
+                        return false;
+                    }else{
+                        window.location.href=data.data;
+                    }
+                })
+            },'json')
+        })
+    })
+  </script>
+</block>

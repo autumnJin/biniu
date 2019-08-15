@@ -1,0 +1,112 @@
+<include file="Public/header" />
+<link href="__CSS__/personal.css" rel="stylesheet" type="text/css"/>
+<link href="__CSS__/stepstyle.css" rel="stylesheet" type="text/css"/>
+<style>
+    #qrcode img{
+        width: 200px;
+        height: 200px;
+    }
+
+    #wxzf{
+        display: inline-block;
+        width: 80%;
+        height: 60px;
+        padding: 5px 0;
+        background: rgb(81,195,50);
+        border-radius: 8px;
+        outline: none;
+        color: #fff;
+        font-size: 1.2em;
+        border:none;
+    }
+</style>
+<header>
+    <article>
+        <div class="mt-logo">
+            <include file="Public/search" />
+        </div>
+    </article>
+</header>
+
+<div class="nav-table">
+    <include file="Public/nav" />
+</div>
+<b class="line"></b>
+<div class="center">
+    <div class="col-main">
+        <div class="main-wrap">
+
+
+            <div class="am-cf am-padding">
+                <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">微信支付</strong>  <small></small></div>
+                <div class="am-fr am-cf"><a href="{:U('index')}">返回</a></div>            </div>
+
+            <hr/>
+            <!--进度条-->
+
+            <div class="am-cf am-padding" style="text-align: center;margin-top: 30px;">
+
+                <p style="font-size: 2em;font-weight: bold;margin-bottom: 2em">￥{$data['amount']}</p>
+
+
+                <button id="wxzf" onclick="callpay()">微信支付</button>
+            </div>
+        </div>
+        <include file="Public/footer"/>
+    </div>
+    <include file="Public/aside_menu"/>
+
+</div>
+<include file="Public/foot_base" />
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script type="text/javascript">
+
+
+
+    function jsApiCall()
+    {
+        WeixinJSBridge.invoke(
+            'getBrandWCPayRequest',
+        <?php echo $jsApiParameters; ?>,
+        function(res){
+            WeixinJSBridge.log(res.err_msg);
+            // alert(res.err_code+res.err_desc+res.err_msg);
+            if(res.err_msg=="get_brand_wcpay_request:ok"){
+                alert('支付成功');
+                location.href="{:U('index/index')}";
+            }
+            // else{
+            //   alert('支付失败');
+            //     location.href="{:U('User/order')}";
+            // }
+        }
+    );
+    }
+
+
+
+
+    function callpay()
+    {
+
+
+        if (typeof WeixinJSBridge == "undefined"){
+            if( document.addEventListener ){
+                document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+            }else if (document.attachEvent){
+                document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+            }
+        }else{
+            jsApiCall();
+        }
+    }
+
+
+
+
+</script>
+    </body>
+
+</html>

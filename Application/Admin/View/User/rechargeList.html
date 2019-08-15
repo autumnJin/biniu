@@ -1,0 +1,153 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">充值管理</strong>  <small></small></div>
+      </div>
+
+      <hr>
+
+      <form class="am-g" action="{:U('rechargeList')}" method="get">
+        <div class="am-u-sm-12 am-u-md-2">
+          <input type="text" class="am-form-field" name="start_time"  value="{$start_time}" placeholder="开始时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <input type="text" class="am-form-field" name="end_time"  value="{$end_time}" placeholder="开始时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-form-group">
+            <select data-am-selected="{btnSize: 'sm'}" name="status">
+              <option value="0">申请状态</option>
+              <option value="1" <php>if($status == 1) echo 'selected'</php>>待审核</option>
+              <option value="2" <php>if($status == 2) echo 'selected'</php>>通过</option>
+              <option value="3" <php>if($status == 3) echo 'selected'</php>>失败</option>
+            </select>
+          </div>
+        </div>
+
+
+        <div class="am-u-sm-12 am-u-md-1">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" name="username" value="{$username}" style="width: 200px" placeholder="用户名精确查找">
+          </div>
+        </div>
+        <!--&nbsp;&nbsp;-->
+        <!--<div class="am-u-sm-12 am-u-md-1">-->
+          <!--<div class="am-input-group am-input-group-sm">-->
+            <!--<input type="text" class="am-form-field" name="bank_user" value="{$bank_user}" style="width: 200px" placeholder="汇款人姓名查找">-->
+          <!--</div>-->
+        <!--</div>-->
+
+
+
+        <div class="am-u-sm-12 am-u-md-1">
+          <div class="am-input-group am-input-group-sm">
+            <input class="am-btn am-btn-primary" value="搜索" id="search" type="submit"/>
+            </span>
+          </div>
+        </div>
+
+
+      </form>
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <div class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th>序号</th>
+                <th class="table-title">会员编号</th>
+                <!--<th class="table-title">当前级别</th>-->
+                <!--<th class="table-title">升级级别</th>-->
+                <th class="table-title">充值金额</th>
+                <th class="table-title">充值类型</th>
+                <!--<th class="table-title">汇款银行</th>-->
+                <!--<th class="table-title">汇款卡号</th>-->
+                <!--<th class="table-title">联系电话</th>-->
+                <th class="table-title">状态</th>
+                <!--<th class="table-title">汇款时间</th>-->
+                <th class="table-date am-hide-sm-only">申请时间</th>
+                <th class="table-date am-hide-sm-only">投资方式</th>
+                <th class="table-date am-hide-sm-only">操作</th>
+              </tr>
+              </thead>
+              <php>
+                $tixian = C('TIXIAN_STATUS');
+                $reg_level = C('reg_level');
+                $account_type = C('account_type');
+              </php>
+              <tbody>
+              <volist name="data" id="vo">
+                <tr>
+                  <td>{$key+1}</td>
+
+                  <td>
+                    {$vo['username']}
+                  </td>
+                  <!--<td>{$reg_level[$vo['before_level']]}</td>-->
+                  <!--<td>{$reg_level[$vo['after_level']]}</td>-->
+                  <td>{$vo['amount']}</td>
+                  <td>{$account_type[$vo['type']]}</td>
+                  <!--<td>{$bank_info[$vo['bank_name']]}</td>-->
+                  <!--<td>{$vo['bank_num']}</td>-->
+                  <!--<td>{$vo['phone']}</td>-->
+
+                  <td class="am-hide-sm-only">{$tixian[$vo['status']]}</td>
+                  <!--<td class="am-hide-sm-only">{$vo['huikuan_time']|date="Y-m-d H:i:s",###}</td>-->
+                  <td class="am-hide-sm-only">{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+                  <td class="am-hide-sm-only"><if condition="$vo.pay_type eq 1">充值<elseif condition="$vo.pay_type eq 2"/>复投</if></td>
+                  <td>
+                    <if condition="$vo['status'] eq 1">
+                      <a  href="javascript:" class="dongjie" r_id={$vo['id']} s="2" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>通过</a>
+                      <a  href="javascript:" class="dongjie" r_id={$vo['id']} s="3" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>退回</a>
+                      <else/>
+
+                    </if>
+                  </td>
+
+                </tr>
+              </volist>
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 {$count} 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  {$page}
+                </ul>
+              </div>
+            </div>
+            <hr />
+          </>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</block>
+
+<block name="js">
+  <script>
+    $(function () {
+        var url = "{:U('check_recharge')}";
+        $('.dongjie').click(function () {
+            if(confirm('确认操作吗')){
+                $.post(url,{id:$(this).attr('r_id'),s:$(this).attr('s')},function (data) {
+                    layer.msg(data.msg,{time:1000},function () {
+                        if(data.code){
+                            return false;
+                        }else{
+                            window.location.href=data.data;
+                        }
+                    })
+                },'json')
+            }
+
+
+        })
+    })
+  </script>
+</block>

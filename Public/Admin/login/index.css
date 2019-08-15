@@ -1,0 +1,79 @@
+/*����Ա��½����*/
+.dx_body
+{
+	background-image: URL('glbg0.jpg');
+}
+.dx_login
+{
+	width: 993px;
+	height: 680px;
+	margin: 0px auto;
+	background-image: URL('glbg.jpg');
+	position: relative;
+}
+.ggg{
+	background-image: URL('bg.jpg');
+}
+.dx_table
+{
+	position: absolute;
+	top: 320px;
+	right: 190px;
+}
+
+
+/*��Ա��¼����*/
+.hy_index
+{
+	background-color: #4389A3;
+}
+.hy_login
+{
+	margin: 0px auto;
+	width: 1024px;
+	height: 527px;
+	background-color: #FFFFFF;
+	margin-top:64px;
+}
+.hy_top
+{
+	width: 1024px;
+	height: 94px;
+	background-image: URL(image/hydl.jpg);
+}
+.hy_left
+{
+	width: 488px;
+	height: 329px;
+	float: left;
+	margin: 20px 30px;
+	background-image: URL(image/xt.jpg);
+}
+.hy_right
+{
+	width: 453px;
+	height: 336px;
+	margin: auto;
+	float: right;
+	background-image: url(image/mright.jpg);
+	position: relative;
+}
+.hy_table
+{
+	position: absolute;
+	top: 130px;
+	right: 130px;
+}
+.hy_table tr
+{
+	height: 30px;
+}
+.bon
+{
+	background: url(image/xian.jpg) no-repeat;
+	width: 1024px;
+	height: 16px;
+	color: #666666;
+	text-align: center;
+	padding-top: 30px;
+}

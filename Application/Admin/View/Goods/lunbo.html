@@ -1,0 +1,90 @@
+<extend name="Public/base"/>
+<block name="content">
+    <div class="admin-content">
+        <div class="admin-content-body">
+            <div class="am-cf am-padding">
+                <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">轮播图</strong> <small></small></div>
+            </div>
+
+             <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-6">
+          <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+              <a href="{:U('goods/add_lunbo')}" type="button" class="am-btn am-btn-primary"><span class="am-icon-plus"></span> 新增</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+            <div class="am-g">
+                <div class="am-u-sm-12">
+                    <table class="am-table am-table-bordered am-table-radius am-table-striped">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>轮播图</th>
+                            <th>图片跳转链接</th>
+                            <th>排序</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <volist name="data" id="vo">
+                            <tr>
+                                <td>
+                                    {$key}
+                                </td>
+                                <td>
+                                   <img src=" __ROOT__{$vo['logo']}" style="width: 40px;height: 30px">
+                                </td>
+                                <td>
+                                    {$vo['url']}
+                                </td>
+                                <td>
+                                    {$vo['sort']}
+                                </td>
+
+                                <td>
+                                    <a href="{:U('edit_lunbo',array('id'=>$vo['id']))}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
+                                    <a href="#" data-id="{$vo['id']}" class="iDelete am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 删除</a>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="admin-content-footer">
+            <hr>
+            <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+        </footer>
+    </div>
+</block>
+<block name="js">
+<script>
+    $(function () {
+        $('.iDelete').click(function(){
+            $.ajax({
+                type : 'POST',
+                url:"",
+                dataType : 'json',
+                data:{
+                    id: $(this).attr('data-id')
+                },
+                success : function(data){
+                    if(data.code>0){
+                        alert(data.message);
+                        window.location.reload();
+                    }
+                    else{
+                        alert(data.message);
+                    }
+                }
+            });
+        });
+    });
+</script>
+</block>

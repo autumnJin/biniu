@@ -1,0 +1,242 @@
+<extend name="Public/base"/>
+<block name="content">
+    <div class="admin-content">
+        <div class="admin-content-body">
+            <div class="am-cf am-padding am-padding-bottom-0">
+                <div class="am-fl am-cf">
+                    <strong class="am-text-primary am-text-lg">{$title}</strong>
+                    <small></small>
+                </div>
+            </div>
+            <hr>
+            <div class="am-tabs am-margin" data-am-tabs>
+                <form class="am-form" action="{:U('edit_add_goods')}" id="goods_form" method="post" enctype="multipart/form-data">
+                    <fieldset>
+                        <div class="am-form-group">
+                            <label for="doc-ipt-email-1">商品名称</label>
+                            <input type="text" required class="" id="doc-ipt-email-1" placeholder="" name="name" value="{$data['name']}">
+                        </div>
+
+                        <!--<div class="am-form-group">-->
+                            <!--<label for="doc-ipt-pwd-1">可见类型</label>-->
+                            <!--<br>-->
+                            <!--<label class="am-radio-inline">-->
+                                <!--<input type="radio"  value="1"  checked name="pro_type" <php>if($data['pro_type'] == 1) echo 'checked'</php>> 仅消费者可见-->
+
+                            <!--</label>-->
+                            <!--<label class="am-radio-inline">-->
+                                <!--<input type="radio" name="pro_type" value="2"  <php>if($data['pro_type'] == 2) echo 'checked'</php>> 仅商家可见-->
+
+                            <!--</label>-->
+
+
+                        <!--</div>-->
+
+                        <div class="am-form-group">
+                            <label for="doc-ipt-pwd-1">产品价格</label>
+                            <input type="text" required class="" id="doc-ipt-pwd-1" placeholder="" name="price" value="{$data['price']}">
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="doc-select-1">购买方式</label>
+                            <select id="doc-select-1" name="buy_type">
+                                <option value="1" <php>if(1 == $data['buy_type']) echo 'selected'</php>>不限购买方式</option>
+                                <option value="2" <php>if(2 == $data['buy_type']) echo 'selected'</php>>仅限流通积分</option>
+                            </select>
+                            <span class="am-form-caret"></span>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="doc-select-1">产品类型</label>
+                            <select id="doc-select-1" name="is_up">
+                                    <option value="1" <php>if(1 == $data['is_up']) echo 'selected'</php>>升级产品</option>
+                                    <option value="2" <php>if(2 == $data['is_up']) echo 'selected'</php>>复购产品</option>
+                            </select>
+                            <span class="am-form-caret"></span>
+                        </div>
+
+
+                        <div class="am-form-group">
+                            <label for="doc-ipt-pwd-1">商品简介</label>
+                            <input type="text" required class="" id="doc-ipt-pwd-1" placeholder="" name="description" value="{$data['description']}">
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="doc-ipt-pwd-1">商品库存</label>
+                            <input type="text" required class="" id="doc-ipt-pwd-1" placeholder="" name="repertory" value="{$data['repertory']}">
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="doc-ipt-pwd-1">首页排序(由大到小)</label>
+                            <input type="text" required class="" id="doc-ipt-pwd-1" placeholder="" name="sort" value="{$data['sort']}">
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="doc-ipt-pwd-1">上传商品Logo</label><br>
+                            <input id="doc-form-file" name="am[]" type="file" multiple="multiple">
+                            <if condition="$data['id'] neq null">
+                                <img style="width: 50px;height: 50px" src="__ROOT__{$data2[1]}">
+                            </if>
+                        </div>
+
+
+                        <div class="am-form-group">
+                            <label for="doc-ipt-pwd-1">上传商品相册</label><br>
+                            <input id="doc-form-file" name="am[]" type="file" multiple="multiple">
+                            <if condition="$data['id'] neq null">
+                                <img style="width: 60px;height: 60px" src="__ROOT__{$data2[2]}">
+
+                            </if>
+                            <br>
+                            <input id="doc-form-file" name="am[]" type="file" multiple="multiple">
+                            <if condition="$data['id'] neq null">
+                                <img style="width: 60px;height: 60px" src="__ROOT__{$data2[3]}">
+
+                            </if>
+                            <br>
+                            <input id="doc-form-file" name="am[]" type="file" multiple="multiple">
+                            <if condition="$data['id'] neq null">
+                                <img style="width: 60px;height: 60px" src="__ROOT__{$data2[4]}">
+
+                            </if>
+                        </div>
+
+                        <!--<div class="am-form-group">-->
+                            <!--<label for="doc-ipt-pwd-1">上传商品相册</label><br>-->
+                            <!--<input  type="file"  name="am2"></br>-->
+                            <!--<if condition="$data['id'] neq null">-->
+                                <!--<img style="width: 60px;height: 60px" src="__ROOT__{$data2[2]}">-->
+
+                            <!--</if>-->
+                            <!--<input  type="file"  name="am3"></br>-->
+                            <!--<if condition="$data['id'] neq null">-->
+                                <!--<img style="width: 60px;height: 60px" src="__ROOT__{$data2[3]}">-->
+
+                            <!--</if>-->
+                            <!--<input  type="file"  name="am4"></br>-->
+                            <!--<if condition="$data['id'] neq null">-->
+                                <!--<img style="width: 60px;height: 60px" src="__ROOT__{$data2[4]}">-->
+
+                            <!--</if>-->
+                        <!--</div>-->
+
+                        <div class="am-form-group">
+                            <label for="doc-ipt-pwd-1">是否上架</label>
+                            <br>
+                            <label class="am-radio-inline">
+                                <input type="radio"  value="1" name="status"   <php>if($data['status'] == 1 || !$data['status']) echo 'checked'</php>> 是
+                            </label>
+                            <label class="am-radio-inline">
+                                <input type="radio" name="status" value="2"  <php>if($data['status'] == 2) echo 'checked'</php>> 否
+                            </label>
+                        </div>
+
+                        <div class="am-form-group">
+                            <label for="doc-select-1">选择商城模块</label>
+                            <select id="doc-select-1" name="module">
+                                <volist name="modules" id="vo">
+                                    <option value="{$vo['id']}" <php>if($vo['id'] == $data['module']) echo 'selected'</php>>{$vo['name']}</option>
+                                </volist>
+                            </select>
+                            <span class="am-form-caret"></span>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="doc-select-1">选择商品类别</label>
+                            <select id="doc-select-1" name="type">
+                                <volist name="data1" id="vo">
+                                    <option value="{$vo['id']}" <php>if($vo['id'] == $data['type']) echo 'selected'</php>>{$vo['name']}</option>
+                                </volist>
+                            </select>
+                            <span class="am-form-caret"></span>
+                        </div>
+                        <div class="am-form-group">
+                            <label for="doc-select-2">选择商品规格</label>
+                            <php>
+                                $area = C('FORMAT');
+                            </php>
+                            <select id="doc-select-3" name="format">
+                                <volist name="area" id="vo">
+                                    <option value="{$key}"  <php>if($key == $data['format']) echo 'selected'</php>>{$vo}</option>
+                                </volist>
+
+                            </select>
+                            <span class="am-form-caret"></span>
+                        </div>
+
+                        <!--<div class="am-form-group">-->
+                            <!--<label for="doc-ipt-pwd-1">商品类型</label>-->
+                            <!--<br>-->
+                            <!--<label class="am-radio-inline">-->
+                                <!--<input type="radio"  value="1" name="pro_type" <php>if($data['pro_type'] == 1 || !$data['pro_type']) echo 'checked'</php>> 升级产品-->
+                            <!--</label>-->
+                            <!--<label class="am-radio-inline">-->
+                                <!--<input type="radio" name="pro_type" value="2"  <php>if($data['pro_type'] == 2) echo 'checked'</php>> 复购产品-->
+                            <!--</label>-->
+                        <!--</div>-->
+
+                        <div class="am-form-group">
+                            <label for="doc-ta-1">商品描述</label>
+                            <textarea style="min-width: 628px" id="container" name="content" type="text/plain">
+                                    {$data.content}
+                            </textarea>
+                            <!--<textarea class="" rows="5" id="doc-ta-1"></textarea>-->
+                        </div>
+                        <input type="hidden" name="id" id="goods_id" value="{$data['id']}">
+                        <p><button type="submit" id="btn" class="am-btn am-btn-default">提交</button></p>
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script type="text/javascript" src="__LIB__/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="__LIB__/ueditor/ueditor.all.js"></script>
+    <script type="text/javascript">
+        var ue = UE.getEditor('container');
+        $(function () {
+
+
+            var form = $('form');
+            $('form').submit(function (e) {
+
+                e.preventDefault();
+                var formData = new FormData($( "form" )[0]);
+                var url = form.attr('action');
+                var index ='';
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: formData,
+                    dataType:'json',
+                    async: false,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    beforeSend:function () {
+                        index = layer.msg('加载中', {
+                            icon: 16
+                            ,shade: 0.01
+                        });
+                    },
+                    success: function (data) {
+                        layer.msg(data.msg,{time:1000},function () {
+                            if(data.code){
+                                return false;
+                            }else{
+                                window.location.href=data.data;
+                            }
+                        })
+                    },
+                    error: function (returndata) {
+                        alert(returndata);
+                    },
+                    complete:function () {
+                        layer.close(index);
+                    }
+                });
+            })
+        })
+    </script>
+</block>

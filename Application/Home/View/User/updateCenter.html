@@ -1,0 +1,150 @@
+<include file="Public/header" />
+<link href="__CSS__/personal.css" rel="stylesheet" type="text/css"/>
+<link href="__CSS__/stepstyle.css" rel="stylesheet" type="text/css"/>
+
+<header>
+    <article>
+        <div class="mt-logo">
+            <include file="Public/search" />
+        </div>
+    </article>
+</header>
+
+<div class="nav-table">
+    <include file="Public/nav" />
+</div>
+<b class="line"></b>
+<div class="center">
+    <div class="col-main">
+        <div class="main-wrap">
+
+            <div class="am-cf am-padding">
+                <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">申请连锁店</strong><small></small></div>
+                <!--<div class="am-fr am-cf"><a href="{:U('withdrawList')}">提现记录</a></div>-->
+            </div>
+            <hr/>
+            <!--进度条-->
+            <form class="am-form am-form-horizontal" action="{:U()}" id="cp" method="post">
+                <div class="am-form-group">
+                    <label for="center_level" class="am-form-label">选择等级</label>
+                    <div class="am-form-content">
+                        <select name="center_level" id="center_level">
+                            <volist name="centers" id="vo">
+                                <option value='{$key}'>{$vo}</option>
+                            </volist>
+                        </select>
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label for="province" class="am-form-label">选择省</label>
+                    <div class="am-form-content">
+                        <select name="province" id="province">
+                            <option value="">省</option>
+                            <volist name="provinces" id="vo">
+                                <option value='{$vo.provinceid}'>{$vo.province}</option>
+                            </volist>
+                        </select>
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label for="bank_name" class="am-form-label">选择市</label>
+                    <div class="am-form-content">
+                        <select name="city" id="city">
+                            <option value="">市</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label for="area" class="am-form-label">选择区</label>
+                    <div class="am-form-content">
+                        <select name="area" id="area">
+                            <option value="">区</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label for="address" class="am-form-label">详细地址</label>
+                    <div class="am-form-content">
+                        <input type="text" id="address" placeholder="" name="address" required value="">
+                    </div>
+                </div>
+                <div class="info-btn">
+                    <a class="am-btn am-btn-danger btn-sub submit">提交</a>
+                </div>
+            </form>
+        </div>
+        <include file="Public/footer"/>
+    </div>
+    <include file="Public/aside_menu"/>
+
+</div>
+<include file="Public/foot_base" />
+
+
+<script src="__COMMON__/js/common.js"></script>
+<script>
+    $(function(){
+        //选中省
+        $('#province').change(function(){
+            $.ajax({
+                type:"post",
+                url:"{:U('Public/area_choose')}",
+                data:'pro_id='+$('#province').val(),
+                dataType:"json",
+                success:function(data){
+                    $('#city').html(data);
+                }
+            });
+        });
+        //选中市
+        $('#city').change(function(){
+            $.ajax({
+                type:"post",
+                url:"{:U('Public/city_choose')}",
+                data:'city_id='+$('#city').val(),
+                dataType:"json",
+                success:function(data){
+                    $('#area').html(data);
+                }
+            });
+        });
+
+        //表单提价
+        $('.submit').click(function(){
+
+            if($('#center_level').val() == '' || $('#province').val() == '' || $('#city').val() == '' || $('#area').val() == '' || $('#address').val() == '')
+            {
+                alert('请填写完整信息！');
+                return;
+            }
+            $.ajax({
+                type:"post",
+                url:"",
+                data:{
+                    'center_level': $('#center_level').val(),
+                    'province': $('#province').val(),
+                    'city': $('#city').val(),
+                    'area': $('#area').val(),
+                    'address': $('#address').val()
+                },
+                dataType:"json",
+                success:function(data){
+                    if(data.code == -1)
+                    {
+                        alert(data.message);
+                        return;
+                    }
+                    if(data.code == 1)
+                    {
+                        alert(data.message);
+                        window.location.href="{:U('user/index')}";
+                    }
+                }
+            });
+        });
+    });
+
+</script>
+</body>
+
+</html>

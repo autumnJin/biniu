@@ -1,0 +1,67 @@
+<include file="Public/header" />
+<link href="__CSS__/personal.css" rel="stylesheet" type="text/css"/>
+<link href="__CSS__/stepstyle.css" rel="stylesheet" type="text/css"/>
+
+<header>
+    <article>
+        <div class="mt-logo">
+            <include file="Public/search" />
+        </div>
+    </article>
+</header>
+
+<div class="nav-table">
+    <include file="Public/nav" />
+</div>
+<b class="line"></b>
+<div class="center">
+    <div class="col-main">
+        <div class="main-wrap">
+
+
+            <div class="am-cf am-padding">
+                <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">{$title}</strong>  <small></small></div>
+            </div>
+            <hr/>
+            <!--进度条-->
+            <php>
+                $reg_level =C('reg_level');
+            </php>
+            <div class="am-cf am-padding">
+                <table class="am-table">
+                    <thead>
+                    <tr>
+                        <th>金额</th>
+                        <th>时间</th>
+                        <th>备注</th>
+                    </tr>
+                    <empty name="data">
+                        <tr>
+                            <td>暂无数据</td>
+                        </tr>
+                    </empty>
+                    </thead>
+                    <tbody>
+                    <volist name="data" id="vo">
+                        <tr>
+                            <php>
+                                $c = $vo['flag'] == '+' ? 'green':'red';
+                            </php>
+                            <td><font color="{$c}">{$vo['flag']}</font>{$vo['amount']}</td>
+                            <td>{$vo['create_time']|date="m-d H:i:s",###}</td>
+                            <td>{$vo['tips']}</td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <include file="Public/footer"/>
+    </div>
+    <include file="Public/aside_menu"/>
+
+</div>
+<include file="Public/foot_base" />
+</body>
+
+</html>

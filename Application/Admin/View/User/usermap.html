@@ -1,0 +1,83 @@
+<extend name="Public/base"/>
+<block name="content">
+  <link href="__LIB__/ztree/zTreeStyle/zTreeStyle.css" rel="stylesheet">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">会员推荐关系</strong>  <small></small></div>
+      </div>
+
+      <hr>
+
+      <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-3">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" name="username" placeholder="根据会员用户名搜索" value="{$username}">
+            <span class="am-input-group-btn">
+            <button class="am-btn am-btn-primary" id="search" type="button">搜索</button>
+          </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <ul id="treeDemo" class="ztree"></ul>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+
+  </div>
+<input type="hidden" id="tree" value="{$data}"/>
+</block>
+<block name="js">
+  <script src="__LIB__/ztree/jquery.ztree.core.min.js">
+  </script>
+<script>
+  $(function () {
+      var setting = {
+          isSimpleData : true,              //数据是否采用简单 Array 格式，默认false  性
+          showLine : true,                  //是否显示节点间的连线
+          checkable : true,
+          // callback: {
+          //     onClick: zTreeOnClick
+          // }
+      };
+
+     var  zNodes;//数据变量
+      function aj() {
+          $.ajax({
+              url:"{:U('userMap')}",
+              type: "POST",
+              async: false,
+              dataType:"json",
+              data:{username:$('input[name="username"]').val()},
+              success: function (data) {
+                  zNode=data;    //将请求返回的数据存起来
+                  // zNodes = eval("("+zNodesq+")");//重点
+                  //alert(zNodes);
+              },
+          })
+      }
+
+
+      $('#search').click(function () {
+          aj();
+          $.fn.zTree.init($("#treeDemo"), setting, zNode);
+      });
+
+      aj();
+      //ajax提交数据，请求后台PHP处理返回出目录结构json数据
+
+
+          $.fn.zTree.init($("#treeDemo"), setting, zNode);
+
+  })
+</script>
+</block>

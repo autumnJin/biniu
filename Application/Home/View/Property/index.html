@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=0,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__WAPCSS__/mui.min.css">
+    <link rel="stylesheet" href="__WAPCSS__/property.css">
+    <script src="__WAPJS__/1.js"></script>
+    <script src="__WAPJS__/zepto.min.js"></script>
+    <script src="__WAPJS__/mui.min.js"></script>
+    <title>HPAY</title>
+</head>
+
+<body>
+<div class="header">
+    <h2>HPAY</h2>
+    <i><img src="__IMG__/money.png" alt=""></i>
+    <span>HPAY资产</span>
+    <p>{$data.z5|default = '0.00'}</p>
+</div>
+
+<div class="price">
+    <div>
+        <span class="wfx_price"></span>
+        <em>当前价格</em>
+    </div>
+    <div>
+        <span>{$data.z5}</span>
+        <em>当前拥有</em>
+    </div>
+</div>
+
+<div style="margin-bottom:80px;overflow:hidden">
+    <!--<div class="wfx">-->
+        <!--<img src="__IMG__/WFX.png" alt="">-->
+        <!--<a href="{:U('Property/wfxrecord')}" class="aa">HPAY</a>-->
+        <!--<p><span></span> CNY</p>-->
+        <!--<em><span></span> CNY</em>-->
+        <!--<i>{$data.z5|default='0.00'}</i>-->
+    <!--</div>-->
+    <div class="wfx">
+        <img src="https://cdn.mytoken.org/Fh8zKdAhi7svn4O389-iNg4JLOPQ" alt="">
+        <a href="{:U('Property/wfxrecord')}" class="aa">IOTE</a>
+        <p><span></span> CNY</p>
+        <em><span></span> CNY</em>
+        <i>{$data.z5|default='0.00'}</i>
+    </div>
+    <div class="btc">
+        <img src="__IMG__/BTC.png" alt="">
+        <a href="{:U('Property/btcrecord')}" class="aa">BTC</a>
+        <p><span></span> CNY</p>
+        <em><span></span> CNY</em>
+        <i>{$data.z7}</i>
+    </div>
+    <div class="eth">
+        <img src="__IMG__/ETH.png" alt="">
+        <a href="{:U('Property/ethrecord')}" class="aa">ETH</a>
+        <p><span></span> CNY</p>
+        <em><span></span> CNY</em>
+        <i>{$data.z9}</i>
+    </div>
+    <!--<div class="ltc">-->
+        <!--<img src="__IMG__/LTC.png" alt="">-->
+        <!--<a href="{:U('Property/ltcrecord')}" class="aa">LTC</a>-->
+        <!--<p><span></span> CNY</p>-->
+        <!--<em><span></span> CNY</em>-->
+        <!--<i>0.00</i>-->
+    <!--</div>-->
+    <div class="usdtx">
+        <img src="https://s1.bqiapp.com/coin/20181030_72_webp/tether_200_200.webp" alt="">
+        <a href="{:U('Property/usdtrecord')}" class="aa">USDT</a>
+        <p><span></span> CNY</p>
+        <em><span></span> CNY</em>
+        <i>{$data.z8}</i>
+    </div>
+</div>
+<style>
+    .usdtx{
+        width: 90%;
+        height: 1.4rem;
+        line-height: 0.5rem;
+        border-bottom: 1px solid #eeeeee;
+        border-radius: 0.2rem;
+        position: relative;
+        background-color: #fff;
+        margin: 0 auto;
+        margin-top: 0.2rem;
+        padding-top: 0.2rem;
+        box-sizing: border-box;
+    }
+    body .usdtx img{
+        position: absolute;
+        top: 0.3rem;
+        left: 0.3rem;
+        width: 0.8rem;
+        height: 0.8rem;
+    }
+    body .usdtx a{
+        text-decoration: none;
+        font-size: 0.28rem;
+        color: #222222;
+        display: block;
+        margin-left: 1.2rem;
+    }
+    body .usdtx p{
+        margin: 0;
+        color: #8a8d90;
+        font-size: 0.22rem;
+        margin-left: 1.2rem;
+        display: inline-block;
+    }
+    body .usdtx em{
+        font-size: 0.22rem;
+        float: right;
+        font-style: normal;
+        display: inline-block;
+        margin-right: 0.3rem;
+        color: #8a8d90;
+    }
+    body .usdtx i{
+        font-style: normal;
+        font-size: 0.27rem;
+        float: right;
+        color: #222222;
+        position: absolute;
+        top: 0.2rem;
+        right: 0.35rem;
+    }
+</style>
+<nav class="mui-bar mui-bar-tab">
+    <a class="mui-tab-item mui-active" href="{:U('Property/index')}">
+        <img src="__IMG__/zc2.png" alt="">
+        <span class="mui-tab-label">资产</span>
+    </a>
+    <a class="mui-tab-item " href="{:U('Hangqing/index')}">
+        <img src="__IMG__/hq1.png" alt="">
+        <span class="mui-tab-label">行情</span>
+    </a>
+    <a class="mui-tab-item" href="{:U('Duihuan/index')}">
+        <img src="__IMG__/sd1.png" alt="">
+        <span class="mui-tab-label">闪兑</span>
+    </a>
+    <a class="mui-tab-item" href="{:U('Discover/index')}">
+        <img src="__IMG__/fx1.png" alt="">
+        <span class="mui-tab-label">发现</span>
+    </a>
+    <a class="mui-tab-item" href="{:U('User/index')}">
+        <img src="__IMG__/my1.png" alt="">
+        <span class="mui-tab-label">我的</span>
+    </a>
+
+</nav>
+
+<script src="__COMMON__/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+    mui('body').on('tap', 'a', function () { document.location.href = this.href; });
+    $('.aa').click(function(){
+        alert('功能暂未开放');
+        return false;
+    });
+
+
+    ajax_get();
+    setInterval(function(){
+        ajax_get()
+    }, 60000);
+
+    function ajax_get(){
+        $.ajax({
+            type:"post",
+            url:"{:U('Property/price2')}",
+            data:{
+                // type:'BTC',
+            },
+            dataType:"json",
+            success:function(data){
+                console.log(data);
+                if(data){
+                    $(".wfx_price").text(parseFloat((data.wfx.close)*6.74).toFixed(4));
+                    $('.wfx>p>span').text(parseFloat((data.wfx.close)*6.74).toFixed(4));
+                    $('.wfx>em>span').text((parseFloat((data.wfx.close)*6.74)*{$data.z5}).toFixed(2));
+
+                    $(".btc>p>span").text(parseFloat(data.btc.close).toFixed(2));
+                    $(".btc>em>span").text((parseFloat(data.btc.close)*{$data.z7}).toFixed(2));
+
+                    $(".eth>p>span").text(parseFloat(data.eth.close).toFixed(2));
+                    $(".eth>em>span").text((parseFloat(data.eth.close)*{$data.z9}).toFixed(2));
+
+
+                    // $(".ltc>p>span").text(parseFloat(data.ltc.close).toFixed(2));
+                    // $(".ltc>em>span").text((parseFloat(data.ltc.close)*{$data.z10}).toFixed(2));
+
+
+                }else{
+                    alert(data.msg);
+                    // window.location.href=data.data;
+                }
+            }
+        });
+
+        $.ajax({
+            type:"post",
+            url:"{:U('Hangqing/api')}",
+            data:{
+            },
+            dataType:"json",
+            success:function(res){
+                // console.log(res.change);
+                //console.log(res.price);
+                if(res){
+                    $('.usdtx>p>span').text(parseFloat(res.rate).toFixed(2));
+                    $('.usdtx>em>span').text((parseFloat(res.rate)*{$data.z8}).toFixed(2));
+
+                }else{
+                    alert(res.msg);
+                }
+            }
+        });
+    }
+</script>
+
+
+</body>
+
+</html>

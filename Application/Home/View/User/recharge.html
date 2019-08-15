@@ -1,0 +1,138 @@
+<include file="Public/header" />
+<link href="__CSS__/personal.css" rel="stylesheet" type="text/css"/>
+<link href="__CSS__/stepstyle.css" rel="stylesheet" type="text/css"/>
+
+<header>
+    <article>
+        <div class="mt-logo">
+            <include file="Public/search" />
+        </div>
+    </article>
+</header>
+
+<div class="nav-table">
+    <include file="Public/nav" />
+</div>
+<b class="line"></b>
+<div class="center">
+    <div class="col-main">
+        <div class="main-wrap">
+
+            <div class="am-cf am-padding">
+                <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">升级代理</strong>  <small></small></div>
+                <!--<div class="am-fr am-cf"><a href="{:U('rechargeList')}">认购记录</a></div>-->
+            </div>
+            <hr/>
+            <!--进度条-->
+            <form class="am-form am-form-horizontal" action="{:U()}" id="cp">
+
+
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">收款银行</label>
+                    <div class="am-form-content">
+                        <input type="text" id="amount" placeholder="" name=""  value="{$config['bank_name']}" readonly>
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">收款银行账户</label>
+                    <div class="am-form-content">
+                        <input type="text" id="amount" placeholder="" name="" value="{$config['bank_num']}" readonly>
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">收款人</label>
+                    <div class="am-form-content">
+                        <input type="text" id="amount" placeholder="" name="" value="{$config['bank_user']}" readonly>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">选择代理级别</label>
+                    <div class="am-form-content">
+                        <select name="after_level">
+                            <option value="4">初级合伙人</option>
+                            <option value="5">战略合伙人</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="user-new-password" class="am-form-label">汇款银行</label>
+                    <div class="am-form-content">
+                        <select name="bank_name">
+                            <volist name="bank_info" id="vo">
+                                <option value="{$vo['id']}" <php> if($data['bank_name'] == $vo['id']) echo 'selected'</php>>{$vo['name']} </option>
+                            </volist>
+                        </select>
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">汇款银行账户</label>
+                    <div class="am-form-content">
+                        <input type="text" id="amount" placeholder="" name="bank_num" value="">
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">汇款金额</label>
+                    <div class="am-form-content">
+                        <input type="text" id="amount" placeholder="" name="amount" value="">
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">汇款人</label>
+                    <div class="am-form-content">
+                        <input type="text" id="amount" placeholder="" name="bank_user" value="">
+                    </div>
+                </div>
+
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">联系电话</label>
+                    <div class="am-form-content">
+                        <input type="text" id="amount" placeholder="" name="phone" value="">
+                    </div>
+                </div>
+
+
+
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">汇款时间</label>
+                    <div class="am-form-content">
+                        <input type="date" id="amount" placeholder="" name="huikuan_time" value="1600">
+                    </div>
+                </div>
+
+
+
+                <div class="info-btn">
+                    <input class="am-btn am-btn-danger  btn-sub" type="submit" value="提交"/>
+                </div>
+
+            </form>
+
+
+        </div>
+        <include file="Public/footer"/>
+    </div>
+    <include file="Public/aside_menu"/>
+
+</div>
+<include file="Public/foot_base" />
+
+<script src="__COMMON__/js/common.js"></script>
+<script>
+    $('form').submit(function (e) {
+        e.preventDefault();
+        var form = $(this);
+        var data = form.serialize();
+        var amount = $('#amount').val() / $('#h_b').val();
+        if(confirm('确认提交吗?')){
+            ajax_sub(form.attr('action'),data,$('.btn-sub'));
+
+        }
+
+
+    })
+</script>
+</body>
+
+</html>

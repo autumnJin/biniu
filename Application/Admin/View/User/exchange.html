@@ -1,0 +1,169 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">提现列表</strong>  <small></small></div>
+      </div>
+
+      <hr>
+
+      <form class="am-g" action="{:U()}" method="get">
+        <div class="am-u-sm-12 am-u-md-1">
+          <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+              <a href="{:U('user/exportexchange')}" type="button" class="am-btn am-btn-primary"><span class="am-icon-plus"></span>闪兑未处理</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="am-u-sm-12 am-u-md-1">
+          <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+              <a href="{:U('user/exportexchange1')}" type="button" class="am-btn am-btn-primary"><span class="am-icon-plus"></span>闪兑已处理</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <input type="text" class="am-form-field" name="start_time"  value="{$start_time}" placeholder="开始时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <input type="text" class="am-form-field" name="end_time"  value="{$end_time}" placeholder="结束时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" name="username" value="{$username}" placeholder="会员用户名">
+          </div>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-form-group">
+            <select data-am-selected="{btnSize: 'sm'}" name="status">
+              <option value="0" <php>if($status == 0) echo 'selected'</php>>待审核</option>
+              <option value="2" <php>if($status == 2) echo 'selected'</php>>通过</option>
+              <option value="3" <php>if($status == 3) echo 'selected'</php>>驳回</option>
+            </select>
+          </div>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+
+            <span class="am-input-group-btn">
+            <button class="am-btn am-btn-primary" type="submit">搜索</button>
+          </span>
+          </div>
+        </div>
+      </form>
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <div class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th class="table-title">序号</th>
+                <th class="table-title">用户名</th>
+                <th class="table-title">闪兑币类型</th>
+                <th class="table-title">闪兑币数量</th>
+                <th class="table-title">兑换币类型</th>
+                <th class="table-title">兑换币数量</th>
+                <th class="table-title">价格</th>
+                <th class="table-title">状态</th>
+                <th class="table-date am-hide-sm-only">兑换时间</th>
+                <th class="table-date am-hide-sm-only">审核时间</th>
+                <th class="table-set">操作</th>
+              </tr>
+              </thead>
+              <tbody>
+              <empty name="data">
+                <tr>
+                  <td>暂无数据</td>
+                </tr>
+              </empty>
+              <php>
+                $tixian = C('TIXIAN_STATUS');
+                $type = C('leixing');
+              </php>
+              <volist name="data" id="vo">
+                <tr>
+                  <td>{$key+1}</td>
+                  <td><a href="#">{$vo['username']}</a></td>
+                  <td>{$type[$vo['from_coin']]}</td>
+                  <td>{$vo['from_coin_num']}</td>
+                  <td>{$type[$vo['to_coin']]}</td>
+                  <td>{$vo['to_exchange_num']}</td>
+                  <td>{$vo['price']}</td>
+                  <td>{$tixian[$vo['status']]}</td>
+                  <!--<td>-->
+                  <!--{$vo['to_exchange_num']}-->
+                  <!--</td>-->
+                  <!--<td class="am-hide-sm-only">-->
+                  <!--{$vo['bank_num']}-->
+                  <!--</td>-->
+                  <!--<td class="am-hide-sm-only">-->
+                  <!--{$vo['bank_name']}-->
+                  <!--</td>-->
+
+                  <!--<td class="am-hide-sm-only">-->
+                  <!--{$vo['bank_tree']}-->
+                  <!--</td>-->
+                  <!--<td class="am-hide-sm-only">-->
+                  <!--{$vo['bank_user']}-->
+                  <!--</td>-->
+                  <!--<td class="am-hide-sm-only">-->
+                  <!--{$vo['weixin']}-->
+                  <!--</td>-->
+                  <!--<td class="am-hide-sm-only">-->
+                  <!--{$vo['zfb']}-->
+                  <!--</td>-->
+                  <td class="am-hide-sm-only">{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+                  <td class="am-hide-sm-only">{$vo['sure_time']|date="Y-m-d H:i:s",###}</td>
+                  <td>
+                    <if condition="$vo['status'] eq '0'">
+                      <div class="am-dropdown" data-am-dropdown="">
+                        <button class="am-btn am-btn-default am-btn-xs am-dropdown-toggle" data-am-dropdown-toggle=""><span class="am-icon-cog"></span> <span class="am-icon-caret-down"></span></button>
+                        <ul class="am-dropdown-content">
+                          <li><a href="{:U('doexchange',array('id'=>$vo['id'],'status'=>2))}">通过</a></li>
+                          <li><a href="{:U('doexchange',array('id'=>$vo['id'],'status'=>3))}">驳回</a></li>
+                        </ul>
+                      </div>
+                      <elseif condition="$vo['status'] eq '2'"/>已通过
+                      <else />已退回
+                    </if>
+                  </td>
+                </tr>
+              </volist>
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 {$count} 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  {$page}
+                  <!--<li class="am-disabled"><a href="#">«</a></li>-->
+                  <!--<li class="am-active"><a href="#">1</a></li>-->
+                  <!--<li><a href="#">2</a></li>-->
+                  <!--<li><a href="#">3</a></li>-->
+                  <!--<li><a href="#">4</a></li>-->
+                  <!--<li><a href="#">5</a></li>-->
+                  <!--<li><a href="#">»</a></li>-->
+
+                </ul>
+              </div>
+            </div>
+            <hr/>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+
+  </div>
+
+</block>

@@ -1,0 +1,66 @@
+<include file="Public/header" />
+<link href="__CSS__/personal.css" rel="stylesheet" type="text/css"/>
+<link href="__CSS__/infstyle.css" rel="stylesheet" type="text/css"/>
+
+<header>
+    <article>
+        <div class="mt-logo">
+            <include file="Public/search" />
+        </div>
+    </article>
+</header>
+
+<div class="nav-table">
+    <include file="Public/nav" />
+</div>
+<b class="line"></b>
+<div class="center">
+    <div class="col-main">
+        <div class="main-wrap">
+            <div class="user-safety">
+                <div class="am-cf am-padding">
+                    <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">账户安全</strong> / <small>Set&nbsp;up&nbsp;Safety</small></div>
+                </div>
+                <hr/>
+
+                <div class="check">
+                    <ul>
+                        <li>
+                            <i class="i-safety-lock"></i>
+                            <div class="m-left">
+                                <div class="fore1">登录密码</div>
+                                <div class="fore2"><small>为保证您账户安全，建议您定期更改密码以保护账户安全。</small></div>
+                            </div>
+                            <div class="fore3">
+                                <a href="{:U('password')}">
+                                    <div class="am-btn am-btn-secondary">修改</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="i-safety-wallet"></i>
+                            <div class="m-left">
+                                <div class="fore1">安全密码</div>
+                                <div class="fore2"><small>为保证您账户安全，建议您定期更改密码以保护账户安全。</small></div>
+                            </div>
+                            <div class="fore3">
+                                <a href="{:U('password2')}">
+                                    <div class="am-btn am-btn-secondary">修改</div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <include file="Public/footer"/>
+    </div>
+    <include file="Public/aside_menu"/>
+
+</div>
+<include file="Public/foot_base" />
+</body>
+
+</html>

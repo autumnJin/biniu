@@ -1,0 +1,105 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">{$title}</strong>  <small></small></div>
+      </div>
+
+      <hr/>
+
+      <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-8 am-u-md-push-1">
+          <form class="am-form am-form-horizontal" action="{:U('add_edit_admin')}" method="post">
+            <input type="hidden" name="id" value="{$data['id']}">
+            <div class="am-form-group">
+              <label for="user-name" class="am-u-sm-3 am-form-label">登录用户名</label>
+              <div class="am-u-sm-9">
+                <input type="text" id="user-name" placeholder="" minlength='1'name="username" value="{$data.username}" required />
+              </div>
+            </div>
+
+            <div class="am-form-group">
+              <label for="user-email" class="am-u-sm-3 am-form-label">真实姓名</label>
+              <div class="am-u-sm-9">
+                <input type="text" id="user-truename" name="truename" minlength='1'  placeholder="" value="{$data.truename}" required />
+              </div>
+            </div>
+
+             <div class="am-form-group">
+              <label for="user-email" class="am-u-sm-3 am-form-label">登录密码</label>
+              <div class="am-u-sm-9">
+                <input type="password" id="user-password" name="password"    placeholder="" value=""  />
+                <if condition="$data['id'] neq null">
+                  <font color="#f00">密码不修改请留空</font>
+                </if>
+              </div>
+            </div>
+             <div class="am-form-group">
+              <label for="user-email" class="am-u-sm-3 am-form-label">确认密码</label>
+              <div class="am-u-sm-9">
+                <input type="password" id="user-email"   data-equal-to="#user-password"  placeholder="" value=""  />
+                <if condition="$data['id'] neq null">
+                  <font color="#f00">密码不修改请留空</font>
+                </if>
+              </div>
+
+            </div>
+
+            <div class="am-form-group">
+              <label for="user-QQ" class="am-u-sm-3 am-form-label">所属分组</label>
+              <div class="am-u-sm-9">
+                <select data-am-selected="{btnSize: 'sm'}" name="group_id">
+                  <volist name="admin_group" id="vo">
+                    <option value="{$vo.id}" <php> if($data['group_id'] == $vo['id']) echo 'selected'</php>>{$vo['group_name']}</option>
+                  </volist>
+                </select>              </div>
+            </div>
+            <div class="am-form-group">
+              <label for="user-QQ" class="am-u-sm-3 am-form-label">是否启用</label>
+             <div class="am-u-sm-9">
+               <label class="am-radio-inline">
+                 <input type="radio" name="is_show" value="1" checked data-am-ucheck> 是
+               </label>
+               <label class="am-radio-inline">
+                 <input type="radio" name="is_show" value="2" data-am-ucheck> 否
+               </label>
+             </div>
+            </div>
+
+            <div class="am-form-group">
+              <div class="am-u-sm-9 am-u-sm-push-3">
+                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</block>
+<block name="js">
+  <script>
+    $(function () {
+        var form = $('form');
+
+        $('form').submit(function (e) {
+            e.preventDefault();
+            if($('#user-password').val() != $('#user-email').val()){
+              layer.msg('两次密码不一致');
+              return;
+            }
+            $.post(form.attr('action'),form.serialize(),function (data) {
+                layer.msg(data.msg,{time:1000},function () {
+                    if(data.code){
+                        return false;
+                    }else{
+                        window.location.href=data.data;
+                    }
+                })
+
+            },'json')
+        })
+    })
+  </script>
+</block>

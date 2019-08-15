@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="__CSS__/ming_common.css">
+  <link rel="stylesheet" href="__CSS__/ming.css">
+</head>
+
+<body>
+  <header class="header">
+    <a href='javascript:history.back(-1)'><img src="http://hb90508.zhongbkj.com/Public/Home/images/Return.png"
+        alt=""></a>
+    <p>WFX交易</p>
+    <span class="kongge"></span>
+  </header>
+  <section class="content">
+    <div class="content_header">
+      <div class="content_header_money">
+        <p>总资产</p>
+        <p>{$user.z5}</p>
+        <!--<p>≈ 0 CNY</p>-->
+      </div>
+      <ul>
+        <!--<li><a href="{:U('Property/zhuanshou')}"><img src="__IMG__/shoukuan.png" alt=""><span>收款</span></a></li>-->
+        <li><a href="{:U('Property/zhuanshou')}"><img src="__IMG__/shoukuan.png" alt=""><span></span></a></li>
+        <li><a href="{:U('Otc/sell')}"><img src="__IMG__/zhuanzhang.png" alt=""><span>卖出</span></a></li>
+      </ul>
+    </div>
+    <div class="qianbao">
+      <h5>交易记录</h5>
+      <ul>
+        <volist name="data" id="vo">
+            <li>
+              <div class="record">
+                <div><img src="__IMG__/test_info.jpg" alt=""></div>
+                <div class="record_list_content">
+                  <p class="record_list_name">{$vo.username}<span><a href="{:U('Otc/buy',['sell_id'=>$vo[id]])}">购买WFX</a></span></p>
+
+                  <p>时间：{$vo.add_time|date='Y-m-d H:i:s',###}</p>
+
+                  <p>最低买入数量：{$vo.low_num} WFX</p>
+                  <p>已卖出的数量：{$vo.sell} WFX</p>
+                  <p>剩余数量：{$vo.lave} WFX</p>
+                </div>
+                <div class="record_list_status">
+                  <p class="doing">交易进行中</p>
+                  <p>{$vo.sell_num}WFX</p>
+                </div>
+              </div>
+            </li>
+        </volist>
+
+        <!--<li>-->
+          <!--<div class="record">-->
+            <!--<div><img src="__IMG__/test_info.jpg" alt=""></div>-->
+            <!--<div class="record_list_content">-->
+              <!--<p class="record_list_name">JackSon<span>购买USDT</span></p>-->
+              <!--<p>编号：456456-45das-456</p>-->
+              <!--<p>时间：2019-01-14 10:10:10</p>-->
+              <!--<p>单价：6.92 CNY</p>-->
+              <!--<p>数量：72.6125145 USDT</p>-->
+            <!--</div>-->
+            <!--<div class="record_list_status">-->
+              <!--<p class="doing">交易进行中</p>-->
+              <!--<p>500CNY</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</li>-->
+        <!--<li>-->
+          <!--<div class="record">-->
+            <!--<div><img src="__IMG__/test_info.jpg" alt=""></div>-->
+            <!--<div class="record_list_content">-->
+              <!--<p class="record_list_name">JackSon<span>购买USDT</span></p>-->
+              <!--<p>编号：456456-45das-456</p>-->
+              <!--<p>时间：2019-01-14 10:10:10</p>-->
+              <!--<p>单价：6.92 CNY</p>-->
+              <!--<p>数量：72.6125145 USDT</p>-->
+            <!--</div>-->
+            <!--<div class="record_list_status">-->
+              <!--<p class="doing">交易进行中</p>-->
+              <!--<p>500CNY</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</li>-->
+      </ul>
+    </div>
+  </section>
+
+</body>
+
+</html>

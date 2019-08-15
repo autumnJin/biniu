@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  background-color: #326cf8;
+}
+body .header {
+  width: 100%;
+  background: linear-gradient(to right, #1e91ff, #075ffe);
+  height: 2.5rem;
+  line-height: 0.8rem;
+  position: relative;
+  text-align: center;
+}
+body .header h2 {
+  font-size: 0.25rem;
+  color: #fff;
+  font-weight: 400;
+  display: inline-block;
+}
+body .header a {
+  text-decoration: none;
+  display: inline-block;
+  width: 0.2rem;
+  height: 0.2rem;
+  position: absolute;
+  top: 0.1rem;
+  left: 0.2rem;
+}
+body .header a img {
+  width: 100%;
+}
+body .content {
+  width: 90%;
+  height: 6rem;
+  position: absolute;
+  top: 1.3rem;
+  left: 0.3rem;
+  background-color: #fff;
+  border-radius: 0.1rem;
+  box-sizing: border-box;
+  padding: 0 0.2rem;
+}
+body .content .title {
+  width: 100%;
+  height: 0.8rem;
+  line-height: 0.4rem;
+  text-align: center;
+  font-size: 0.25rem;
+  color: #333333;
+  border-bottom: 1px solid #e5e5e5;
+}
+body .content .title p {
+  font-size: 0.22rem;
+}
+body .content .pic {
+  width: 100%;
+  height: 4.3rem;
+  text-align: center;
+}
+body .content .pic img {
+  margin-top: 0.4rem;
+}
+body .content .save {
+  width: 100%;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  text-align: center;
+  font-size: 0.25rem;
+  color: #4787cf;
+  border-top: 1px solid #e5e5e5;
+}
+body .copy {
+  width: 90%;
+  height: 1rem;
+  margin: 0 auto;
+  line-height: 1rem;
+  font-size: 0.25rem;
+  text-align: center;
+  margin-top: 5.4rem;
+  background-color: #fff;
+  border-radius: 0.1rem;
+  color: #4787cf;
+}

@@ -1,0 +1,154 @@
+<include file="Public/head" />
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        font-size: 13.3333333333333vw;
+    }
+    .header{
+        background: linear-gradient(to right, #1e91ff, #075ffe);
+        height: 1.16rem;
+        line-height: 1.4rem;
+        color: #fff;
+        text-align: center;
+        font-size: .34rem;
+        border-bottom: 1px solid #ececec;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 .2rem;
+    }
+    .header a{
+        width: .2rem;
+        display: inline-block;
+    }
+    .header a img{
+        width: 100%;
+    }
+    .container{
+        width: 100%;
+        padding: .2rem;
+        font-size: 14px;
+    }
+    #waitPay .second .box .txt{
+        width: 4rem;
+    }
+</style>
+<div id="waitPay">
+
+    <header class="header">
+        <a href="javascript:window.history.go(-1)"><img src="/Public/Wap/img/arrowl.png"></a>
+        <div>我的订单</div>
+        <a href="javascript:void(0)" style="opacity: 0"><img src="/Public/Wap/img/arrowl.png"></a>
+    </header>
+    <div class="info">
+        <div class="container">
+            <php>
+                if($orderInfo['status'] == 1){
+                $s = '待付款';
+                }else if($orderInfo['status'] == 2 && $orderInfo['wuliu_status'] !=5 && $orderInfo['wuliu_status'] !=6){
+                $s = '待发货';
+                }else if($orderInfo['wuliu_status'] == 5){
+                $s = '待收货';
+                }else if($orderInfo['wuliu_status'] == 6){
+                $s = '已收货';
+                }else{}
+            </php>
+            <div class="p1">订单时间：{$orderInfo['create_time']|date="Y-m-d",###} <span>{$s}</span></div>
+        </div>
+    </div>
+    <section class="first">
+        <div class="container">
+            <div class="p1">{$orderInfo.receiver} <span>{$orderInfo.phone}</span></div>
+            <div class="p3">{$orderInfo.address}</div>
+            <div class="p3">{$orderInfo.wallet_address}</div>
+        </div>
+    </section>
+    <section class="second">
+        <volist name="orderInfo['suborder']" id="vo">
+        <div class="box">
+            <php>
+                $format = C('format');
+            </php>
+            <div class="container">
+                <div class="pic"><img src="__ROOT__{$vo.path}"></div>
+                <div class="txt">
+                    <div class="p1">
+                        {$vo['goodInfo']['name']}
+                    </div>
+                    <div class="p3">
+                        ￥{$vo['goodInfo']['price']} / {$format[$vo['goodInfo']['format']]}
+                        <span>x<if condition="count($orderInfo['suborder']) neq 1">{$vo.num}<else />{$orderInfo.num}</if></span>
+                    </div>
+                </div>
+                <!--<a class="mores" href=""  style="width: 1.5rem">退款成功</a>-->
+            </div>
+        </div>
+        </volist>
+    </section>
+    <section class="third">
+        <div class="container">
+            <div class="tiles">备注</div>
+            <div class="p1">{$orderInfo.tips}</div>
+            <div class="p3">合计：<span>￥{$orderInfo.amount}</span></div>
+        </div>
+    </section>
+    <section class="fourth">
+        <div class="container">
+            <div class="p1">订单编号：{$orderInfo.order_id}</div>
+            <div class="p1">下单时间：{$orderInfo['create_time']|date="Y-m-d H:i:s",###}</div>
+            <!--<div class="p1">成交时间：2018-06-25</div>-->
+        </div>
+    </section>
+    <div class="container">
+        <div class="exce">
+            <if condition="$orderInfo['status'] eq 1">
+                <a href="{:U('pay',array('order_id'=>$orderInfo['order_id']))}">去付款</a>
+                <a class="del active" o_id="{$orderInfo['id']}" href="#">取消订单</a>
+            </if>
+            <if condition="$orderInfo['wuliu_status'] eq 5">
+                <a href="http://m.kuaidi100.com/result.jsp?nu={$orderInfo['wuliu']}">去付款</a>
+                <a class="recevice active" o_id="{$orderInfo['id']}" href="#">确认收货</a>
+            </if>
+        </div>
+    </div>
+</div>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/layer.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    $(function () {
+        $('.del').click(function () {
+            if(confirm('确定删除吗?')){
+                var url = "{:U('deleteorder')}";
+                var id = $(this).attr('o_id');
+                $.post(url,{id:id},function (data) {
+                    alert(data.msg);
+                    if(data.code){
+                        return;
+                    }else{
+                        window.location.href=data.data;
+                    }
+                },'json')
+            }
+        });
+        $('.recevice').click(function () {
+            if(confirm('确定收货吗?')){
+                var url = "{:U('recevice')}";
+                var id = $(this).attr('o_id');
+                $.post(url,{id:id},function (data) {
+                    alert(data.msg);
+                    if(data.code){
+                        return;
+                    }else{
+                        window.location.href=data.data;
+                    }
+                },'json')
+            }
+        });
+    })
+</script>

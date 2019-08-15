@@ -1,0 +1,66 @@
+<extend name="Public/base"/>
+<block name="content">
+    <div class="admin-content">
+        <div class="admin-content-body">
+            <div class="am-cf am-padding am-padding-bottom-0">
+                <div class="am-fl am-cf">
+                    <strong class="am-text-primary am-text-lg">新增广告产品</strong>
+                    <small></small>
+                </div>
+            </div>
+            <hr>
+            <div class="am-tabs am-margin" data-am-tabs>
+                <form class="am-form" action="{:U('edit_add_goods1')}" id="goods_form" method="post" enctype="multipart/form-data">
+                    <fieldset>
+                        <div class="am-form-group">
+                            <label for="doc-ipt-email-1">广告名称</label>
+                            <input type="text" required class="" id="doc-ipt-email-1" placeholder="" name="name" value="{$data['name']}">
+                        </div>
+
+
+                        <div class="am-form-group">
+                            <label for="doc-ipt-pwd-1">广告奖励</label>
+                            <input type="text" required class="" id="doc-ipt-pwd-1" placeholder="" name="amount" value="{$data['price']}">
+                        </div>
+
+
+
+
+                        <div class="am-form-group">
+                            <label for="doc-ipt-pwd-1">上传广告图片</label><br>
+                            <input id="doc-form-file" name="logo1" type="file">
+                            <if condition="$data['id'] neq null">
+                                <img style="width: 50px;height: 50px" src="__ROOT__{$data2[1]}">
+
+                            </if>
+                        </div>
+
+
+
+                        <div class="am-form-group">
+
+                            <label for="doc-ta-1">商品描述</label>
+
+                            <textarea style="min-width: 628px" id="container" name="content" type="text/plain">
+                                    {$data.content}
+                            </textarea>
+
+                            <!--<textarea class="" rows="5" id="doc-ta-1"></textarea>-->
+                        </div>
+                        <input type="hidden" name="id" id="goods_id" value="{$data['id']}">
+                        <p><button type="submit" id="btn" class="am-btn am-btn-default">提交</button></p>
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</block>
+<block name="js">
+    <script type="text/javascript" src="__LIB__/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="__LIB__/ueditor/ueditor.all.js"></script>
+    <script type="text/javascript">
+        var ue = UE.getEditor('container');
+
+    </script>
+</block>

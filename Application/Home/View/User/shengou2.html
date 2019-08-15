@@ -1,0 +1,138 @@
+<include file="Public/head" />
+<link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css">
+<style>
+    .content1{
+        border-radius: .1rem;
+        /*background: #fff;*/
+        margin: .4rem auto 0;
+        overflow: hidden;
+        width: 5.8rem;
+        box-sizing: border-box;
+        background-size: 100%;
+        /*padding: .4rem 0;*/
+        background-repeat: no-repeat;
+    }
+</style>
+<div id="recharges">
+    <div class="head">
+        <div class="container">
+            <div class="left">
+                <a href="javascript:void(0);" class="" id="goback"><img src="__IMG__/img/arr_lb.png"></a>
+            </div>
+            <div class="logotxt">充值</div>
+        </div>
+    </div>
+    <div class="content">
+        <!--<div class="p1">扫描下方二维码，支付<span>{$data.money}</span>元</div>-->
+        <div class="p1">扫描下方二维码</div>
+        <!--<img src="__IMG__/img/erweima.png" alt="" class="erweima">-->
+        <div class="erweima">{$bank_info}</div>
+        <!--<div class="p1">余额充值</div>-->
+        <div class="froms" >
+            <!-- <div class="names"><input type="text" placeholder="请输入您的账户名称" style="background-image: url('img/count.png');"></div> -->
+            <div class="names">
+                <input id="money" type="text" placeholder="请输入您充值的金额" style="background-image: url('__IMG__/img/money.png');">
+            </div>
+        </div>
+    </div>
+    <div class="content1">
+        <img id="headimgurl" alt="" class="tou" style="max-height: 7rem;">
+        <input hidden type="text" value="" id="headimg" name="headimg">
+        <div class="field">
+            <a class="mint-cell mint-field is-nolabel">
+                <div class="mint-cell-left"></div>
+                <div class="mint-cell-wrapper">
+                    <div class="mint-cell-title">
+                        <span class="mint-cell-text"></span>
+                    </div>
+                    <button type="button" class="layui-btn" id="test1">
+                        <i class="layui-icon">&#xe67c;</i>上传凭证
+                    </button>
+                </div>
+                <div class="mint-cell-right"></div>
+            </a>
+        </div>
+    </div>
+
+
+    <input type="hidden" id="value" value="{$data.id}">
+    <a href="javascript:void(0);" id="recharges_confirm">确认</a>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="__JS__/js/main.js"></script>
+<script>
+    layui.use(['upload','layer'], function () {
+        var upload = layui.upload;
+        var layer = layui.layer;
+
+        //执行实例
+        var uploadInst = upload.render({
+            elem: '#test1' //绑定元素
+            , url: "{:U('uploadHeadImg')}" //上传接口
+            , done: function (res) {
+                //上传完毕回调
+                layer.msg(res.info,{time:2000});
+                if (res.status) {
+                    $("#headimgurl").attr("src", res.url);
+                    $("#headimg").val(res.url);
+                }
+            }
+            , error: function () {
+                //请求异常回调
+            }
+        });
+    });
+    $("#recharges_confirm").click(function(){
+        // let  money=$('#money').val()
+        // if(money==""){
+        //     layer.msg('请输入充值金额');return false;
+        // }
+        $.ajax({
+            type : 'POST',
+            url:"{:U('shengou2')}",
+            dataType : 'json',
+            data:{
+                // id:$('#value').val(),
+                img:$('#headimg').val(),
+                money:$('#money').val()
+            },
+            success : function(data){
+                if(data.code>0){
+                    layer.msg(data.message);
+                    setTimeout(function () {
+                        window.location.href ='{:U("User/index")}';
+                    },3000);
+                    // window.location.href='{:U("User/index")}';
+                }
+                else{
+                    layer.msg(data.message);return false;
+                }
+            }
+        })
+    });
+</script>
+
+<style>
+#recharges .content .froms .names input{
+    height: 1rem;
+    line-height: 1rem;
+}
+#recharges .content{
+    width: 6.8rem;
+}
+#recharges .content .erweima{
+    width: 100%;
+}
+#recharges .content{
+    padding: .4rem;
+}
+#recharges .content .erweima p{
+    line-height: 2;
+}
+#recharges .content .erweima p span{
+    font-size: .28rem!important;
+}
+</style>
+
+</body></html>
+

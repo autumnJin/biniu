@@ -1,0 +1,177 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">充币管理</strong>  <small></small></div>
+      </div>
+
+      <hr>
+
+      <form class="am-g" action="{:U()}" method="get">
+        <!-- <div class="am-u-sm-12 am-u-md-1">
+          <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+              <a href="{:U('user/exportOrder')}" type="button" class="am-btn am-btn-primary"><span class="am-icon-plus"></span>提现未处理</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="am-u-sm-12 am-u-md-1">
+          <div class="am-btn-toolbar">
+            <div class="am-btn-group am-btn-group-xs">
+              <a href="{:U('user/exportOrder1')}" type="button" class="am-btn am-btn-primary"><span class="am-icon-plus"></span>提现已处理</a>
+            </div>
+          </div>
+
+        </div> -->
+      <!--   <div class="am-u-sm-12 am-u-md-2">
+          <input type="text" class="am-form-field" name="start_time"  value="{$start_time}" placeholder="开始时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <input type="text" class="am-form-field" name="end_time"  value="{$end_time}" placeholder="结束时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" name="username" value="{$username}" placeholder="会员用户名">
+          </div>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-form-group">
+            <select data-am-selected="{btnSize: 'sm'}" name="status">
+              <option value="2" <php>if($status == 2) echo 'selected'</php>>待审核</option>
+              <option value="1" <php>if($status == 1) echo 'selected'</php>>已完成</option>
+              <option value="3" <php>if($status == 3) echo 'selected'</php>>已驳回</option>
+            </select>
+          </div>
+        </div> -->
+
+        <!-- <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+
+            <span class="am-input-group-btn">
+            <button class="am-btn am-btn-primary" type="submit">搜索</button>
+          </span>
+          </div>
+        </div> -->
+
+      </form>
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <div class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th class="table-title">序号</th>
+                <th class="table-title">账户名</th>
+                <th class="table-title">手机号</th>
+                <th class="table-type">币种名称</th>
+                <th class="table-type">充币地址</th>
+                <th class="table-type">充币数量</th>
+                <th class="table-type">交易hash</th>
+                <!-- <th class="table-type">到账金额</th> -->
+                <th class="table-type">状态</th>
+                <th class="table-type">手续费</th>
+<!--                 <th class="table-author am-hide-sm-only">银行卡号</th>
+                <th class="table-date am-hide-sm-only">开户银行</th>
+                <th class="table-date am-hide-sm-only">银行支行</th>
+                <th class="table-date am-hide-sm-only">持卡人</th>
+                <th class="table-date am-hide-sm-only">微信</th>
+                <th class="table-date am-hide-sm-only">支付宝</th> -->
+                <th class="table-date am-hide-sm-only">提交时间</th>
+                <th class="table-date am-hide-sm-only">确认时间</th>
+                <!-- <th class="table-set">操作</th> -->
+              </tr>
+              </thead>
+              <tbody>
+              <empty name="data">
+                <tr>
+                  <td>暂无数据</td>
+                </tr>
+              </empty>
+              <php>
+                $tixian = C('WITHDRAW_STATUS');
+                $type = C('account_type');
+              </php>
+              <volist name="data" id="vo">
+                <tr>
+                  <td>{$vo['id']}</td>
+                  <td>{$vo['username']}</td>
+                  <td><a href="#">{$vo['phone']}</a></td>
+                  <td><a href="#">{$vo['coinname']|strtoupper}</a></td>
+                  <td><a href="#">{$vo['address']}</a></td>
+                  <td>{$vo['amount']}</td>
+
+                  <!-- <td>{$vo['sxf']}</td> -->
+                  <!-- <td>{$vo['amount'] - $vo['sxf']}</td> -->
+                  <if condition="$vo['coinname'] neq btc">
+                    <td><a href="https://etherscan.io/tx/{$vo['hash']}" target="_blank">
+                    {$vo['hash']}</a></td>
+                  <else/>
+                    <td><a href="https://btc.com/{$vo['hash']}" target="_blank">
+                    {$vo['hash']}</a></td>
+                  </if>
+
+                  <td>
+                    {$tixian[$vo['status']]}
+                  </td>
+                  <td>{$vo['fee']}</td>
+                  <!-- <td class="am-hide-sm-only">
+                      {$vo['bank_num']}
+                  </td>
+                  <td class="am-hide-sm-only">
+                    {$vo['bank_name']}
+                  </td> -->
+
+                  <!-- <td class="am-hide-sm-only">
+                    {$vo['bank_tree']}
+                  </td>
+                  <td class="am-hide-sm-only">
+                    {$vo['bank_user']}
+                  </td>
+                  <td class="am-hide-sm-only">
+                    {$vo['weixin']}
+                  </td>
+                  <td class="am-hide-sm-only">
+                    {$vo['zfb']}
+                  </td> -->
+                  <td class="am-hide-sm-only">{$vo['addtime']|date="Y-m-d H:i:s",###}</td>
+                  <td class="am-hide-sm-only">{$vo['endtime']|date="Y-m-d H:i:s",###}</td>
+                  <!-- ` -->
+                </tr>
+              </volist>
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 {$count} 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  {$page}
+                  <!--<li class="am-disabled"><a href="#">«</a></li>-->
+                  <!--<li class="am-active"><a href="#">1</a></li>-->
+                  <!--<li><a href="#">2</a></li>-->
+                  <!--<li><a href="#">3</a></li>-->
+                  <!--<li><a href="#">4</a></li>-->
+                  <!--<li><a href="#">5</a></li>-->
+                  <!--<li><a href="#">»</a></li>-->
+
+                </ul>
+              </div>
+            </div>
+            <hr/>
+        </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+
+  </div>
+
+</block>

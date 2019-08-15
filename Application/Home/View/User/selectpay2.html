@@ -1,0 +1,147 @@
+<include file="Public/head" />
+<style>
+    .getPs {
+        width: 100%;
+        height: .7rem;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        padding-left: .1rem;
+    }
+</style>
+<div id="paystyle">
+    <div class="heads">
+        <div class="container">
+            <div class="p1">支付方式</div>
+            <a href="javascript:void(0);" id="goback"><img src="__WAPIMG__/arrowl.png"></a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="p1">订单总额<span>￥{$data.amount}</span></div>
+            <div class="p1">支付费用<span>￥{$data.pay_amount}</span></div>
+            <div class="p1">可用余额<span>充值积分 ￥{$MoneyLst.z1}</span></div>
+            <div class="p1"><span>流通积分 ￥{$MoneyLst.z2}</span></div>
+            <div class="p1"><span>购物积分 ￥{$MoneyLst.z3}</span></div>
+            <div class="p5">支付方式</div>
+            <ul class="choosePayStyle">
+                <if condition="$data.buy_type eq 1">
+                    <li>
+                        <div class="box" data-type="xjPay">
+                            <img src="__WAPIMG__/money.png" alt="" /><span>充值积分</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="box" data-type="gwPay">
+                            <img src="__WAPIMG__/money.png" alt="" /><span>购物积分</span>
+                        </div>
+                    </li>
+
+                    <elseif condition="$data.buy_type eq 2"/>
+                        <li>
+                            <div class="box" data-type="ltPay">
+                            <img src="__WAPIMG__/money.png" alt="" /><span>流通积分</span>
+                            </div>
+                        </li>
+                </if>
+
+
+
+
+
+
+                <!--<li>-->
+                    <!--<div class="box" data-type="dhPay">-->
+                        <!--<img src="__WAPIMG__/money.png" alt="" /><span>兑换积分</span>-->
+                    <!--</div>-->
+                <!--</li>-->
+
+                <!--<li>-->
+                    <!--<div class="box" data-type="">-->
+                        <!--<img src="__WAPIMG__/weixin.png" alt="" /><span>微信</span>-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<div class="box" data-type="">-->
+                        <!--<img src="__WAPIMG__/zhifubao.png" alt="" /><span>支付宝</span>-->
+                    <!--</div>-->
+                <!--</li>-->
+            </ul>
+            <input type="hidden" id="order_id" name="order_id"  value="{$data.order_id}">
+            <input type="hidden" name="total_amount"  value="{$data.amount}">
+            <input type="hidden" name="subject"  value="{$goods.name}">
+            <a href="javascript:void()" class="pay">确定</a>
+        </div>
+    </div>
+</div>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/layer.js" type="text/javascript" charset="utf-8"></script>
+<script>
+$(function() {
+    $('.pay').on('click', function() {
+
+        var module = 0;
+
+        if($('.choosePayStyle .active').attr('data-type') == 'xjPay')
+        {
+            var module = 1;
+        }
+        if($('.choosePayStyle .active').attr('data-type') == 'ltPay')
+        {
+            var module = 2;
+        }
+        if($('.choosePayStyle .active').attr('data-type') == 'gwPay')
+        {
+            var module = 3;
+        }
+        if($('.choosePayStyle .active').attr('data-type') == '')
+        {
+            var module = 4;
+        }
+
+        if(module == 0)
+        {
+            alert('请选择支付方式！');
+            return;
+        }
+        var payPassword = ''; //支付密码
+        //询问框
+        layer.open({
+            content: '<input type="password" class="getPs" value="" placeholder="请输入支付密码" />'
+            ,btn: ['确定', '取消']
+            ,yes: function(index){
+                payPassword = $('.getPs').val();
+                layer.close(index);
+                if(payPassword == '')
+                {
+                    alert('请输入支付密码！');
+                    return;
+                }
+                $.ajax({
+                    url:"{:U('balancePay')}",
+                    type : 'POST',
+                    dataType : 'json',
+                    data:{
+                        password : payPassword,
+                        order_id: $('#order_id').val(),
+                        module: module, //积分
+                    },
+                    success : function(data){
+                        if(data.code == -1)
+                        {
+                            alert(data.message);
+                        }
+                        if(data.code == 1)
+                        {
+                            alert(data.message);
+                            window.location.href = "{:U('User/orderlist')}";
+                        }
+                    }
+                })
+            }
+        });
+    });
+});
+</script>
+<include file="Public/foot" />

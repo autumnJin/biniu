@@ -1,0 +1,81 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">{$title}</strong>  <small></small></div>
+      </div>
+
+      <hr/>
+
+      <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-8 am-u-md-push-1">
+          <form class="am-form am-form-horizontal" action="{:U('')}" method="post">
+            <input type="hidden" name="id" value="{$data['id']}">
+            <div class="am-form-group">
+              <label for="user-name" class="am-u-sm-3 am-form-label">用户名</label>
+              <div class="am-u-sm-9">
+                <input type="text" id="user-name" placeholder="" required name="username" value="{$data.username}">
+              </div>
+            </div>
+
+            <div class="am-form-group">
+              <php>
+                $account_type = C('account_type');
+              </php>
+              <label for="user-QQ" class="am-u-sm-3 am-form-label">充值账户</label>
+              <div class="am-u-sm-9">
+                <select data-am-selected="{btnSize: 'sm'}" name="accountType">
+                  <volist name="account_type" id="vo">
+                    <option value="{$key}" <php> if($type == $key) echo 'selected'</php>>{$vo}</option>
+                  </volist>
+                </select>              </div>
+            </div>
+
+            <div class="am-form-group">
+              <label for="user-email" class="am-u-sm-3 am-form-label">充值金额</label>
+              <div class="am-u-sm-9">
+                <input type="text" id="user-email" name="amount" required placeholder="" value="{$money}">
+              </div>
+            </div>
+
+            <div class="am-form-group">
+              <label for="user-email" class="am-u-sm-3 am-form-label">说明</label>
+              <div class="am-u-sm-9">
+                <input type="text" id="user-email" name="shuoming" required placeholder="" value="">
+              </div>
+            </div>
+
+            <input type="hidden" name="flag" value="{$flag}">
+            <div class="am-form-group">
+              <div class="am-u-sm-9 am-u-sm-push-3">
+                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</block>
+<block name="js">
+  <script>
+    $(function () {
+        var form = $('form');
+
+        $('form').submit(function (e) {
+            e.preventDefault();
+            $.post(form.attr('action'),form.serialize(),function (data) {
+                layer.msg(data.msg,{time:1000},function () {
+                    if(data.code){
+                        return false;
+                    }else{
+                        window.location.href=data.data;
+                    }
+                })
+
+            },'json')
+        })
+    })
+  </script>
+</block>

@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    .header {
+        width: 100%;
+        background: linear-gradient(to right, rgb(82, 164, 255), rgb(40, 105, 255));
+        height: 2.5rem;
+        text-align: center;
+        overflow: hidden;
+        h2{
+            color: #fff;
+            font-size: 0.3rem;
+            font-weight: 400;
+            margin-top: 0.5rem;
+        }
+      }
+      .quick{
+          width: 90%;
+          height: 3rem;
+          background-color: #fff;
+          position: absolute;
+          top: 1rem;
+          left: 5%;
+          border-radius: 0.1rem;
+          .quick-t{
+              width: 100%;
+              height: 2rem;
+              display: flex;
+              justify-content: space-around;
+              flex-wrap: wrap;
+              position: relative;
+              img{
+                  width: 0.5rem;
+                  height: 0.5rem;
+                  position: absolute;
+                  top: 40%;
+                  left: 45%;
+              }
+              div{
+                  width: 35%;
+                  height: 0.6rem;
+                  line-height: 0.6rem;
+                  border: 1px solid rgb(236,236,236);
+                  border-radius: 0.1rem;
+                  margin-top: 0.2rem;
+                  text-align: left;
+                  font-size: 0.22rem;
+                  color: rgb(51,51,51);
+                  box-sizing: border-box;
+                  padding-left: 0.2rem;
+              }
+          }
+          .quick-b{
+              width: 100%;
+              height: 1rem;
+              line-height: 1rem;
+              text-align: center;
+              font-size: 0.25rem;
+              color: rgb(30,145,255);
+          }
+      }
+      .content{
+          width: 90%;
+         // height: 6rem;
+          background-color: #fff;
+          margin: 0 auto;
+          margin-top: 1.8rem;
+          border-radius: 0.2rem;
+          .title{
+              width: 100%;
+              height: 0.8rem;
+              line-height: 0.8rem;
+              padding-top: 0.2rem;
+              box-sizing: border-box;
+              border-bottom: 1px solid rgb(238,238,238);
+              div{
+                  width: 32%;
+                  float: left;
+                  height: 0.4rem;   
+                  line-height: 0.4rem;             
+                  text-align: center;
+                  font-size: 0.25rem;
+                  color: rgb(102,102,102);
+                  border-right: 1px solid rgb(236,236,236);
+                  &:nth-of-type(3){
+                      border-right: none;
+                  }
+              }
+          }
+          ul{
+              width: 100%;
+              list-style: none;
+              li{
+                  width: 100%;
+                  height: 1rem;
+                  line-height: 1rem;
+                  display: flex;
+                  justify-content: space-between;
+                  border-bottom: 1px solid rgb(236,236,236);
+                  &:nth-of-type(3){
+                    button{
+                        background-color: rgb(254,17,17);
+                    }
+                }
+                  &:nth-of-type(2){
+                    button{
+                        background-color: rgb(6,181,122);
+                    }
+                }
+                  div{
+                      width: 30%;
+                      height: 1rem;
+                      font-size: 0.25rem;
+                      position: relative;
+                      text-align: center;
+                     
+                      img{
+                          width: 0.45rem;
+                          height: 0.45rem;
+                          position: absolute;
+                          top: 0.25rem;
+                          left: 0.2rem;
+                      }
+                      span{
+                          font-size: 0.25rem;
+                          margin-left: 0.8rem;
+                      }
+                      button{
+                          border: 0;
+                          outline: 0;
+                          background-color: rgb(255,189,0);
+                          width: 1rem;
+                          height: 0.6rem;
+                          color: #fff;
+                          border-radius: 0.1rem;
+                          margin-top: 0.15rem;
+                      }
+                  }
+              }
+          }
+      }
+    .mui-bar {
+        box-shadow:none;
+        background-color: #fff;
+        height: 0.8rem;
+        box-shadow:0px -2px 0px 0px  rgba(0,0,0,0.05);
+        .mui-tab-item{
+            position: relative;
+            line-height: 0.2rem;
+            vertical-align: bottom;
+            img{
+                width: 0.4rem;
+                height: 0.4rem;
+                position: absolute;
+                top: 0.1rem;
+                left: 0.44rem;
+            }
+            span{
+                font-size: 0.22rem;
+            }
+        }
+    }
+}

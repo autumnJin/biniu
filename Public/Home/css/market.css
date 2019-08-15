@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  background-color: #fff;
+}
+body .header {
+  width: 100%;
+  height: 1rem;
+  line-height: 1.2rem;
+  background-color: #fff;
+  text-align: center;
+  font-size: 0.3rem;
+  border-bottom: 1px solid #ececec;
+}
+body .title {
+  width: 100%;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  padding-top: 0.2rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eeeeee;
+}
+body .title div {
+  width: 32%;
+  float: left;
+  height: 0.4rem;
+  line-height: 0.4rem;
+  text-align: center;
+  font-size: 0.25rem;
+  color: #666666;
+  border-right: 1px solid #ececec;
+}
+body .title div:nth-of-type(3) {
+  border-right: none;
+}
+body ul {
+  width: 100%;
+  list-style: none;
+}
+body ul li {
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ececec;
+}
+body ul li div {
+  width: 30%;
+  height: 1rem;
+  font-size: 0.25rem;
+  position: relative;
+  text-align: center;
+}
+body ul li div img {
+  width: 0.45rem;
+  height: 0.45rem;
+  position: absolute;
+  top: 0.25rem;
+  left: 0.3rem;
+}
+body ul li div span {
+  font-size: 0.3rem;
+  margin-left: 0.8rem;
+}
+body ul li div button {
+  border: 0;
+  outline: 0;
+  background-color: #51b27e;
+  width: 1.5rem;
+  height: 0.5rem;
+  color: #fff;
+  border-radius: 0.1rem;
+  margin-top: 0.25rem;
+}
+body .mui-bar {
+  box-shadow: none;
+  background-color: #fff;
+  height: 0.8rem;
+  box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.05);
+}
+body .mui-bar .mui-tab-item {
+  position: relative;
+  line-height: 0.2rem;
+  vertical-align: bottom;
+}
+body .mui-bar .mui-tab-item img {
+  width: 0.4rem;
+  height: 0.4rem;
+  position: absolute;
+  top: 0.1rem;
+  left: 0.44rem;
+}
+body .mui-bar .mui-tab-item span {
+  font-size: 0.22rem;
+}

@@ -1,0 +1,107 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">控制台</strong><small></small></div>
+      </div>
+
+      <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
+        <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>总收入<br/>{$shouru}</a></li>
+        <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>总奖金<br/>{$zhichu}</a></li>
+
+          <!--<li><a href="#" class="am-text-warning"><span class="am-icon-btn am-icon-briefcase"></span><br/>订单总数<br/>{$bo1}</a></li>-->
+        <!--<li><a href="{:U('User/userAdd')}" class="am-text-success"><span class="am-icon-btn am-icon-file-text"></span><br/>会员新增<br/></a></li>-->
+        <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>今日新增会员<br/>{$newer}</a></li>
+        <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>平台会员总数<br/>{$all}</a></li>
+
+      </ul>
+      <br>
+
+
+      <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
+        <li><a href="{:U('user/withdraw')}" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>今日提现<br/>{$c}</a></li>
+
+        <li><a href="{:U('user/withdraw')}" class="am-text-warning"><span class="am-icon-btn am-icon-briefcase"></span><br/>累计提现<br/>{$d}</a></li>
+        <li><a href="{:U('user/rechargelist')}" class="am-text-danger"><span class="am-icon-btn am-icon-recycle"></span><br/>今日升级申请<br/>{$f}</a></li>
+        <li><a href="{:U('order/orderlist')}" class="am-text-success"><span class="am-icon-btn am-icon-file-text"></span><br/>订单处理<br/></a></li>
+        <!--<li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>商家收款总计<br/>{$xs*88/100}</a></li>-->
+        <!--<li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>商家累计充值<br/>{$all}</a></li>-->
+        <!--<li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>商家累计充值<br/>{$all}</a></li>-->
+      </ul>
+      <ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">
+        <li><a href="#" class="am-text-secondary"><span class="am-icon-btn am-icon-user-md"></span><br/>今日营业额<br/>{$shouru1}</a></li>
+      </ul>
+
+      <php>
+        $r =C('level');
+      </php>
+      <div class="am-g">
+        <div class="am-u-sm-12">
+
+          <table class="am-table am-table-bd am-table-striped admin-content-table">
+            <thead>
+            <tr>
+              <th>级别</th><th>人数</th>
+            </tr>
+            </thead>
+            <tbody>
+            <volist name="l" id="vo">
+              <tr>
+                <td>{$r[$vo['level']]}</td>
+                <td>{$vo.c}</td>
+              </tr>
+            </volist>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--<ul class="am-avg-sm-1 am-avg-md-4 am-margin am-padding am-text-center admin-content-list ">-->
+
+        <!--&lt;!&ndash;<li><a href="{:U('user/withdraw')}" class="am-text-warning"><span class="am-icon-btn am-icon-briefcase"></span><br/>提现</br>{$wr['w']|default=0.00}</a></li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<li><a href="{:U('user/rechargeList')}" class="am-text-danger"><span class="am-icon-btn am-icon-recycle"></span><br/>充值<br/>{$wr['r']|default=0.00}</a></li>&ndash;&gt;-->
+
+      <!--</ul>-->
+
+      <!--<div class="am-g">-->
+        <!--<div class="am-u-sm-12">-->
+          <!--<table class="am-table am-table-bd am-table-striped admin-content-table">-->
+            <!--<thead>-->
+            <!--<tr>-->
+              <!--<th>ID</th><th>新闻标题</th><th>内容</th><th>创建时间</th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<empty name="news">-->
+              <!--<tr>-->
+                <!--<td>暂无数据</td>-->
+              <!--</tr>-->
+            <!--</empty>-->
+            <!--<tr>-->
+              <!--<volist name="news" id="vo">-->
+                <!--<tr>-->
+              <!--<td>{$key}</td>-->
+              <!--<td>{$vo['title']}</td>-->
+              <!--<td>-->
+                <!--{$vo['content']}-->
+              <!--</td>-->
+
+              <!--<td>{$vo['create_time']|date="Y-m-d H:i:s",###}</td>-->
+            <!--</tr>-->
+              <!--</volist>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+          <!--</table>-->
+        <!--</div>-->
+      <!--</div>-->
+
+    </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+  </div>
+
+</block>

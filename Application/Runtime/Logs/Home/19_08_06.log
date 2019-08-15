@@ -1,0 +1,2539 @@
+[ 2019-08-06T23:54:29+08:00 ] 117.136.86.223 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000395s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003422s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003448s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000374s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000398s ]
+
+[ 2019-08-06T23:54:57+08:00 ] 117.136.86.223 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ms_user` WHERE `username` = 'dw123' AND `password` = '3c5aabf671ce11f1a7d84a229f4eac62' LIMIT 1   [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `ms_user_login` [ RunTime:0.0003s ]
+SQL: INSERT INTO `ms_user_login` (`create_time`,`ip`,`username`) VALUES ('1565106897','117.136.86.223','dw123') [ RunTime:0.0001s ]
+
+[ 2019-08-06T23:55:01+08:00 ] 117.136.86.223 /index.php/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000364s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 5512 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 5482 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ms_fmoney` [ RunTime:0.0004s ]
+SQL: SELECT SUM(amount) AS tp_sum FROM `ms_fmoney` WHERE `user_id` = 5512 LIMIT 1   [ RunTime:0.3372s ]
+SQL: SELECT SUM(amount) AS tp_sum FROM `ms_fmoney` WHERE `user_id` = 5512 AND `create_time` BETWEEN 1564934400 AND 1565020800 LIMIT 1   [ RunTime:0.4475s ]
+SQL: SHOW COLUMNS FROM `ms_reward_config` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `ms_reward_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ms_news` [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title` FROM `ms_news` WHERE `status` = 1 ORDER BY create_time desc LIMIT 7   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007837s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007890s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000225s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000461s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000491s ]
+
+[ 2019-08-06T23:55:12+08:00 ] 180.111.133.129 /index.php/Property/price2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-08-06T23:55:12+08:00 ] 180.111.133.129 /index.php/Hangqing/api.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-08-06T23:55:12+08:00 ] 180.111.133.129 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000373s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000074s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003241s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003264s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000305s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000326s ]
+
+[ 2019-08-06T23:55:12+08:00 ] 180.111.133.129 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003416s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003442s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000152s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000361s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000384s ]
+
+[ 2019-08-06T23:55:12+08:00 ] 117.136.86.223 /index.php/User/sign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 5512 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ms_reward_config` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ms_reward_config` LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0007s ]
+SQL: UPDATE `ms_user` SET `sign_time`='1565106912',`z5`='43685.1' WHERE `id` = 5512 [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `ms_fmoney` [ RunTime:0.0003s ]
+SQL: INSERT INTO `ms_fmoney` (`user_id`,`from_id`,`amount`,`type`,`reward_type`,`tips`,`create_time`) VALUES ('5512','5512','10.00','5','551','+','1565106912') [ RunTime:0.0028s ]
+NOTIC: [2] Missing argument 3 for ajax_return(), called in /www/wwwroot/wfx.devops.love/Application/Home/Controller/UserController.class.php on line 178 and defined /www/wwwroot/wfx.devops.love/Application/Common/Common/function.php 第 86 行.
+NOTIC: [8] Undefined variable: data /www/wwwroot/wfx.devops.love/Application/Common/Common/function.php 第 91 行.
+
+[ 2019-08-06T23:55:44+08:00 ] 112.96.37.241 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `ms_goods` [ RunTime:0.0006s ]
+SQL: SELECT a.*,g.path FROM ms_goods a left join ms_goods_img as g on a.id = g.goods_id  WHERE a.status = 1 ORDER BY sort desc LIMIT 3   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_belong` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_belong` ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_goods_img` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 1 AND `status` = 1 AND `is_up` = 1 ORDER BY create_time desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 1 AND `status` = 1 AND `is_up` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 384  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 385  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 383  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 414  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 415  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 427  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 425  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 426  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 428  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 429  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 430  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 431  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 432  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 433  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 434  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 435  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 436  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 437  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 438  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 439  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 440  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 441  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 2 AND `status` = 1 AND `is_up` = 1 ORDER BY create_time desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_belong` ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 1 AND `status` = 1 AND `is_up` = 2 ORDER BY create_time desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 1 AND `status` = 1 AND `is_up` = 2  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 399  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 2 AND `status` = 1 AND `is_up` = 2 ORDER BY create_time desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 2 AND `status` = 1 AND `is_up` = 2  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 398  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 400  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 401  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 402  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 403  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_belong` WHERE `status` = 1  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_goods_class` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_goods_class` WHERE `belong` = 2  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_class` WHERE `belong` = 1  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_lunbo` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_lunbo`  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_news` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `ms_news` WHERE `status` = 1 ORDER BY create_time desc LIMIT 7   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_reward_config` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ms_reward_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003010s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003037s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000145s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000342s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000364s ]
+
+[ 2019-08-06T23:55:48+08:00 ] 112.96.37.241 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000375s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004674s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004708s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000162s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000184s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000384s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000410s ]
+
+[ 2019-08-06T23:56:06+08:00 ] 112.96.37.241 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000351s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ms_user` WHERE `username` = 'cly688' AND `password` = 'c5b9495f2c0847cb92f0fe148e1a200e' LIMIT 1   [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `ms_user_login` [ RunTime:0.0003s ]
+SQL: INSERT INTO `ms_user_login` (`create_time`,`ip`,`username`) VALUES ('1565106966','112.96.37.241','cly688') [ RunTime:0.0001s ]
+
+[ 2019-08-06T23:56:09+08:00 ] 112.96.37.241 /index.php/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000368s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 4992 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 4814 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ms_fmoney` [ RunTime:0.0003s ]
+SQL: SELECT SUM(amount) AS tp_sum FROM `ms_fmoney` WHERE `user_id` = 4992 LIMIT 1   [ RunTime:0.3401s ]
+SQL: SELECT SUM(amount) AS tp_sum FROM `ms_fmoney` WHERE `user_id` = 4992 AND `create_time` BETWEEN 1564934400 AND 1565020800 LIMIT 1   [ RunTime:0.4479s ]
+SQL: SHOW COLUMNS FROM `ms_reward_config` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `ms_reward_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ms_news` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `ms_news` WHERE `status` = 1 ORDER BY create_time desc LIMIT 7   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007161s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007194s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000163s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000384s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000411s ]
+
+[ 2019-08-06T23:56:11+08:00 ] 112.96.37.241 /index.php/User/sign.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 4992 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ms_reward_config` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ms_reward_config` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0008s ]
+SQL: UPDATE `ms_user` SET `sign_time`='1565106971',`z5`='107040' WHERE `id` = 4992 [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `ms_fmoney` [ RunTime:0.0004s ]
+SQL: INSERT INTO `ms_fmoney` (`user_id`,`from_id`,`amount`,`type`,`reward_type`,`tips`,`create_time`) VALUES ('4992','4992','10.00','5','551','+','1565106971') [ RunTime:0.0046s ]
+NOTIC: [2] Missing argument 3 for ajax_return(), called in /www/wwwroot/wfx.devops.love/Application/Home/Controller/UserController.class.php on line 178 and defined /www/wwwroot/wfx.devops.love/Application/Common/Common/function.php 第 86 行.
+NOTIC: [8] Undefined variable: data /www/wwwroot/wfx.devops.love/Application/Common/Common/function.php 第 91 行.
+
+[ 2019-08-06T23:56:12+08:00 ] 180.111.133.129 /index.php/Property/price2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000389s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-08-06T23:56:12+08:00 ] 180.111.133.129 /index.php/Hangqing/api.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000351s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-08-06T23:56:12+08:00 ] 180.111.133.129 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003337s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003361s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000320s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000341s ]
+
+[ 2019-08-06T23:56:12+08:00 ] 180.111.133.129 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000347s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003384s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003409s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000159s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000375s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000400s ]
+
+[ 2019-08-06T23:56:14+08:00 ] 112.96.37.241 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-08-06T23:57:12+08:00 ] 180.111.133.129 /index.php/Property/price2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-08-06T23:57:12+08:00 ] 180.111.133.129 /index.php/Hangqing/api.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000364s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-08-06T23:57:12+08:00 ] 180.111.133.129 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000379s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000074s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003271s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003295s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000158s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000341s ]
+
+[ 2019-08-06T23:57:12+08:00 ] 180.111.133.129 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000367s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000073s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003355s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003381s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000146s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000311s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000350s ]
+
+[ 2019-08-06T23:57:47+08:00 ] 117.136.86.225 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000347s ]
+SQL: SHOW COLUMNS FROM `ms_goods` [ RunTime:0.0006s ]
+SQL: SELECT a.*,g.path FROM ms_goods a left join ms_goods_img as g on a.id = g.goods_id  WHERE a.status = 1 ORDER BY sort desc LIMIT 3   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_belong` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_belong` ORDER BY sort asc  [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_goods_img` [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 1 AND `status` = 1 AND `is_up` = 1 ORDER BY create_time desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 1 AND `status` = 1 AND `is_up` = 1  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 384  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 385  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 383  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 414  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 415  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 427  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 425  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 426  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 428  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 429  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 430  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 431  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 432  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 433  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 434  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 435  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 436  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 437  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 438  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 439  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 440  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 441  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 2 AND `status` = 1 AND `is_up` = 1 ORDER BY create_time desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_belong` ORDER BY sort asc  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 1 AND `status` = 1 AND `is_up` = 2 ORDER BY create_time desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 1 AND `status` = 1 AND `is_up` = 2  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 399  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 2 AND `status` = 1 AND `is_up` = 2 ORDER BY create_time desc LIMIT 4   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods` WHERE `module` = 2 AND `status` = 1 AND `is_up` = 2  [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 398  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 400  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 401  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 402  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 403  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_belong` WHERE `status` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ms_goods_class` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_goods_class` WHERE `belong` = 2  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `ms_goods_class` WHERE `belong` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ms_lunbo` [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ms_lunbo`  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ms_news` [ RunTime:0.0002s ]
+SQL: SELECT `id`,`title` FROM `ms_news` WHERE `status` = 1 ORDER BY create_time desc LIMIT 7   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ms_reward_config` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ms_reward_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003083s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003108s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000144s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000166s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000342s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000367s ]
+
+[ 2019-08-06T23:57:50+08:00 ] 117.136.86.225 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000349s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000075s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003306s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003332s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000341s ]
+
+[ 2019-08-06T23:58:07+08:00 ] 117.136.86.225 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000380s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `ms_user` WHERE `username` = 'zz0916' AND `password` = 'ad26e967d9199b7849ef99a03c4aed6e' LIMIT 1   [ RunTime:0.0114s ]
+SQL: SHOW COLUMNS FROM `ms_user_login` [ RunTime:0.0003s ]
+SQL: INSERT INTO `ms_user_login` (`create_time`,`ip`,`username`) VALUES ('1565107087','117.136.86.225','zz0916') [ RunTime:0.0002s ]
+
+[ 2019-08-06T23:58:09+08:00 ] 117.136.86.225 /index.php/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 6856 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 6855 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ms_fmoney` [ RunTime:0.0003s ]
+SQL: SELECT SUM(amount) AS tp_sum FROM `ms_fmoney` WHERE `user_id` = 6856 LIMIT 1   [ RunTime:0.3641s ]
+SQL: SELECT SUM(amount) AS tp_sum FROM `ms_fmoney` WHERE `user_id` = 6856 AND `create_time` BETWEEN 1564934400 AND 1565020800 LIMIT 1   [ RunTime:0.4465s ]
+SQL: SHOW COLUMNS FROM `ms_reward_config` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `ms_reward_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ms_news` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `ms_news` WHERE `status` = 1 ORDER BY create_time desc LIMIT 7   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000110s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007351s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007382s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000167s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000368s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000395s ]
+
+[ 2019-08-06T23:58:12+08:00 ] 180.111.133.129 /index.php/Property/price2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-08-06T23:58:12+08:00 ] 180.111.133.129 /index.php/Hangqing/api.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000341s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-08-06T23:58:12+08:00 ] 180.111.133.129 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003319s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003343s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000349s ]
+
+[ 2019-08-06T23:58:12+08:00 ] 180.111.133.129 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000076s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003325s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003350s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000169s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000362s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000386s ]
+
+[ 2019-08-06T23:58:25+08:00 ] 117.136.86.225 /index.php/Property/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000367s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `ms_user` WHERE ( id = 6856 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `ms_reward_config` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ms_reward_config` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000094s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004496s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004524s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000329s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000352s ]
+
+[ 2019-08-06T23:58:28+08:00 ] 117.136.86.225 /index.php/Hangqing/api.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000605s ]
+
+[ 2019-08-06T23:58:29+08:00 ] 117.136.86.225 /index.php/Property/price2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000340s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000588s ]
+
+[ 2019-08-06T23:58:32+08:00 ] 117.136.86.225 /index.php/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 6856 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 6855 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_fmoney` [ RunTime:0.0003s ]
+SQL: SELECT SUM(amount) AS tp_sum FROM `ms_fmoney` WHERE `user_id` = 6856 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT SUM(amount) AS tp_sum FROM `ms_fmoney` WHERE `user_id` = 6856 AND `create_time` BETWEEN 1564934400 AND 1565020800 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ms_reward_config` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ms_reward_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_news` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `ms_news` WHERE `status` = 1 ORDER BY create_time desc LIMIT 7   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006799s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006829s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000178s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000200s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000316s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000339s ]
+
+[ 2019-08-06T23:58:37+08:00 ] 117.136.86.225 /index.php/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000366s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 6856 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 6855 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_fmoney` [ RunTime:0.0003s ]
+SQL: SELECT SUM(amount) AS tp_sum FROM `ms_fmoney` WHERE `user_id` = 6856 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT SUM(amount) AS tp_sum FROM `ms_fmoney` WHERE `user_id` = 6856 AND `create_time` BETWEEN 1564934400 AND 1565020800 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ms_reward_config` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ms_reward_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ms_news` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `ms_news` WHERE `status` = 1 ORDER BY create_time desc LIMIT 7   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006621s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006649s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000155s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000173s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000346s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000371s ]
+
+[ 2019-08-06T23:58:37+08:00 ] 117.136.86.225 /index.php/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000399s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 6856 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 6855 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_fmoney` [ RunTime:0.0003s ]
+SQL: SELECT SUM(amount) AS tp_sum FROM `ms_fmoney` WHERE `user_id` = 6856 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(amount) AS tp_sum FROM `ms_fmoney` WHERE `user_id` = 6856 AND `create_time` BETWEEN 1564934400 AND 1565020800 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `ms_reward_config` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `ms_reward_config` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_news` [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `ms_news` WHERE `status` = 1 ORDER BY create_time desc LIMIT 7   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000093s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006543s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006571s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000179s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000322s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000346s ]
+
+[ 2019-08-06T23:58:38+08:00 ] 117.136.86.225 /index.php/Discover/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000367s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003938s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003966s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000332s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000356s ]
+
+[ 2019-08-06T23:59:12+08:00 ] 180.111.133.129 /index.php/Property/price2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000049s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000365s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-08-06T23:59:12+08:00 ] 180.111.133.129 /index.php/Hangqing/api.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000326s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+
+[ 2019-08-06T23:59:12+08:00 ] 180.111.133.129 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000073s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003240s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003264s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000147s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000164s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000349s ]
+
+[ 2019-08-06T23:59:12+08:00 ] 180.111.133.129 /index.php/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000352s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000074s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.003391s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003414s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000161s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000338s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000361s ]
+
+[ 2019-08-06T23:59:26+08:00 ] 117.136.86.225 /index.php/Discover/machine.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000379s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_fmoney` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_fmoney` WHERE `user_id` = 6856 AND `reward_type` IN ('51','56') ORDER BY create_time desc  [ RunTime:0.5055s ]
+SQL: SHOW COLUMNS FROM `ms_reward_config` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `ms_reward_config` LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `ms_user` WHERE `id` = 6856 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006122s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006159s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000199s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000377s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000434s ]
+
+[ 2019-08-06T23:59:29+08:00 ] 117.136.86.225 /index.php/Goods/GoodsLists.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ms_goods` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ms_goods` WHERE `status` = 1 ORDER BY sort desc  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ms_goods_img` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 438 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 437 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 440 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 403 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 436 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 402 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 435 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 383 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 434 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 441 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 401 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 439 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 400 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 385 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 399 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 415 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 384 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 398 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 414 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 427 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 425 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 426 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 428 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 429 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 430 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 431 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 432 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `ms_goods_img` WHERE `goods_id` = 433 AND `type` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000069s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004226s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004253s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000172s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000342s ]
+
+[ 2019-08-06T16:07:53+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000371s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000530s ]
+
+[ 2019-08-06T16:08:54+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000365s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000550s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000611s ]
+
+[ 2019-08-06T16:09:54+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000067s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000541s ]
+
+[ 2019-08-06T16:10:54+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000059s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000502s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000566s ]
+
+[ 2019-08-06T16:11:54+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000470s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000536s ]
+
+[ 2019-08-06T16:12:54+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000562s ]
+
+[ 2019-08-06T16:14:35+00:00 ] 111.18.177.109 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000363s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000505s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000572s ]
+
+[ 2019-08-06T16:15:08+00:00 ] 223.104.249.136 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000552s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000623s ]
+
+[ 2019-08-06T16:16:27+00:00 ] 125.71.100.79 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000450s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000511s ]
+
+[ 2019-08-06T16:59:29+00:00 ] 36.108.30.78 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000495s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000554s ]
+
+[ 2019-08-06T17:48:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000503s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000566s ]
+
+[ 2019-08-06T17:49:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000465s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000526s ]
+
+[ 2019-08-06T17:50:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000436s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000498s ]
+
+[ 2019-08-06T17:51:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000527s ]
+
+[ 2019-08-06T17:51:44+00:00 ] 117.44.71.123 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000037s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000327s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000479s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000544s ]
+
+[ 2019-08-06T17:52:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000363s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000488s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000554s ]
+
+[ 2019-08-06T17:53:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000402s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000471s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000531s ]
+
+[ 2019-08-06T17:53:41+00:00 ] 117.44.71.123 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000526s ]
+
+[ 2019-08-06T17:54:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000084s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000419s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000453s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000509s ]
+
+[ 2019-08-06T17:55:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000324s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000527s ]
+
+[ 2019-08-06T17:56:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000400s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000529s ]
+
+[ 2019-08-06T17:57:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000494s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000556s ]
+
+[ 2019-08-06T17:58:16+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000513s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000574s ]
+
+[ 2019-08-06T17:58:56+00:00 ] 59.63.69.15 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000329s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000526s ]
+
+[ 2019-08-06T17:59:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000402s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000488s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000559s ]
+
+[ 2019-08-06T18:00:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000380s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000477s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000539s ]
+
+[ 2019-08-06T18:01:16+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000373s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000481s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000541s ]
+
+[ 2019-08-06T18:02:08+00:00 ] 1.81.239.184 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000535s ]
+
+[ 2019-08-06T18:02:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000502s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000566s ]
+
+[ 2019-08-06T18:03:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000477s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000538s ]
+
+[ 2019-08-06T18:04:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000478s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000535s ]
+
+[ 2019-08-06T18:05:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000054s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000388s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000564s ]
+
+[ 2019-08-06T18:05:53+00:00 ] 125.80.164.8 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000368s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000533s ]
+
+[ 2019-08-06T18:06:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000481s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000543s ]
+
+[ 2019-08-06T18:07:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000502s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2019-08-06T18:08:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000488s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000550s ]
+
+[ 2019-08-06T18:09:16+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000493s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000554s ]
+
+[ 2019-08-06T18:10:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000499s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000574s ]
+
+[ 2019-08-06T18:11:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000480s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000544s ]
+
+[ 2019-08-06T18:12:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000513s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000578s ]
+
+[ 2019-08-06T18:13:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000477s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000537s ]
+
+[ 2019-08-06T18:14:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000494s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000559s ]
+
+[ 2019-08-06T18:15:16+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000366s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000497s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000595s ]
+
+[ 2019-08-06T18:16:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000445s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000518s ]
+
+[ 2019-08-06T18:17:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000544s ]
+
+[ 2019-08-06T18:18:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000478s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000547s ]
+
+[ 2019-08-06T18:19:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000465s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000524s ]
+
+[ 2019-08-06T18:20:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000438s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000487s ]
+
+[ 2019-08-06T18:21:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000370s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000452s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000514s ]
+
+[ 2019-08-06T18:22:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000366s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000481s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000548s ]
+
+[ 2019-08-06T18:23:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000336s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000365s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000471s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000535s ]
+
+[ 2019-08-06T18:24:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000506s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000573s ]
+
+[ 2019-08-06T18:25:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000335s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000363s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000449s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000504s ]
+
+[ 2019-08-06T18:26:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000405s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000449s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000506s ]
+
+[ 2019-08-06T18:27:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000403s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000566s ]
+
+[ 2019-08-06T18:28:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000059s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000478s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000519s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000453s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000518s ]
+
+[ 2019-08-06T18:29:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000396s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000504s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000569s ]
+
+[ 2019-08-06T18:30:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000352s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000473s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000557s ]
+
+[ 2019-08-06T18:31:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000517s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000582s ]
+
+[ 2019-08-06T18:32:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000391s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000439s ]
+
+[ 2019-08-06T18:33:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000523s ]
+
+[ 2019-08-06T18:34:16+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000381s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000468s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000526s ]
+
+[ 2019-08-06T18:35:15+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000346s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000484s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000549s ]
+
+[ 2019-08-06T18:35:29+00:00 ] 121.31.254.43 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000367s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000431s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000484s ]
+
+[ 2019-08-06T20:56:23+00:00 ] 111.41.222.241 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000385s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000443s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000499s ]
+
+[ 2019-08-06T21:00:01+00:00 ] 113.70.243.208 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000514s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000577s ]
+
+[ 2019-08-06T21:00:37+00:00 ] 113.70.243.208 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000367s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000532s ]
+
+[ 2019-08-06T21:17:51+00:00 ] 114.231.239.230 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000068s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000381s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000516s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000581s ]
+
+[ 2019-08-06T21:21:03+00:00 ] 223.104.251.42 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000371s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000471s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000529s ]
+
+[ 2019-08-06T21:57:35+00:00 ] 117.136.75.202 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000050s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000370s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000471s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000530s ]
+
+[ 2019-08-06T21:57:44+00:00 ] 117.136.75.202 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000070s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000510s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000406s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000459s ]
+
+[ 2019-08-06T22:17:28+00:00 ] 14.157.157.136 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000441s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000517s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000581s ]
+
+[ 2019-08-06T22:17:43+00:00 ] 14.157.157.136 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000384s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000470s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000533s ]
+
+[ 2019-08-06T22:18:47+00:00 ] 112.9.193.110 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000349s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000492s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000554s ]
+
+[ 2019-08-06T22:18:57+00:00 ] 112.9.193.110 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000071s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000488s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000452s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000556s ]
+
+[ 2019-08-06T22:21:05+00:00 ] 125.85.36.156 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000450s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000505s ]
+
+[ 2019-08-06T22:21:10+00:00 ] 106.226.53.141 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000007s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000510s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000575s ]
+
+[ 2019-08-06T22:21:46+00:00 ] 106.226.53.141 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000073s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000357s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000389s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000484s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000548s ]
+
+[ 2019-08-06T22:23:10+00:00 ] 125.85.36.156 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000388s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000483s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000547s ]
+
+[ 2019-08-06T22:40:49+00:00 ] 113.96.219.243 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000484s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000545s ]
+
+[ 2019-08-06T22:41:06+00:00 ] 113.96.219.243 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000434s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000489s ]
+
+[ 2019-08-06T22:43:12+00:00 ] 183.229.197.135 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000516s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000584s ]
+
+[ 2019-08-06T22:47:37+00:00 ] 119.86.122.199 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000386s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000431s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000487s ]
+
+[ 2019-08-06T23:00:21+00:00 ] 111.49.56.63 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000393s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000407s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000460s ]
+
+[ 2019-08-06T23:04:56+00:00 ] 111.49.56.63 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000465s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000525s ]
+
+[ 2019-08-06T23:05:37+00:00 ] 111.49.56.63 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000375s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000448s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000507s ]
+
+[ 2019-08-06T23:05:40+00:00 ] 111.49.56.63 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000339s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000526s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000594s ]
+
+[ 2019-08-06T23:07:47+00:00 ] 223.104.251.6 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000378s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000408s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000503s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2019-08-06T23:08:24+00:00 ] 111.41.222.241 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000543s ]
+
+[ 2019-08-06T23:13:09+00:00 ] 117.178.92.164 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000064s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000505s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000455s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000509s ]
+
+[ 2019-08-06T23:13:28+00:00 ] 117.178.92.164 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000329s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000454s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000517s ]
+
+[ 2019-08-06T23:13:36+00:00 ] 117.178.92.164 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000041s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000471s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000531s ]
+
+[ 2019-08-06T23:13:51+00:00 ] 119.86.35.143 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000485s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000545s ]
+
+[ 2019-08-06T23:14:38+00:00 ] 119.86.35.143 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000364s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000476s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000539s ]
+
+[ 2019-08-06T23:19:34+00:00 ] 117.37.133.224 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000047s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000490s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000550s ]
+
+[ 2019-08-06T23:20:05+00:00 ] 117.37.133.224 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000390s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000524s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000589s ]
+
+[ 2019-08-06T23:26:13+00:00 ] 106.91.51.5 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000389s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000461s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000517s ]
+
+[ 2019-08-06T23:29:06+00:00 ] 59.63.69.15 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000048s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000375s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000499s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000562s ]
+
+[ 2019-08-06T23:33:26+00:00 ] 125.71.100.79 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000456s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000515s ]
+
+[ 2019-08-06T23:33:50+00:00 ] 1.205.134.77 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000325s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000355s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000493s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000555s ]
+
+[ 2019-08-06T23:34:06+00:00 ] 1.205.134.77 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000365s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000491s ]
+
+[ 2019-08-06T23:38:41+00:00 ] 117.136.85.246 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000040s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000348s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000379s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000471s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000535s ]
+
+[ 2019-08-06T23:38:59+00:00 ] 117.136.85.246 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000413s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000524s ]
+
+[ 2019-08-06T23:40:01+00:00 ] 117.136.85.246 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000042s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000340s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000497s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000563s ]
+
+[ 2019-08-06T23:41:01+00:00 ] 117.136.85.246 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000043s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000378s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000499s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000565s ]
+
+[ 2019-08-06T23:42:00+00:00 ] 117.136.85.246 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000370s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000518s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000585s ]
+
+[ 2019-08-06T23:43:00+00:00 ] 117.136.85.246 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000044s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000488s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000544s ]
+
+[ 2019-08-06T23:44:00+00:00 ] 117.136.85.246 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000391s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0004s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000460s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000518s ]
+
+[ 2019-08-06T23:45:00+00:00 ] 117.136.85.246 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000008s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000394s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000527s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000596s ]
+
+[ 2019-08-06T23:48:22+00:00 ] 59.63.69.15 /index.php/Demo/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000045s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `ms_user` [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `ms_sysconfig` [ RunTime:0.0003s ]
+SQL: SELECT * FROM `ms_sysconfig` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000451s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000510s ]
+

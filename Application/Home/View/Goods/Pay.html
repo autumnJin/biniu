@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/Public/Wap/css/common.css"/>
+    <title>HPAY</title>
+</head>
+<body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        font-size: 13.3333333333333vw;
+    }
+    .header{
+        background: linear-gradient(to right, #1e91ff, #075ffe);
+        height: 1.16rem;
+        line-height: 1.4rem;
+        color: #fff;
+        text-align: center;
+        font-size: .34rem;
+        border-bottom: 1px solid #ececec;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 .2rem;
+    }
+    .header a{
+        width: .2rem;
+        display: inline-block;
+    }
+    .header a img{
+        width: 100%;
+    }
+
+</style>
+
+<div id="paystyle">
+    <header class="header">
+        <a href="javascript:history.back(-1)"><img src="/Public/Wap/img/arrowl.png"></a>
+        <p>提交订单</p>
+        <a href="javascript:void(0)" style="opacity: 0"><img src="/Public/Wap/img/arrowl.png"></a>
+    </header>
+    <div class="content">
+        <div class="container">
+            <div class="p1">订单总额<span>IOTE {$OrderInfo.amount}</span></div>
+            <div class="p1">支付费用<span>IOTE {$OrderInfo.pay_amount}</span></div>
+<!--            <div class="p1">可用余额<span>IOTE  {$UserInfo.z5}</span></div>-->
+<!--            <div class="p1"><span>IOTE奖金 {$UserInfo.z10}</span></div>-->
+            <div class="p5">支付钱包地址 <span class="copy_btn" onclick="" style="background: #2a5de8;color: white;border-radius: 10%;padding: .02rem;font-size: .2rem" data-clipboard-target="#copyVal">点击复制</span></div>
+            <ul class="choosePayStyle">
+                <li style="font-size: .28rem;width: 100%">
+                    <input type="text" id="copyVal" style="background:none;outline:none;border:0px;display:inline-block;width: 100%"  value="{$RewardConfig.pay_address}" readonly>
+                </li>
+<!--                <li>-->
+<!--                    <div class="box" data-type="iote">-->
+<!--                        <img src="/Public/Wap/img/money.png" alt="" /><span>IOTE</span>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                <div class="box" data-type="iote_jj">-->
+<!--                <img src="/Public/Wap/img/money.png" alt="" /><span>IOTE奖金</span>-->
+<!--                </div>-->
+<!--                </li>-->
+
+                <!--<li>-->
+                <!--<div class="box" data-type="">-->
+                <!--<img src="/Public/Wap/img/weixin.png" alt="" /><span>微信</span>-->
+                <!--</div>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<div class="box" data-type="">-->
+                <!--<img src="/Public/Wap/img/zhifubao.png" alt="" /><span>支付宝</span>-->
+                <!--</div>-->
+                <!--</li>-->
+            </ul>
+            <input type="hidden" id="order_id" name="order_id"  value="{$OrderInfo.order_id}">
+            <a href="javascript:void()" class="pay">确认付款</a>
+        </div>
+    </div>
+</div>
+<style>.getPs {
+    width: 100%;
+    height: .7rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding-left: .1rem;
+}</style>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/layer.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js"></script>
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.0/clipboard.min.js"></script>
+
+<script>
+    $(function() {
+        var copyBtn = new ClipboardJS('.copy_btn');
+        copyBtn.on("success",function(e){
+            alert('复制成功');
+            e.clearSelection();
+        });
+        copyBtn.on("error",function(e){
+            //复制失败；
+            alert('复制失败');
+        });
+
+        $('.pay').on('click', function() {
+            con = confirm("请确认已支付，如恶意点击将进行封号处理！确认支付吗？");//在页面上弹出
+            if(con === true){
+                $.ajax({
+                    url:"{:U('Goods/Pay')}",
+                    type : 'POST',
+                    dataType : 'json',
+                    data:{
+                        // password : payPassword,
+                        order_id: $('#order_id').val(),
+                        // module: module,
+                    },
+                    success : function(data){
+                        if(data.code == -1)
+                        {
+                            alert(data.message);
+                        }
+                        if(data.code == 1)
+                        {
+                            alert(data.message);
+                            window.location.href = "/index.php/User/orderlist.html";
+                        }
+                    }
+                })
+            }
+
+            // var module = 0;
+            // if($('.choosePayStyle .active').attr('data-type') == 'iote')
+            // {
+            //      module = 1;
+            // }
+            // if($('.choosePayStyle .active').attr('data-type') == 'iote_jj')
+            // {
+            //      module = 2;
+            // }
+            //
+            // if(module == 0)
+            // {
+            //     alert('请选择支付方式！');
+            //     return;
+            // }
+            // var payPassword = ''; //支付密码
+            // //询问框
+            // layer.open({
+            //     content: '<input type="password" class="getPs" value="" placeholder="请输入支付密码" />'
+            //     ,btn: ['确定', '取消']
+            //     ,yes: function(index){
+            //         payPassword = $('.getPs').val();
+            //         layer.close(index);
+            //         if(payPassword == '')
+            //         {
+            //             alert('请输入支付密码！');
+            //             return;
+            //         }
+            //         $.ajax({
+            //             url:"{:U('Goods/Pay')}",
+            //             type : 'POST',
+            //             dataType : 'json',
+            //             data:{
+            //                 password : payPassword,
+            //                 order_id: $('#order_id').val(),
+            //                 module: module,
+            //             },
+            //             success : function(data){
+            //                 if(data.code == -1)
+            //                 {
+            //                     alert(data.message);
+            //                 }
+            //                 if(data.code == 1)
+            //                 {
+            //                     alert(data.message);
+            //                     window.location.href = "/index.php/User/orderlist.html";
+            //                 }
+            //             }
+            //         })
+            //     }
+            // });
+        });
+    });
+</script>
+</body>
+<script>
+    $(function(){
+        // //检测页面位置
+        // $('.container-ul li').each(function () {
+        //     if($(this).children('a').attr('data-href') == 'User/selectpay2')
+        //     {
+        //         $(this).addClass('active');
+        //     }
+        // });
+        $(".box").on('click',function(){
+            $(".box").removeClass('active')
+            $(this).addClass('active')
+        })
+    });
+</script>
+</html>

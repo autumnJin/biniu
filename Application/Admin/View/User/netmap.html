@@ -1,0 +1,390 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">会员网络关系</strong>  <small></small></div>
+      </div>
+
+      <hr>
+
+      <form class="am-g" action="{:U('')}" method="get">
+        <div class="am-u-sm-12 am-u-md-5">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" name="username" placeholder="用户名查找">
+          </div>
+        </div>
+
+
+
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+            <input class="am-btn am-btn-primary" value="搜索" type="submit"/>
+            </span>
+          </div>
+        </div>
+      </form>
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <php>
+            $reg_level = C('reg_level');
+          </php>
+          <table style="text-align:center; width:100%;" cellpadding=0 cellspacing=0  >
+            <!--level_1 statrt-->
+            <tr>
+
+
+              <td id="table_leval_1" colspan="5"><table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>  <tr><td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                <a href="{:U('netmap',array(id=>$p_info['id']))}" style='text-decoration:none; '>{$p_info['username']}   </a>
+                <br /></td></tr>
+
+                <tr>
+                  <td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $p_info['id']))}" style='text-decoration:none; '>{$reg_level[$p_info['level']]}</a><br />
+                  </td></tr>
+
+                <tr><td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                <a href="{:U('netmap',array(id=>$p_info['id']))}" style='text-decoration:none; '>{$p_info['truename']}</a><br />
+              </td>
+              </tr>
+                <tr>
+                  <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                    <a href="{:U('netmap',array(id=>$p_info['id']))}" style='text-decoration:none'>{$p_info.zuo_zong|default='0'}</a>
+                  </td>
+                  <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>总</td>
+                  <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                    <a href="{:U('netmap',array(id=>$p_info['id']))}" style='text-decoration:none'>{$p_info.you_zong|default='0'}
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                    <a href="{:U('netmap',array(id=>$p_info['id']))}" style='text-decoration:none'>{$p_info['zuo_zong']-$p_info['zuo_peng']}
+                    </a>
+                  </td>
+                  <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>余</td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$p_info['id']))}" style='text-decoration:none'>{$p_info['you_zong']-$p_info['you_peng']}</a> </td></tr>   </table></td>
+
+            </tr>
+            <tr>
+              <td colspan=5 align="center" class="style1">
+                <div style="border-bottom:1px #006600 solid; height:30px; width:50%; margin-right:5px;">
+                  <table style="width:5px; border-left:1px #006600 solid; height:100%; margin-left:5px;">
+                    <tr>
+                      <td></td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td colspan=2 align="center" height=15 valign=top>
+                <table style="width:5px; border-left:1px #006600 solid; height:100%   " cellpadding=0 cellspacing=0>
+                  <tr>
+                    <td></td>
+                  </tr>
+                </table>
+              </td>
+              <td colspan=3 align="center" height=15>
+                <table style="width:8px; border-left:1px #006600 solid; height:100%" cellpadding=0 cellspacing=0>
+                  <tr>
+                    <td></td>
+                  </tr>
+                </table>
+              </td>
+
+
+            </tr>
+
+            <!--level_1 end -->
+            <tr>
+            <span id="table_leval_2">
+              <td colspan=2>
+              <if condition="$level_second_l eq null">
+                                        <table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>
+              <tr>
+                <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                  <!--<a href="{:U('userAdd',array(node_id=>$p_info['id'],'left_right'=>1))}" style='text-decoration:none'>注册</a>-->
+                </td>
+            </table>
+
+                <else/>
+                            <table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>
+
+              <tr><td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+              <a href="{:U('netmap',array(id=>$level_second_l['id']))}" style='text-decoration:none; '>{$level_second_l['username']}</a>
+              <br /></td>
+            </tr>
+                               <tr>
+                <td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_second_l['id']))} " style='text-decoration:none; '>{$reg_level[$level_second_l['level']]}</a><br />
+                </td>
+              </tr>
+              <tr>
+                <td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                  <a href="{:U('netmap',array(id=>$level_second_l['id']))}" style='text-decoration:none; '>{$level_second_l['truename']}</a>
+                  <br /></td>
+              </tr>
+              <tr>
+                <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                  <a href="{:U('netmap',array(id=>$level_second_l['id']))}" style='text-decoration:none'>{$level_second_l.zuo_zong|default='0'}</a> </td>
+                <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>总</td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_second_l['id']))}" style='text-decoration:none'>{$level_second_l.you_zong|default='0'}</a> </td></tr>  <tr><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_second_l['id']))}" style='text-decoration:none'>{$level_second_l['zuo_zong']-$level_second_l['zuo_peng']}</a> </td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'>余</td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_second_l['id']))}" style='text-decoration:none'>{$level_second_l['you_zong']-$level_second_l['you_peng']}</a> </td></tr>
+            </table>
+
+              </if>
+
+
+
+
+
+
+            </td>
+              <td colspan=2>
+                <if condition="$level_second_r eq null">
+                                                          <table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>
+              <tr>
+                <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                  <!--<a href="{:U('userAdd',array(node_id=>$p_info['id'],'left_right'=>2))}" style='text-decoration:none'>注册</a>-->
+                </td>
+              </tr>
+            </table>
+
+
+                  <else />
+                  <table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>
+              <tr>
+                <td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_second_r['id']))}" style='text-decoration:none; '>{$level_second_r['username']}</a><br /></td></tr>
+                     <tr>
+                <td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_second_r['id']))}" style='text-decoration:none; '>{$reg_level[$level_second_r['level']]}</a><br />
+                </td>
+              </tr>
+                    <tr><td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_second_r['id']))}" style='text-decoration:none; '>{$level_second_r['truename']}</a><br />
+            </td>
+            </tr>
+              <tr>
+                <td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_second_r['id']))}" style='text-decoration:none'>{$level_second_r.zuo_zong|default='0'}</a>
+                </td>
+                <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>总</td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                <a href="{:U('netmap',array(id=>$level_second_r['id']))}" style='text-decoration:none'>{$level_second_r.you_zong|default='0'}</a> </td></tr>
+              <tr>
+                <td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_second_r['id']))}" style='text-decoration:none'>{$level_second_r['zuo_zong']-$level_second_r['zuo_peng']}</a>
+                </td>
+                <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>余</td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_second_r['id']))}" style='text-decoration:none'>{$level_second_r['you_zong']-$level_second_r['you_peng']}</a>
+              </td></tr>
+            </table>
+                </if>
+
+
+              <!-- 注册 -->
+              <!--             <table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>  <tr><td colspan=3 style='background-color:rgba(0,255,0,0.3);text-align:center;'><a href='../../huiyuan/server/reg.aspx?jd_bianhao=CF174145   &zuoyou=2' style='text-decoration:none; '>注册</a><br /></td></tr>  <tr><td colspan=3 style='background-color:rgba(0,255,0,0.3);text-align:center;'><a href='../../huiyuan/server/reg.aspx?jd_bianhao=CF174145   &zuoyou=2' style='text-decoration:none; '></a><br /></td></tr>  <tr><td style='background-color:rgba(0,255,0,0.3);text-align:center;'><a href='../../huiyuan/server/reg.aspx?jd_bianhao=CF174145   &zuoyou=2' style='text-decoration:none'></a> </td><td style='background-color:rgba(0,255,0,0.3);text-align:center;'>总</td><td style='background-color:rgba(0,255,0,0.3);text-align:center;'><a href='../../huiyuan/server/reg.aspx?jd_bianhao=CF174145   &zuoyou=2' style='text-decoration:none'></a> </td></tr>  <tr><td style='background-color:rgba(0,255,0,0.3);text-align:center;'><a href='../../huiyuan/server/reg.aspx?jd_bianhao=CF174145   &zuoyou=2' style='text-decoration:none'></a> </td><td style='background-color:rgba(0,255,0,0.3);text-align:center;'>余</td><td style='background-color:rgba(0,255,0,0.3);text-align:center;'><a href='../../huiyuan/server/reg.aspx?jd_bianhao=CF174145   &zuoyou=2' style='text-decoration:none'></a> </td></tr>   </table> -->
+
+
+            </td>
+            </span>
+            </tr>
+
+
+            <tr>
+              <td colspan=2 align="center" height=30 valign=top>
+                <div style="border-bottom:1px #006600 solid; height:30px; width:50%;">
+                  <table style="width:5px; border-left:1px #006600 solid; height:100%" cellpadding=0 cellspacing=0>
+                    <tr>
+                      <td></td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+              <td colspan=3 align="center" height=30>
+                <div style="border-bottom:1px #006600 solid; height:30px; width:50%;">
+                  <table style="width:8px; border-left:1px #006600 solid; height:100%" cellpadding=0 cellspacing=0>
+                    <tr>
+                      <td></td>
+                    </tr>
+                  </table>
+                </div>
+              </td>
+
+
+            </tr>
+
+            <tr>
+              <td align="center" height=15 valign=top>
+                <table style="width:8px; border-left:1px #006600 solid; height:100%" cellpadding=0 cellspacing=0>
+                  <tr>
+                    <td></td>
+                  </tr>
+                </table>
+              </td>
+              <td align="center" height=15>
+                <table style="width:5px; border-left:1px #006600 solid; height:100%" cellpadding=0 cellspacing=0>
+                  <tr>
+                    <td></td>
+                  </tr>
+                </table>
+              </td>
+              <td align="center" height=15>
+                <table style="width:0px; border-left:1px #006600 solid; height:100%; margin-left:7px;" cellpadding=0 cellspacing=0>
+                  <tr>
+                    <td></td>
+                  </tr>
+                </table>
+
+              </td>
+
+              <td align="center" height=15 valign=top>
+                <table style="width:7px; border-left:1px #006600 solid; height:100%" cellpadding=0 cellspacing=0>
+                  <tr>
+                    <td></td>
+                  </tr>
+                </table>
+              </td>
+
+
+
+            </tr>
+
+            <!--第三层 -->
+            <tr>
+            <span id="table_leval_3">
+
+
+                   <td>
+                <div style='margin:2px;'>
+
+                  <if condition="$level_third_l1 eq null">
+                                        <table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>
+              <tr>
+                <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                  <!--<a href="{:U('userAdd',array(node_id=>$level_second_l['id'],'left_right'=>1))}" style='text-decoration:none'>注册</a>-->
+                </td>
+              </tr>
+            </table>
+
+                    <else/>
+
+                                <table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>
+              <tr><td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                <a href="{:U('netmap',array(id=>$level_third_l1['id']))}" style='text-decoration:none; '>{$level_third_l1['username']}</a><br />
+              </td>
+              </tr>
+                                   <tr>
+                <td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_third_l1['id']))}" style='text-decoration:none; '>{$reg_level[$level_third_l1['level']]}</a><br />
+                </td>
+              </tr>
+              <tr>
+                <td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_third_l1['id']))}" style='text-decoration:none; '>{$level_third_l1['truename']}</a><br /></td></tr>  <tr><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_third_l1['id']))}" style='text-decoration:none'>{$level_third_l1.zuo_zong|default='0'}</a> </td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'>总</td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+              <a href="{:U('netmap',array(id=>$level_third_l1['id']))}" style='text-decoration:none'>{$level_third_l1.you_zong|default='0'}</a>
+            </td>
+            </tr>
+              <tr>
+                <td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_third_l1['id']))}" style='text-decoration:none'>{$level_third_l1['zuo_zong']-$level_third_l1['zuo_peng']}</a> </td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'>余</td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_third_l1['id']))}" style='text-decoration:none'>{$level_third_l1['you_zong']-$level_third_l1['you_peng']}</a> </td></tr>   </table>
+
+                  </if>
+
+
+
+
+            </div>
+              </td>
+
+
+
+                 <td>
+                <div style='margin:2px;'>
+
+<!--level22 -->
+
+              <if condition="$level_third_r1 eq null">
+                <table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>
+                  <tr>
+                    <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                                        <!--<a href="{:U('userAdd',array(node_id=>$level_second_l['id'],'left_right'=>2))}" style='text-decoration:none'>注册</a>-->
+
+                    </td>
+                </table>
+
+                <else/>
+                            <table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>  <tr><td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_third_r1['id']))}" style='text-decoration:none; '>{$level_third_r1['username']}</a><br /></td></tr>
+                              <tr>
+                <td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_third_r1['id']))}" style='text-decoration:none; '>{$reg_level[$level_third_r1['level']]}</a><br />
+
+                </td></tr>
+                              <tr><td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_third_r1['id']))}" style='text-decoration:none; '>{$level_third_r1['truename']}</a><br /></td></tr>  <tr><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_third_r1['id']))}" style='text-decoration:none'>{$level_third_r1.zuo_zong|default='0'}</a> </td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'>总</td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_third_r1['id']))}" style='text-decoration:none'>{$level_third_r1.you_zong|default='0'}</a> </td></tr>  <tr><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_third_r1['id']))}" style='text-decoration:none'>{$level_third_r1['zuo_zong']-$level_third_r1['zuo_peng']}</a> </td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'>余</td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=>$level_third_r1['id']))}" style='text-decoration:none'>{$level_third_r1['you_zong']-$level_third_r1['you_peng']}</a> </td></tr>   </table>
+
+
+
+
+
+            </div>
+              </td>
+              </if>
+
+
+                <td>
+                <div style='margin:2px;'>
+
+
+<!--level23 -->
+              <if condition="$level_third_l2 eq null">
+                <table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>
+                  <tr>
+                    <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                  <!--<a href="{:U('userAdd',array(node_id=>$level_second_r['id'],'left_right'=>1))}" style='text-decoration:none'>注册</a>-->
+                    </td>
+                </table>
+
+                <else/>
+                  <table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>  <tr><td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_l2['id']))}" style='text-decoration:none; '>{$level_third_l2['username']}</a><br /></td></tr>
+                     <tr>
+                <td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_l2['id']))}" style='text-decoration:none; '>{$reg_level[$level_third_l2['level']]}</a><br />
+                </td>
+               </tr>
+                    <tr><td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_l2['id']))}" style='text-decoration:none; '>{$level_third_l2['truename']}</a><br /></td></tr>  <tr><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_l2['id']))}" style='text-decoration:none'>{$level_third_l2.zuo_zong|default='0'}</a> </td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'>总</td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_l2['id']))}" style='text-decoration:none'>{$level_third_l2.you_zong|default='0'}</a> </td></tr>  <tr><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_l2['id']))}" style='text-decoration:none'>{$level_third_l2['zuo_zong']- $level_third_l2['zuo_peng']}</a> </td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'>余</td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_l2['id']))}" style='text-decoration:none'>{$level_third_l2['you_zong']- $level_third_l2['you_peng']}</a> </td></tr>   </table>
+
+              </if>
+
+            </div>
+              </td>
+
+
+                  <td><div style='margin:2px;'>
+
+
+<!--level24 -->
+              <if condition="$level_third_r2 eq null">
+                <table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>
+                  <tr>
+                    <td style='background-color:rgba(222,0,0,0.3);text-align:center;'>
+                                        <!--<a href="{:U('userAdd',array(node_id=>$level_second_r['id'],'left_right'=>2))}" style='text-decoration:none'>注册</a>-->
+
+                    </td>
+                </table>
+
+                <else/>
+                            <table cellspacing='0' cellpadding='0' border='0'  align='center' style=' margin:0 auto; width:160px; height:160px;border:2px solid #CCC; border-radius: 10px;'>  <tr><td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_r2['id']))}" style='text-decoration:none; '>{$level_third_r2['username']}</a><br /></td></tr>
+                              <tr>
+                <td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_r2['id']))}" style='text-decoration:none; '>{$reg_level[$level_third_r2['level']]}</a><br />
+                </td></tr>
+                              <tr><td colspan=3 style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_r2['id']))}" style='text-decoration:none; '>{$level_third_r2['truename']}</a><br /></td></tr>  <tr><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_r2['id']))}" style='text-decoration:none'>{$level_third_r2.zuo_zong|default='0'}</a> </td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'>总</td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_r2['id']))}" style='text-decoration:none'>{$level_third_r2.you_zong|default='0'}</a> </td></tr>  <tr><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_r2['id']))}" style='text-decoration:none'>{$level_third_r2['zuo_zong']- $level_third_r2['zuo_peng']}</a> </td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'>余</td><td style='background-color:rgba(222,0,0,0.3);text-align:center;'><a href="{:U('netmap',array(id=> $level_third_r2['id']))}" style='text-decoration:none'>{$level_third_l2['you_zong']- $level_third_r2['you_peng']}</a> </td></tr>   </table>
+
+              </if>
+
+
+
+
+            </div></td>
+            </span>
+            </tr>
+
+
+
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</block>
+
+
+
+

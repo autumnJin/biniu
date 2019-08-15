@@ -1,0 +1,181 @@
+<include file="Public/head" />
+<style>
+.nums {
+    clear: both;
+    box-sizing: border-box;
+    padding-right: 1px;
+    margin-bottom: .05rem;
+    border: 1px solid #bfbfbf;
+    overflow: hidden;
+    float: right;
+    display: inline;
+}
+.nums input:nth-child(3) {
+    border-right: 1px solid #bfbfbf;
+}
+.nums input {
+    cursor: pointer;
+    display: block;
+    float: right;
+    background: #fff;
+    width: .47rem;
+    border: 0;
+    outline: 0;
+    color: #000;
+    font-size: .3rem;
+    line-height: .5rem;
+}
+.nums input:nth-child(2) {
+    width: .8rem;
+    color: #333;
+    text-align: center;
+}
+.nums input:nth-child(1) {
+    border-left: 1px solid #bfbfbf;
+}
+.active {
+    margin-bottom: .5rem;
+}
+</style>
+<div id="submitOrder">
+    <div class="heads">
+        <div class="container">
+            <div class="p1">提交订单</div>
+            <a href="javascript:void(0);" id="goback"><img src="__WAPIMG__/arrowl.png"></a>
+        </div>
+    </div>
+    <section class="first">
+        <div class="container">
+            <div class="content defaultAddr">
+                <div class="p1">
+                    <img class="titl" src="__WAPIMG__/titl_l.png">
+                    收货信息
+                    <a href="{:U('User/address')}"><img src="__WAPIMG__/mores.png"></a>
+                </div>
+                <if condition="$address[0]['id']">
+                    <input type="hidden" value="{$address[0]['id']}" class="h_a_id">
+                    <div class="p1"><span>姓名：</span>{$address[0]['receiver']}</div>
+                    <div class="p1"><span>联系电话：</span>{$address[0]['phone']}</div>
+                    <div class="p1"><span>联系地址：</span>{$address[0]['address']}</div>
+                <else />
+                    <div class="p1"><span>暂无默认收货地址</span></div>
+                </if>
+            </div>
+        </div>
+    </section>
+    <section>
+        <form class="order_info">
+            <section class="second">
+                <php>
+                    $format = C('format');
+                </php>
+                <div class="content">
+                    <volist name="goods" id="vo">
+                        <div class="box">
+                            <div class="container">
+                                <img src="__ROOT__{$vo.path}" alt="">
+                                <div class="txt">
+                                    <div class="p1">
+                                        {$vo.name}
+                                    </div>
+                                    <div class="p3">
+                                        {$vo.price} <b>/ {$format[$vo['format']]}</b>
+                                        <div class="nums">
+                                            <input class="add" type="button" name="" value="+" />
+                                            <input class="num" type="number" name="p[{$key}][goods_num]" value="1" data-price="{$vo.price}" />
+                                            <input class="reduce" type="button" name="" value="-"/>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" class="h_p" value="{$vo.price}">
+                                    <input type="hidden" name="p[{$key}][goods_id]" value="{$vo.g_id}">
+                                    <input type="hidden" name="p[{$key}][shop_id]" value="{$vo.shopid}">
+                                    <input type="hidden" name="p[{$key}][price]" value="{$vo.price}">
+                                    <input type="hidden" name="p[{$key}][pv]" value="{$vo.pv}">
+                                    <input type="hidden" name="p[{$key}][a]" class="h_a">
+                                </div>
+                            </div>
+                        </div>
+                    </volist>
+                </div>
+            </section>
+            <section class="third">
+                <div class="container">
+                    <div class="content">
+                        <!-- <div class="p1">优惠<a id="fordiscount" href="javascript:void(0);">新品上架，立减100元<img src="__WAPIMG__/mores.png"></a></div>
+                        <div class="p1">发票<a href="">不开发票<img src="__WAPIMG__/mores.png"></a></div> -->
+                        <div class="p3">备注</div>
+                        <textarea name="tips" placeholder="请在这里添加备注"></textarea>
+                        <div class="p1 active">物流方式<a id="forlogistics" href="javascript:void(0);">快递<img src="__WAPIMG__/mores.png"></a></div>
+                    </div>
+                </div>
+            </section>
+            <section class="fourth">
+                <div class="p1">合计：￥<span class="totalMoney">{$all}</span><a id="J_Go" href="#">提交订单</a></div>
+            </section>
+            <div id="logistics" class="logistics">
+                <div class="content">
+                    <div class="container">
+                        <div class="p1">物流方式</div>
+                        <div class="p3">快递<input checked="checked" class="logistics-input" name="logistics_style" type="radio" value="1"></div>
+                        <div class="p3">自提<input class="logistics-input" name="logistics_style" type="radio" value="2"></div>
+                        <a class="cons" href="#">确定</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>
+</body>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+<script>
+$(function() {
+    $('.cons').click(function () {
+        $('#logistics').removeClass('active');
+    });
+    $('#J_Go').click(function () {
+        var address = $('.defaultAddr').find('.h_a_id').val();
+        var url = "{:U('buying')}";
+        ajax_sub(url, $.param({'address': address}) + '&' + $('.order_info').serialize(), $(this));
+    });
+    //加的效果
+    $(".add").click(function () {
+        var t = $('.num');
+        if (t.val() == "" || undefined || null) {
+            t.val(1);
+        }
+        t.val(parseInt(t.val()) + 1)
+        setTotal();
+    });
+
+    //减得效果
+    $(".reduce").click(function () {
+        var t = $('.num');
+        if (t.val() == "" || undefined || null) {
+            t.val(1);
+        }
+        t.val(parseInt(t.val()) - 1)
+        if (parseInt(t.val()) < 1) {
+            t.val(1);
+        }
+        setTotal();
+    });
+
+    function setTotal() {
+        var t = $('.num').val();
+        var p = $('.h_p').val();
+        if(parseInt(t)==""||undefined||null || isNaN(t) || isNaN(parseInt(t))){
+            t=1;
+        }
+        var s = parseInt(t) * parseFloat(p);
+        $(".totalMoney").html(s.toFixed(2));
+    }
+    setTotal();
+
+
+
+
+});
+</script>
+</html>

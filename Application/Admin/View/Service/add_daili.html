@@ -1,0 +1,171 @@
+                                <extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">{$title}</strong>  <small></small></div>
+      </div>
+
+      <hr/>
+
+      <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-8 am-u-md-push-1">
+          <form class="am-form am-form-horizontal" action="{:U('')}" method="post">
+            <div class="am-form-group">
+            <label for="user-name" class="am-u-sm-3 am-form-label">会员用户名</label>
+            <input type="hidden" name="id" value="{$data['id']}">
+            <div class="am-u-sm-9">
+              <input type="text" id="username" placeholder="" required name="username"   value="{$info['username']}">
+              <span id="p" style="color: red"></span>
+            </div>
+          </div>
+            <!--<div class="am-form-group">-->
+              <!--<label for="user-name" class="am-u-sm-3 am-form-label">会员姓名</label>-->
+              <!--<input type="hidden" name="id" value="{$data['id']}">-->
+              <!--<div class="am-u-sm-9">-->
+                <!--<input type="text" id="user-name" placeholder="" required name="truename"  readonly value="{$data['truename']}">-->
+              <!--</div>-->
+            <!--</div>-->
+
+
+            <!--<div class="am-form-group">-->
+            <!--<label for="user-QQ" class="am-u-sm-3 am-form-label">开通代理</label>-->
+            <!--<div class="am-u-sm-9">-->
+              <!--<select data-am-selected="{btnSize: 'sm'}" name="is_daili">-->
+                <!--<option value="1">否</option>-->
+
+                <!--<option value="2">是</option>-->
+              <!--</select>-->
+            <!--</div>-->
+          <!--</div>-->
+            <php>
+              $daili = C('daili');
+            </php>
+            <div class="am-form-group">
+              <label for="user-QQ" class="am-u-sm-3 am-form-label">代理级别</label>
+              <div class="am-u-sm-9">
+                <select data-am-selected="{btnSize: 'sm'}" name="daili_level">
+                  <volist name="daili" id="vo">
+                    <option value="{$key}">{$vo}</option>
+                  </volist>
+
+
+
+                </select>
+              </div>
+            </div>
+            <div class="am-form-group">
+              <label for="user-email" class="am-u-sm-3 am-form-label">代理区域</label>
+              <div class="am-u-sm-9">
+                <!--<input type="text" id="user-kj3" name="address" required placeholder="" value="{$data.address}">-->
+                <select id="pro" name="province">
+                  <volist name="p" id="vo">
+                    <option value="{$vo.provinceid}" <php>if($vo.provinceid == $address['prince']) echo 'selected'</php> >{$vo.province}</option>
+                  </volist>
+                </select>
+                <select id="city" name="city">
+                  <if condition="$data neq null">
+                    <volist name="c" id="v">
+                      <option value="{$v.cityid}" <php>if($v.cityid == $address['city']) echo 'selected'</php>>{$v.city}</option>
+                    </volist>
+                  </if>
+
+                </select>
+                <select id="area" name="area">
+                  <if condition="$data neq null">
+                    <volist name="a" id="v">
+                      <option value="{$v.areaid}" <php>if($v.areaid == $address['area']) echo 'selected'</php>>{$v.area}</option>
+                    </volist>
+                  </if>
+                </select>
+              </div>
+            </div>
+
+            <!--<div class="am-form-group">-->
+              <!--<label for="user-QQ" class="am-u-sm-3 am-form-label">是否赠送报单中心</label>-->
+              <!--<div class="am-u-sm-9">-->
+                <!--<select data-am-selected="{btnSize: 'sm'}" name="is_service">-->
+                  <!--<option value="2">是</option>-->
+                  <!--<option value="1">否</option>-->
+                <!--</select>-->
+              <!--</div>-->
+            <!--</div>-->
+            <div class="am-form-group">
+              <div class="am-u-sm-9 am-u-sm-push-3">
+                <p>注:请根据合伙人级别选择相应区域</p>
+
+              </div>
+            </div>
+            <div class="am-form-group">
+              <div class="am-u-sm-9 am-u-sm-push-3">
+                <button type="submit" class="am-btn am-btn-primary">保存修改</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</block>
+<block name="js">
+  <script>
+    $(function () {
+
+        $('#username').change(function () {
+
+            var url = "{:U('getTrueName')}";
+            var that = $(this);
+            var username = that.val();
+            $.post(url,{username:username},function (data) {
+                if(data.code){
+                    alert(data.msg);
+                    return;
+                }else{
+                    $('#p').html(data.data);
+                }
+            },'json');
+        });
+        $('#pro').change(function(){
+            $.ajax({
+                type:"post",
+                url:"{:U('Public/area_choose')}",
+                data:'pro_id='+$('#pro').val(),
+                dataType:"json",
+                success:function(data){
+                    $('#city').html(data);
+                }
+            });
+        });
+        $('#city').change(function(){
+            $.ajax({
+                type:"post",
+                url:"{:U('Public/city_choose')}",
+                data:'city_id='+$('#city').val(),
+                dataType:"json",
+                success:function(data){
+                    $('#area').html(data);
+                }
+            });
+        });
+
+
+
+        var form = $('form');
+
+        $('form').submit(function (e) {
+         
+            e.preventDefault();
+            $.post(form.attr('action'),form.serialize(),function (data) {
+                layer.msg(data.msg,{time:1000},function () {
+                    if(data.code){
+                        return false;
+                    }else{
+                        window.location.href=data.data;
+                    }
+                })
+
+            },'json')
+        })
+    })
+  </script>
+</block>

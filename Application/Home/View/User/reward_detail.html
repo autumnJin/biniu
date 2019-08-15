@@ -1,0 +1,48 @@
+<include file="Public/head"/>
+<div id="detail">
+    <div class="heads">
+        <div class="container">
+            <div class="p1">奖金明细</div>
+            <!--<a href="javascript:void(0);" id="goback"><img src="__WAPIMG__/arrowl.png"></a>-->
+            <a href="{:U('User/index')}" id="goback"><img src="__WAPIMG__/arrowl.png"></a>
+        </div>
+    </div>
+    <section class="first">
+        <div class="container">
+            <div class="navs">
+                <ul>
+                    <li><a <if condition="$reward_type eq 2">class="active"</if> href="{:U('reward_detail',array('reward_type'=>'2'))}">推荐</a></li>
+                    <li><a <if condition="$reward_type eq 3">class="active"</if> href="{:U('reward_detail',array('reward_type'=>'3'))}">周返</a></li>
+                    <!--<li><a <if condition="$reward_type eq 4">class="active"</if> href="{:U('reward_detail',array('reward_type'=>'4'))}">团队</a></li>-->
+                    <li><a <if condition="$reward_type eq 5">class="active"</if> href="{:U('reward_detail',array('reward_type'=>'5'))}">加速</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="second">
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <th>会员帐户</th>
+                <th>时间</th>
+                <th>奖励点</th>
+            </tr>
+            <volist name="data" id="v">
+                <tr>
+                    <td>{$v.username}</td>
+                    <td>{$v.create_time|date='Y-m-d H:i',###}</td>
+                    <td>{$v.amount}
+                        <if condition="$v.type eq 1">(现金)
+                            <elseif condition="$v.type eq 2"/>(提现)
+                            <elseif condition="$v.type eq 3"/>(购物)
+                            <elseif condition="$v.type eq 4"/>(兑换)
+                        </if>
+                    </td>
+                </tr>
+            </volist>
+        </table>
+    </section>
+</div>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+<include file="Public/foot" />

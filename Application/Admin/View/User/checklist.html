@@ -1,0 +1,173 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">商家申请管理</strong>  <small></small></div>
+      </div>
+
+      <hr>
+
+
+      <form class="am-g"  action="{:U('')}" method="get">
+        <!--<div class="am-u-sm-12 am-u-md-3">-->
+          <!--<div class="am-form-group">-->
+            <!--<select  name="status" data-am-selected="{btnSize: 'sm'}">-->
+             <!--<option value="1">认证通过</option>-->
+             <!--<option value="2">认证退回</option>-->
+            <!--</select>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <div class="am-u-sm-12 am-u-md-3">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" name="username" placeholder="用户名精确查找" value="{$username}">
+          </div>
+        </div>
+
+        <div class="am-u-sm-12 am-u-md-3">
+          <div class="am-input-group am-input-group-sm">
+            <span class="am-input-group-btn">
+            <button class="am-btn am-btn-primary" type="button">搜索</button>
+          </span>
+          </div>
+        </div>
+      </form>
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <div class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th class="table-title">序号</th>
+                <th class="table-title">用户名</th>
+                <!--<th class="table-title">姓名</th>-->
+                <!--<th class="table-title">照片</th>-->
+                <th class="table-title">状态</th>
+                <th class="table-date am-hide-sm-only">提交时间</th>
+                <th class="table-set">操作</th>
+              </tr>
+              </thead>
+              <tbody>
+
+              <empty name="list">
+                <tr>
+                  <td>暂无数据</td>
+                </tr>
+              </empty>
+              <php>
+                $daili_level = C('daili');
+              </php>
+              <volist name="list" id="vo">
+                <tr>
+                  <td>{$key+1}</td>
+                  <td><a href="#">{$vo['username']}</a></td>
+                  <!--<td><a href="#">{$vo['truename']}</a></td>-->
+                  <!--<td><a href="#">-->
+                    <!--<img src="{$vo['path']}" style="width: 50px;height: 50px"/>-->
+                  <!--</a></td>-->
+                  <td><a href="#">
+                   <if condition="$vo['status'] eq 1">
+                     待审核
+                     <else/>
+                      已通过
+                   </if>
+                  </a></td>
+
+                  <td class="am-hide-sm-only">{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+                  <td>
+                    <div class="am-btn-toolbar">
+                      <div class="am-btn-group am-btn-group-xs">
+                        <a  href="{:U('checkEdit',array('id'=>$vo['id']))}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>查看详细</a>&nbsp;&nbsp;
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </volist>
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 {$count} 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  {$show}
+
+
+                </ul>
+              </div>
+            </div>
+            <hr />
+          </>
+        </div>
+
+      </div>
+    </div>
+
+    <!--<footer class="admin-content-footer">-->
+      <!--<hr>-->
+      <!--<p class="am-padding-left">软件版权归使用者所有,所产生的后果与开发者无关.</p>-->
+    <!--</footer>-->
+
+  </div>
+
+</block>
+<block name="js">
+  <script>
+      $(function () {
+
+          var url2 = "{:U('dongjie')}";
+
+          $('.dongjie').click(function () {
+              $.post(url2,{id:$(this).attr('user_id')},function (data) {
+                  layer.msg(data.msg,{time:1000},function () {
+                      if(data.code){
+                          return false;
+                      }else{
+                          window.location.href=data.data;
+                      }
+                  })
+              },'json')
+          })
+
+          $('#username').change(function () {
+
+              var url = "{:U('getTrueName')}";
+              var that = $(this);
+              var username = that.val();
+              $.post(url,{username:username},function (data) {
+                  if(data.code){
+                      alert(data.msg);
+                      return;
+                  }else{
+                      $('#p').html(data.data);
+                  }
+              },'json');
+          });
+          $('#pro').change(function(){
+              $.ajax({
+                  type:"post",
+                  url:"{:U('Public/area_choose')}",
+                  data:'pro_id='+$('#pro').val(),
+                  dataType:"json",
+                  success:function(data){
+                      $('#city').html(data);
+                  }
+              });
+          });
+          $('#city').change(function(){
+              $.ajax({
+                  type:"post",
+                  url:"{:U('Public/city_choose')}",
+                  data:'city_id='+$('#city').val(),
+                  dataType:"json",
+                  success:function(data){
+                      $('#area').html(data);
+                  }
+              });
+          });
+
+
+      })
+  </script>
+</block>

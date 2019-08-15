@@ -1,0 +1,90 @@
+<include file="Property/head"/>
+
+<body>
+<div class="header">
+    <a href="javascript:history.back(-1)"><img src="__IMG__/Return.png" alt=""></a>
+    <i>USDT</i>
+    <span>{$usdt.z8}</span>
+    <p class="usdt_price"></p>
+</div>
+<div class="title">
+    <div>全部</div>
+    <div>转入</div>
+    <div>转出</div>
+</div>
+<ul>
+    <li>
+        <img src="__IMG__/sd2.png" alt="">
+        <span>兑换扣款</span>
+        <p>[WFX-减少]</p>
+        <em>2019-04-10</em>
+        <i>100.00000</i>
+    </li>
+    <li>
+        <img src="__IMG__/sd2.png" alt="">
+        <span>兑换扣款</span>
+        <p>[WFX-减少]</p>
+        <em>2019-04-10</em>
+        <i>100.00000</i>
+    </li>
+    <li>
+        <img src="__IMG__/sd2.png" alt="">
+        <span>兑换扣款</span>
+        <p>[WFX-减少]</p>
+        <em>2019-04-10</em>
+        <i>100.00000</i>
+    </li>
+    <li>
+        <img src="__IMG__/sd2.png" alt="">
+        <span>兑换扣款</span>
+        <p>[WFX-减少]</p>
+        <em>2019-04-10</em>
+        <i>100.00000</i>
+    </li>
+    <li>
+        <img src="__IMG__/sd2.png" alt="">
+        <span>兑换扣款</span>
+        <p>[WFX-减少]</p>
+        <em>2019-04-10</em>
+        <i>100.00000</i>
+    </li>
+</ul>
+</body>
+
+<script src="__COMMON__/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+
+    ajax_get();
+    setInterval(function(){
+        ajax_get()
+    }, 10000);
+
+    function ajax_get() {
+        $.ajax({
+            type:"post",
+            url:"{:U('Hangqing/api')}",
+            data:{
+            },
+            dataType:"json",
+            success:function(res){
+                // console.log(res.change);
+                //console.log(res.price);
+                if(res){
+                    $('.usdt_price').text("≈￥"+(parseFloat(res.rate)*{$usdt.z8}).toFixed(2));
+                    // $('.usdt').text((parseFloat(res.rate)*{$data.z8}).toFixed(2));
+                    // $('#iii').text(parseFloat(res.rate).toFixed(4));
+                    //
+                    // $('#iii').parent().find('button').text(res.change+'%');
+                    // if(res.change < 0){
+                    //     $("#iii").parent().find('button').addClass('reduce');
+                    // }else{
+                    //     $('#iii').parent().find('button').text('+'+res.change+'%');
+                    // }
+                }else{
+                    alert(res.msg);
+                }
+            }
+        });
+    }
+</script>
+</html>

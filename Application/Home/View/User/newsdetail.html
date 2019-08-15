@@ -1,0 +1,33 @@
+<include file="Public/head" />
+
+
+<div id="statement">
+    <style>
+        .heads{
+            background: linear-gradient(to right, #1e91ff, #075ffe);
+        }
+        .container{
+            width: 98%!important;padding: 0 .2rem!important;
+        }
+    </style>
+    <div class="heads">
+        <div class="container" >
+            <div class="p1">{$data.title}</div>
+            <!--<a href="javascript:void(0);" id="goback"><img src="__WAPIMG__/arrowl.png"></a>-->
+            <a href="{:U('User/news')}" id="goback"><img src="__WAPIMG__/arrowl.png"></a>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="p1">
+                {$data.content}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+</html>

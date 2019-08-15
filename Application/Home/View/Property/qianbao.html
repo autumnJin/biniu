@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>钱包</title>
+  <link rel="stylesheet" href="__CSS__/ming_common.css">
+  <link rel="stylesheet" href="__CSS__/ming.css">
+</head>
+
+<body>
+  <header class="header">
+    <a href='javascript:history.back(-1)'><img src="http://hb90508.zhongbkj.com/Public/Home/images/Return.png"
+        alt=""></a>
+    <p>钱包</p>
+    <span class="kongge"></span>
+  </header>
+  <section class="content">
+    <div class="content_header">
+      <!-- <div class="content_header_money">
+        <p>总资产</p>
+        <p>123456.00</p>
+        <p>≈ 0 CNY</p>
+      </div> -->
+      <ul>
+        <li><a href="{:U('Property/zhuanshou')}"><img src="__IMG__/shoukuan.png" alt=""><span>充币</span></a></li>
+        <li><a href="{:U('Property/zhuanzhang')}"><img src="__IMG__/zhuanzhang.png" alt=""><span>提币</span></a></li>
+      </ul>
+    </div>
+    <div class="qianbao">
+      <h5>充提记录</h5>
+      <ul>
+
+        <volist name="coinListData" id="vo"> 
+
+            <li class="bi_record">
+
+                <if condition="$vo['type'] eq 1">
+
+                    <p><span>类型:</span><span>充币</span></p>
+
+                <else/>
+
+                    <p><span>类型:</span><span>提币</span></p>
+
+                </if>
+
+                <p><span>币种:</span><span>{$vo['coinname']|strtoupper}</span></p>
+                
+                <p><span>数量:</span><span>{$vo['amount']}</span></p>
+
+                <if condition="$vo['status'] eq 1">
+
+                    <p><span>状态</span><span style="color: green;">已完成</span></p>
+
+                <elseif condition="$vo['status'] eq 2" />
+
+                    <p><span>状态</span><span style="color: red;">审核中</span></p>
+
+                <else/>
+
+                    <p><span>状态</span><span style="color: red;">已驳回</span></p>
+
+                </if>
+
+                <if condition="$vo['endtime'] eq 0">
+
+                    <p><span>时间:</span><span>---</span></p>
+
+                <else/>
+
+                    <p><span>时间:</span><span>{$vo['endtime']||date='Y-m-d H:i:s',###}</span></p>
+                    
+                </if>
+
+            </li>
+
+        </volist>
+
+      </ul>
+    </div>
+  </section>
+
+  <style>
+    .qianbao {
+      padding: 0 2.5%;
+      box-sizing: border-box;
+    }
+
+    .bi_record {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      line-height: .7rem;
+      font-size: .28rem;
+      border-bottom: 1px solid #eaeaea;
+      padding: .3rem 0;
+    }
+
+     .bi_record p {
+      width: 50%;
+    }
+
+    .bi_record p:last-child {
+      width: 100%;
+    } 
+
+    .bi_record p>span:first-child {
+      margin-right: .2rem;
+    }
+
+    .bi_record p>span:last-child {
+      font-weight: 700;
+    }
+  </style>
+
+</body>
+
+</html>

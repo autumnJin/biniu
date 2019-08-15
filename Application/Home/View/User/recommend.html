@@ -1,0 +1,42 @@
+<include file="Public/head" />
+<div id="recommend">
+    <div class="heads">
+        <div class="container">
+            <div class="p1">推荐人</div>
+            <!--<a href="javascript:void(0);" id="goback"><img src="__WAPIMG__/arrowl.png"></a>-->
+            <a href="{:U('User/index')}" id="goback"><img src="__WAPIMG__/arrowl.png"></a>
+        </div>
+    </div>
+    <section class="first" style="background: url('__WAPIMG__/recommend.png') no-repeat;"></section>
+    <section class="second">
+        <div class="container">
+            <div class="content">
+                <div class="pic">
+                    <img src="__WAPIMG__/reico1.png">
+                </div>
+                <div class="p1">推荐人：{$topInfo.truename}</div>
+                <div class="p2">编号：00{$topInfo.id}</div>
+                <div class="p3"><span>已成功邀请<b>{$recomSum}</b>人</span> <span>累计赚取<b>{$topInfo.all_achievement}</b>元奖金</span></div>
+            </div>
+        </div>
+    </section>
+    <section class="third">
+        <div class="container">
+            <div class="content">
+                <div class="pic">
+                    <img src="__WAPIMG__/reico2.png" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="fourth">
+        <div class="container">
+            <a class="shares" href="{:U('qrcode')}">立即去分享推荐</a>
+        </div>
+    </section>
+</div>
+</body>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+</html>

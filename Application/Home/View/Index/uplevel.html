@@ -1,0 +1,45 @@
+<include file="Public/head" />
+<style>
+    .tipList{
+        color: #666;
+        margin-left: .5rem;
+    }
+    .tipList:first-child {
+        margin-left: 0;
+    }
+</style>
+<div id="home">
+    <div class="hhead">
+        <div class="container">
+            <div class="p1">会员升级</div>
+            <div class="searchs">
+                <form action="{:U('goods/lists')}" method="get">
+                    <input type="text" name="goodsname" id="keywords" placeholder="搜商品享优惠" value="{$s}" />
+                    <input type="button" name="" id="btn" style="background: url('__WAPIMG__/search.png') no-repeat;">
+                </form>
+            </div>
+        </div>
+    </div>
+    <section class="sixth" style="margin-bottom: 2.2rem">
+        <div class="container">
+            <section class="fourth">
+            <div class="container">
+            <div class="title" style="background: url('__WAPIMG__/hbg.png') no-repeat center;">升级专区</div>
+            <volist name="goodsList" id="vo">
+            <ul>
+            <volist name="vo['children']" id="vv">
+            <li>
+            <a href="{:U('goods/detail',array('id'=>$vv['id']))}">
+            <img src="__ROOT__{$vv['img'][0]['path']}" alt="">
+            <span>￥{$vv['price']}</span>
+            </a>
+            </li>
+            </volist>
+            </ul>
+            </volist>
+            </div>
+            </section>
+        </div>
+    </section>
+</div>
+<include file="Public/foot" />

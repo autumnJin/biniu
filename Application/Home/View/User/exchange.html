@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="__CSS__/ming_common.css">
+  <link rel="stylesheet" href="__CSS__/ming.css">
+</head>
+
+<body>
+  <header class="header">
+    <a href='javascript:history.back(-1)'><img src="http://hb90508.zhongbkj.com/Public/Home/images/Return.png"
+        alt=""></a>
+    <p>WFX转算力钱包</p>
+    <span class="kongge"></span>
+  </header>
+  <section class="zhuanzhang">
+    <div class="zhuanzhang_choose">
+      <div>
+        <!--<img src="https://bbtcdn.8btc.com/data/attachment/common/c8/common_2_icon.svg" alt="">-->
+        <!--<span>BTC</span>  -->
+
+        <img src="https://bbtcdn.8btc.com/data/attachment/common/c8/common_2_icon.svg" alt="">
+        <span>WFX</span><span style="margin-left: 0.5rem;">{$user.z5}</span>  <span>算力钱包</span><span style="margin-left: 0.5rem;">{$user.z6}</span>
+      </div>
+      <div>
+        <!--<img src="__IMG__/youjiantou.png" alt="">-->
+      </div>
+    </div>
+    <div class="zhuanzhang_input">
+      <form action="{:U(sell)}" id="cp" method="post">
+      <!--<section>-->
+        <!--<p>钱包地址</p>-->
+        <!--<input type="text" placeholder="点击添加地址">-->
+      <!--</section>-->
+      <section>
+        <p>数量</p>
+        <input type="text" placeholder="填写数量" name="amount">
+      </section>
+
+      <section>
+        <p>密码</p>
+        <input type="password" name="password" placeholder="请输入支付密码">
+      </section>
+      <div class="zhuanzhang_btn" id="btn">
+        确定
+      </div>
+      </form>
+    </div>
+
+  </section>
+
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $("#btn").click(function () {
+      $.ajax({
+        type:"post",
+        url:"{:U('User/exchange')}",
+        data: $("#cp").serialize(),
+        dataType:"json",
+        success:function(data){
+          if(data.code > 0){
+            alert(data.message);
+            window.location.href = "{:U('User/exchange')}";
+          }else{
+            alert(data.message);
+          }
+        }
+      });
+    });
+
+    // $('body').on('click',function(){
+    //   $('.dialog').addClass('hide');
+    // })
+    // $(".zhuanzhang_choose").on('click', function (e) {
+    //   $(".dialog").removeClass('hide')
+    //   e.stopPropagation();
+    // })
+    // $(".dialog_content").on('click', function(e){
+    //   e.stopPropagation();
+    // })
+  </script>
+</body>
+
+</html>

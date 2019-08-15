@@ -1,0 +1,103 @@
+<include file="Public/header" />
+<link href="__CSS__/personal.css" rel="stylesheet" type="text/css"/>
+<link href="__CSS__/infstyle.css" rel="stylesheet" type="text/css"/>
+
+<header>
+    <article>
+        <div class="mt-logo">
+            <include file="Public/search" />
+        </div>
+    </article>
+</header>
+
+<div class="nav-table">
+    <include file="Public/nav" />
+</div>
+<b class="line"></b>
+<div class="center">
+    <div class="col-main">
+        <div class="main-wrap">
+            <div class="user-safety">
+                <div class="am-cf am-padding">
+                    <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">转账</strong> / <small></small></div>
+                </div>
+                <hr/>
+
+                <div class="check">
+                    <ul>
+                        <li>
+                            <div class="m-left">
+                                <div class="fore1">增值积分转动态积分</div>
+                            </div>
+                            <div class="fore3">
+                                <a href="{:U('zhuanzhang',array('id'=>1))}">
+                                    <div class="am-btn am-btn-secondary">进入</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="m-left">
+                                <div class="fore1">动态积分转充值积分</div>
+                            </div>
+                            <div class="fore3">
+                                <a href="{:U('zhuanzhang',array('id'=>2))}">
+                                    <div class="am-btn am-btn-secondary">进入</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="m-left">
+                                <div class="fore1">动态积分转消费积分</div>
+                            </div>
+                            <div class="fore3">
+                                <a href="{:U('zhuanzhang',array('id'=>3))}">
+                                    <div class="am-btn am-btn-secondary">进入</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="m-left">
+                                <div class="fore1">动态积分转复投积分</div>
+                            </div>
+                            <div class="fore3">
+                                <a href="{:U('zhuanzhang',array('id'=>4))}">
+                                    <div class="am-btn am-btn-secondary">进入</div>
+                                </a>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="m-left">
+                                <div class="fore1">充值积分转复投积分</div>
+                            </div>
+                            <div class="fore3">
+                                <a href="{:U('zhuanzhang',array('id'=>5))}">
+                                    <div class="am-btn am-btn-secondary">进入</div>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="m-left">
+                                <div class="fore1">会员充值积分互转</div>
+                            </div>
+                            <div class="fore3">
+                                <a href="{:U('zhuanzhang_user')}">
+                                    <div class="am-btn am-btn-secondary">进入</div>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+        <include file="Public/footer"/>
+    </div>
+    <include file="Public/aside_menu"/>
+
+</div>
+<include file="Public/foot_base" />
+</body>
+
+</html>

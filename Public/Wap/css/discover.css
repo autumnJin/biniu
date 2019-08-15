@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  background-color: #f6f5fa;
+}
+body .header {
+  width: 100%;
+  height: 1rem;
+  line-height: 1.2rem;
+  background-color: #fff;
+  text-align: center;
+  font-size: 0.3rem;
+  border-bottom: 1px solid #ececec;
+}
+body .banner {
+  width: 100%;
+  height: 3rem;
+  margin-top: 0.2rem;
+}
+body .banner img {
+  width: 100%;
+  height: 100%;
+}
+body .hot,
+body .circle {
+  width: 100%;
+  height: 2.2rem;
+}
+body .hot .title,
+body .circle .title {
+  width: 100%;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  font-size: 0.3rem;
+  color: #333333;
+  box-sizing: border-box;
+  padding-left: 0.3rem;
+}
+body .hot .content,
+body .circle .content {
+  width: 100%;
+  height: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+body .hot .content div,
+body .circle .content div {
+  width: 32.5%;
+  height: 1.5rem;
+  background-color: #fff;
+  text-align: center;
+}
+body .hot .content div img,
+body .circle .content div img {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: 0.2rem;
+}
+body .circle .content div {
+  margin-top: 0.1rem;
+}
+body .mui-bar {
+  box-shadow: none;
+  background-color: #fff;
+  height: 0.8rem;
+  box-shadow: 0px -2px 0px 0px rgba(0, 0, 0, 0.05);
+}
+body .mui-bar .mui-tab-item {
+  position: relative;
+  line-height: 0.2rem;
+  vertical-align: bottom;
+}
+body .mui-bar .mui-tab-item img {
+  width: 0.4rem;
+  height: 0.4rem;
+  position: absolute;
+  top: 0.1rem;
+  left: 0.44rem;
+}
+body .mui-bar .mui-tab-item span {
+  font-size: 0.22rem;
+}

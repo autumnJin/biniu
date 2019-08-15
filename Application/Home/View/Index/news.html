@@ -1,0 +1,31 @@
+<include file="Public/head" />
+<style>
+	.container .p1 a {
+		color: #666;
+	}
+</style>
+<div id="statement">
+	<div class="heads">
+		<div class="container">
+			<div class="p1">公告</div>
+			<!--<a href="javascript:void(0);" id="goback"><img src="__WAPIMG__/arrowl.png"></a>-->
+			<a href="{:U('User/index')}" id="goback"><img src="__WAPIMG__/arrowl.png"></a>
+		</div>
+	</div>
+	<div class="content">
+		<div class="container">
+			<div class="container">
+				<volist name="data" id="vo">
+					<div class="p1">
+						<a href="{:U('newsdetail',array('id'=>$vo['id']))}">{$key+1} : {$vo['title']}</a>
+					</div>
+				</volist>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+</html>

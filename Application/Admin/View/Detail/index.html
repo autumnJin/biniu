@@ -1,0 +1,121 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">流水明细</strong>  <small></small></div>
+      </div>
+
+      <hr>
+
+      <form class="am-g" action="{:U('')}" method="get">
+
+        <!--<div class="am-u-sm-12 am-u-md-2">-->
+          <!--<input type="text" class="am-form-field" name="start_time" data-am-datepicker="{format: 'yyyy-mm-dd ', viewMode: 'years', minViewMode: 'days'}" placeholder="注册开始时间" data-am-datepicker readonly/>-->
+        <!--</div>-->
+        <!--<div class="am-u-sm-12 am-u-md-2">-->
+          <!--<input type="text" class="am-form-field" name="end_time" data-am-datepicker="{format: 'yyyy-mm-dd ', viewMode: 'years', minViewMode: 'days'}" placeholder="注册结束时间" data-am-datepicker readonly/>-->
+        <!--</div>-->
+        <div class="am-u-sm-12 am-u-md-2">
+          <input type="text" class="am-form-field" name="start_time"  value="{$start_time}" placeholder="开通开始时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <input type="text" class="am-form-field" name="end_time"  value="{$end_time}" placeholder="开通开始时间" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',readOnly:true})" readonly/>
+        </div>
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-form-group">
+            <php>
+              $c = C('account_type');
+            </php>
+            <select data-am-selected="{btnSize: 'sm'}" name="type">
+              <option value="0">账户类型</option>
+
+              <volist name="c" id="vo">
+                <option value="{$key}" <php>if($type == $key) echo 'selected'</php>>{$vo}</option>
+              </volist>
+
+            </select>
+          </div>
+        </div>
+
+
+        <div class="am-u-sm-12 am-u-md-3">
+          <div class="am-input-group am-input-group-sm">
+            <input type="text" class="am-form-field" name="username" placeholder="用户名精确查找" value="{$username}">
+          </div>
+        </div>
+
+
+
+        <div class="am-u-sm-12 am-u-md-2">
+          <div class="am-input-group am-input-group-sm">
+            <input class="am-btn am-btn-primary" value="搜索" type="submit"/>
+          </span>
+          </div>
+        </div>
+      </form>
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <div class="am-form">
+            <php>
+              $a = C('account_type');
+            </php>
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th>序号</th>
+                <th class="table-title">用户名</th>
+                <th class="table-date am-hide-sm-only">时间</th>
+                <th class="table-date am-hide-sm-only">数量</th>
+                <th class="table-date am-hide-sm-only">备注</th>
+                <th class="table-date am-hide-sm-only">关联账户</th>
+              </tr>
+              </thead>
+              <tbody>
+              <volist name="list" id="vo">
+                <tr>
+                  <td>{$key}</td>
+                  <td>{$vo['username']}</td>
+                  <td>{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+                  <td class="am-hide-sm-only">{$vo['flag']}{$vo['amount']}</td>
+                  <td class="am-hide-sm-only">{$vo['tips']}</td>
+                  <td class="am-hide-sm-only">{$a[$vo['type']]}</td>
+                </tr>
+              </volist>
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 {$count} 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  {$page}
+                </ul>
+              </div>
+            </div>
+            <hr />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</block>
+
+<block name="js">
+  <script>
+    $(function () {
+        var url = "{:U('activeUser')}";
+        $('.useractive').click(function () {
+            $.post(url,{user_id:$(this).attr('user_id')},function (data) {
+                layer.msg(data.msg,{time:1000},function () {
+                    if(data.code){
+                        return false;
+                    }else{
+                        window.location.href=data.data;
+                    }
+                })
+            },'json')
+        })
+    })
+  </script>
+</block>

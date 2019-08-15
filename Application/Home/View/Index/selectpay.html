@@ -1,0 +1,102 @@
+<include file="Public/header" />
+<link href="__CSS__/personal.css" rel="stylesheet" type="text/css"/>
+<link href="__CSS__/stepstyle.css" rel="stylesheet" type="text/css"/>
+
+<header>
+    <article>
+        <div class="mt-logo">
+            <include file="Public/search" />
+        </div>
+    </article>
+</header>
+
+<div class="nav-table">
+    <include file="Public/nav" />
+</div>
+<b class="line"></b>
+<div class="center">
+    <div class="col-main">
+        <div class="main-wrap">
+
+            <div class="am-cf am-padding">
+                <div class="am-fl am-cf"><strong class="am-text-danger am-text-lg">订单支付</strong>  <small></small></div>
+            </div>
+            <hr/>
+            <!--进度条-->
+            <div class="am-form am-form-horizontal"  id="cp">
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">充值单号</label>
+                    <div class="am-form-content">
+                        <input type="text" id="user-old-password1" placeholder="" name="" readonly value="{$order['order_num']}">
+                        <input type="hidden" id="user-old-password1" placeholder="" name="id" readonly value="{$data['id']}">
+                    </div>
+                </div>
+                <div class="am-form-group">
+                    <label for="user-old-password" class="am-form-label">充值金额</label>
+                    <div class="am-form-content">
+                        <input type="text" id="user-old-password" placeholder="" name="amount" readonly value="{$order['amount']}">
+                    </div>
+                </div>
+
+                <div class="info-btn">
+                    <input class="am-btn am-btn-danger" type="button"  value="立即支付" onclick="callpay()"/>
+                </div>
+
+            </div>
+        </div>
+        <include file="Public/footer"/>
+    </div>
+
+
+</div>
+<include file="Public/foot_base" />
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script type="text/javascript">
+
+
+
+    function jsApiCall()
+    {
+        WeixinJSBridge.invoke(
+            'getBrandWCPayRequest',
+        <?php echo $jsApiParameters; ?>,
+        function(res){
+            WeixinJSBridge.log(res.err_msg);
+           // alert(res.err_code+res.err_desc+res.err_msg);
+            if(res.err_msg=="get_brand_wcpay_request:ok"){
+                alert('支付成功');
+                location.href="{:U('Index/index')}";
+            }
+            // else{
+            //   alert('支付失败');
+            //     location.href="{:U('User/order')}";
+            // }
+        }
+    );
+    }
+
+
+
+
+    function callpay()
+    {
+        if (typeof WeixinJSBridge == "undefined"){
+            if( document.addEventListener ){
+                document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+            }else if (document.attachEvent){
+                document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+            }
+        }else{
+            jsApiCall();
+        }
+    }
+
+
+
+
+</script>
+</body>
+
+</html>

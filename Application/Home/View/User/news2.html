@@ -1,0 +1,33 @@
+<include file="User/header"/>
+<body>
+    <div class="header">
+        <a href="javascript:history.back(-1)"><img src="__IMG__/Return.png" alt=""></a>
+        <h2>公告</h2>
+    </div>
+    <div>
+        <volist name="data" id="vo">
+            <div class="us">
+                <a href="{:U('newsdetail',array('id'=>$vo['id']))}">{$key+1} : {$vo['title']}</a>
+            </div>
+        </volist>
+    </div>
+
+    <style>
+        .us{
+            padding: 0 .2rem;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .us a{
+            font-size: .24rem;
+            color: #646464;
+            text-decoration: none;
+        }
+        /*111*/
+    </style>
+
+</body>
+
+</html>

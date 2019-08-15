@@ -1,0 +1,96 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">账户流水</strong>  <small></small></div>
+      </div>
+
+      <hr>
+
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <form class="am-form">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <thead>
+              <tr>
+                <th class="table-id">序号</th>
+                <th class="table-title">用户名</th>
+                <th class="table-type">金额</th>
+                <th class="table-type">类型</th>
+                <th class="table-type">账户</th>
+                <th class="table-type">复消币</th>
+                <th class="table-author am-hide-sm-only">商品类别</th>
+                <th class="table-author am-hide-sm-only">商品属性</th>
+                <th class="table-date am-hide-sm-only">投放区域</th>
+                <th class="table-set">是否上架</th>
+                <th class="table-set">创建时间</th>
+                <th class="table-set">操作</th>
+              </tr>
+              </thead>
+              <tbody>
+              <volist name="data" id="vo">
+                <tr>
+                  <td>{$vo['id']}</td>
+                  <td>{$vo['name']}</td>
+                  <td>{$vo['price']}</td>
+                  <td>{$vo['price4']}</td>
+                  <td>{$vo['price2']}</td>
+                  <td>{$vo['price5']}</td>
+                  <td>{$vo['gc_name']}</td>
+                  <td>
+                    <php>
+                      $area = C('AREA');
+                      $protype = $vo['pro_type'] == 1 ? '注册单':'零售单';
+                      $fenqu = $area[$vo['home']];
+                      $status = $vo['status'] == 1 ? '上架' : '下架';
+                    </php>
+                    {$protype}
+                  </td>
+                  <td>{$fenqu}</td>
+                  <td>{$status}</td>
+                  <td>{$vo['create_time']|date="Y-m-d H:i:s",###}</td>
+                  <td>
+                    <div class="am-btn-toolbar">
+                      <div class="am-btn-group am-btn-group-xs">
+                        <a href="{:U('edit_goods',array('id'=>$vo['id']))}" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
+                        <!--<button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only xiajia"  g="{$vo['id']}"><span class="am-icon-trash-o"></span>下架</button>-->
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </volist>
+              </tbody>
+            </table>
+            <div class="am-cf">
+              共 {$count} 条记录
+              <div class="am-fr">
+                <ul class="am-pagination">
+                  {$page}
+                  <!--<li class="am-disabled"><a href="#">«</a></li>-->
+                  <!--<li class="am-active"><a href="#">1</a></li>-->
+                  <!--<li><a href="#">2</a></li>-->
+                  <!--<li><a href="#">3</a></li>-->
+                  <!--<li><a href="#">4</a></li>-->
+                  <!--<li><a href="#">5</a></li>-->
+                  <!--<li><a href="#">»</a></li>-->
+
+                </ul>
+              </div>
+            </div>
+            <hr />
+            <p>注：.....</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2014 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+
+  </div>
+
+</block>

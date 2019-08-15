@@ -1,0 +1,70 @@
+<include file="Public/head" />
+
+<div id="getMoney">
+    <div class="heads">
+        <div class="container">
+            <div class="p1">购买WFX币</div>
+            <!--<a href="javascript:void(0);" id="goback"><img src="__WAPIMG__/arrowl.png"></a>-->
+            <a href="{:U('User/index')}" id="goback"><img src="__WAPIMG__/arrowl.png"></a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="froms">
+            <div class="container">
+                <form action="{:U(rechargeWfx)}" id="cp" method="post">
+                    <div class="names">
+                        <label for="">余额</label>
+                        <input type="text" name="z1" value="{$user_info['z1']}" readonly>
+                    </div>
+                    <div class="names">
+                        <label for="" style="margin-bottom: 0.3rem;">购买类型</label>
+                        <select name="type" style="width: 100%;height:.9rem;border: .3rem;margin-top:-0.3rem;padding-left: .3rem;box-sizing: border-box;color: #313131;font-size: .3rem;line-height: .8rem;background: #f3f3f3;">
+                            <option value="1">余额购买</option>
+                            <!--<option value="2">流通积分</option>-->
+                            <!--<option value="3">购物积分</option>-->
+                            <!--<option value="4">兑换积分</option>-->
+                        </select>
+                    </div>
+                    <div class="names">
+                        <label for="">当前汇率</label>
+                        <input type="text" name="hapy" value="{$config['hapy']}" readonly>
+                    </div>
+                    <div class="names">
+                        <label for="">购买金额</label>
+                        <input type="text" name="amount" placeholder="请输入充值金额">
+                    </div>
+                    <div class="names">
+                        <label for="">支付密码</label>
+                        <input type="password" name="password" placeholder="请输入支付密码">
+                    </div>
+                    <input type="button" id="btn" name="" value="确 认" style="width: 91%;">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    $(function() {
+        $('#btn').click(function () {
+            $.ajax({
+                type: "POST",
+                url: "{:U('User/rechargeWfx')}",
+                data: $("#cp").serialize(),
+                dataType: "json",
+                success: function (data){
+                    if(data.code > 0){
+                        alert(data.message);
+                        window.location.href = "{:U('Index/index')}";
+                    }else{
+                        alert(data.message);
+                    }
+                },
+            })
+        })
+    });
+</script>
+</html>

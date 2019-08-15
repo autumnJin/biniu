@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>GHA全球健康联盟-打造人居健康第一平台</title>
+    <link rel="stylesheet" type="text/css" href="__WAPCSS__/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="__WAPCSS__/common.css"/>
+    <script type="text/javascript">
+        !(function(){
+            fontSize();
+            window.onresize=function(){
+                fontSize();
+            }
+            //改变默认字体大小
+            function fontSize(){
+                var wid = document.documentElement.clientWidth;
+                document.documentElement.style.fontSize = wid/ 7.5+ 'px';
+            }
+        })();
+    </script>
+</head>
+<style>
+    .sd1{
+        font-size: 0.3rem;
+        margin-left: 0.5rem;
+    }
+    select{
+        width: 90%;
+        height: 1rem;
+        display:block;
+        margin: 0.2rem auto;
+        font-size: 0.3rem;
+        text-align: center;
+        border-radius: 10px;
+        outline: none;
+    }
+    option{
+        text-align: center;
+        outline: none;
+    }
+    input{
+        width: 90%;
+        margin: 0 auto;
+        height: 1rem;
+        display:block;
+        outline: none;
+        font-size: 0.3rem;
+        border-radius: 10px;
+        border:none;
+        margin-bottom:0.2rem;
+    }
+    button{
+        width: 50%;
+        height: 1rem;
+        display: block;
+        margin: 1.2rem auto;
+        border-radius: 0.5rem;
+        border:none;
+        font-size: 0.4rem;
+        outline: none;
+        color:#fff;
+        background: linear-gradient(to right,#ffc200,#f90);
+    }
+</style>
+
+<body>
+<div id="detail">
+    <div class="heads">
+        <div class="container">
+            <div class="p1">闪兑资产</div>
+            <a href="{:U('User/index')}" id="goback"><img src="__WAPIMG__/arrowl.png"></a>
+        </div>
+    </div>
+    <div id="recommend">
+        <section class="first" style="background: url('__WAPIMG__/recommend.png') no-repeat;"></section>
+        <section class="second">
+            <div class="container">
+                <div class="content">
+                    <div class="pic">
+                        <img src="__WAPIMG__/reico1.png">
+                    </div>
+                    <div class="p1">WFX资产：{$UserInfo.z5}</div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="sd1">资产兑换：</div>
+    <select id="type">
+        <option value="2">流通积分</option>
+        <option value="4">兑换积分</option>
+    </select>
+    <div>
+        <div class="sd1" style="margin-bottom: 0.2rem;">兑换数量：</div>
+        <input type="text" id="num">
+    </div>
+    <div>
+        <div class="sd1" style="margin-bottom: 0.2rem;">支付密码：</div>
+        <input type="password" id="password2">
+    </div>
+    <button id="btn">确认</button>
+
+</div>
+</body>
+<script src="__WAPJS__/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__WAPJS__/main.js" type="text/javascript" charset="utf-8"></script>
+</html>
+<script>
+    $('#btn').click(function(){
+        $.ajax({
+            type: "POST",
+            url: "{:U('User/change')}",
+            data: {
+                type:$('#type').val(),
+                num:$('#num').val(),
+                password2:$('#password2').val(),
+            },
+            dataType: "json",
+            success: function (data){
+                if(data.code > 0){
+                    alert(data.message);
+                    window.location.href = "{:U('User/change')}";
+                }else{
+                    alert(data.message);
+                }
+            },
+        })
+    })
+</script>

@@ -1,0 +1,83 @@
+<include file="Property/head"/>
+<body>
+<div class="header">
+    <a href="javascript:history.back(-1)"><img src="__IMG__/Return.png" alt=""></a>
+    <i>LTC</i>
+    <span>{$ltc.z9}</span>
+    <p class="ltc_price">≈￥12345.00</p>
+</div>
+<div class="title">
+    <div>全部</div>
+    <div>转入</div>
+    <div>转出</div>
+</div>
+<ul>
+    <li>
+        <img src="__IMG__/sd2.png" alt="">
+        <span>兑换扣款</span>
+        <p>[WFX-减少]</p>
+        <em>2019-04-10</em>
+        <i>100.00000</i>
+    </li>
+    <li>
+        <img src="__IMG__/sd2.png" alt="">
+        <span>兑换扣款</span>
+        <p>[WFX-减少]</p>
+        <em>2019-04-10</em>
+        <i>100.00000</i>
+    </li>
+    <li>
+        <img src="__IMG__/sd2.png" alt="">
+        <span>兑换扣款</span>
+        <p>[WFX-减少]</p>
+        <em>2019-04-10</em>
+        <i>100.00000</i>
+    </li>
+    <li>
+        <img src="__IMG__/sd2.png" alt="">
+        <span>兑换扣款</span>
+        <p>[WFX-减少]</p>
+        <em>2019-04-10</em>
+        <i>100.00000</i>
+    </li>
+    <li>
+        <img src="__IMG__/sd2.png" alt="">
+        <span>兑换扣款</span>
+        <p>[WFX-减少]</p>
+        <em>2019-04-10</em>
+        <i>100.00000</i>
+    </li>
+</ul>
+</body>
+<script src="__COMMON__/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+
+    ajax_get();
+    setInterval(function(){
+        ajax_get()
+    }, 10000);
+
+    function ajax_get() {
+        $.ajax({
+            type:"post",
+            url:"{:U('price')}",
+            data:{
+                type:'LTC',
+            },
+            dataType:"json",
+            success:function(data){
+                // console.log(data);
+                if(data){
+                    // alert(data.btc.close);
+                    $(".ltc_price").text("≈￥"+(parseFloat(data.close)*{$ltc.z10}).toFixed(2));
+                    // $(".eth>em>span").text((parseFloat(data.close)*{$data.z9}).toFixed(2));
+
+                }else{
+                    alert(data.msg);
+                    // window.location.href=data.data;
+                }
+            }
+        });
+    }
+</script>
+</html>

@@ -1,0 +1,417 @@
+<extend name="Public/base"/>
+<block name="content">
+  <div class="admin-content">
+    <div class="admin-content-body">
+      <div class="am-cf am-padding am-padding-bottom-0">
+        <div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">参数设置</strong>  <small></small></div>
+      </div>
+      <hr>
+      <div class="am-g">
+        <div class="am-u-sm-12">
+          <form class="am-form" action="{:U('rewardConfig')}" method="post">
+            <input type="hidden" name="id" value="{$data.id}">
+            <table class="am-table am-table-striped am-table-hover table-main">
+              <!--<thead>-->
+              <!--</thead>-->
+              <tbody>
+              <tr>
+                <td colspan="3">激活返币</td>
+                <td><input type="text" name="ptr1" value="{$data.ptr1}"></td>
+                <td colspan="11">激活返购物币</td>
+              </tr>
+
+              <tr>
+                <td colspan="3">推荐奖励</td>
+                <td><input type="text" name="ptr2" value="{$data.ptr2}"></td>
+                <td colspan="2">推荐奖励(一代)%</td>
+                <td><input type="text" name="ptr3" value="{$data.ptr3}"></td>
+                <td colspan="2">推荐奖励(二代)%</td>
+                <td><input type="text" name="ptr25" value="{$data.ptr25}"></td>
+                <td colspan="2">推荐奖励(三代)%</td>
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+
+              <tr>
+                <td colspan="3">周返奖励</td>
+                <td><input type="text" name="ptr4" value="{$data.ptr4}"></td>
+                <td colspan="2">总返倍数</td>
+                <td><input type="text" name="ptr26" value="{$data.ptr26}"></td>
+                <td colspan="2">日返还比例</td>
+                <td></td>
+                <td colspan="2"></td>
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+
+              <tr>
+                <td colspan="3">每单金额</td>
+                <td><input type="text" name="ptr8" value="{$data.ptr8}"></td>
+                <td colspan="11">每单金额</td>
+              </tr>
+
+              <!--<tr>-->
+                <!--<td colspan="3">团队奖励</td>-->
+                <!--<td><input type="text" name="ptr9" value="{$data.ptr9}"></td>-->
+                <!--<td colspan="11">奖励比例</td>-->
+              <!--</tr>-->
+              <tr>
+                <td colspan="3">加速释放</td>
+                <td><input type="text" name="ptr10" value="{$data.ptr10}"></td>
+                <td colspan="2">一层比例%</td>
+                <td><input type="text" name="ptr11" value="{$data.ptr11}"></td>
+                <td colspan="2">二层比例%</td>
+                <td><input type="text" name="ptr12" value="{$data.ptr12}"></td>
+                <td colspan="2">三层比例%</td>
+                <td><input type="text" name="ptr13" value="{$data.ptr13}"></td>
+                <td colspan="2">四层比例%</td>
+              </tr>
+              <tr>
+                <td colspan="3"></td>
+                <td><input type="text" name="ptr14" value="{$data.ptr14}"></td>
+                <td colspan="2">五层比例%</td>
+                <td><input type="text" name="ptr15" value="{$data.ptr15}"></td>
+                <td colspan="2">六层比例%</td>
+                <td><input type="text" name="ptr16" value="{$data.ptr16}"></td>
+                <td colspan="2">七层比例%</td>
+                <td><input type="text" name="ptr17" value="{$data.ptr17}"></td>
+                <td colspan="2">八层比例%</td>
+              </tr>
+              <tr>
+                <td colspan="3"></td>
+                <td><input type="text" name="ptr18" value="{$data.ptr18}"></td>
+                <td colspan="2">九层比例%</td>
+                <td><input type="text" name="ptr19" value="{$data.ptr19}"></td>
+                <td colspan="2">十层比例%</td>
+                <td><input type="text" name="ptr20" value="{$data.ptr20}"></td>
+                <td colspan="2">十一到十五层比例%</td>
+                <td><input type="text" name="ptr21" value="{$data.ptr21}"></td>
+                <td colspan="2">无限层比例%</td>
+              </tr>
+
+              <tr>
+                <td colspan="3">奖励拨比</td>
+                <td><input type="text" name="ptr5" value="{$data.ptr5}"></td>
+                <td colspan="2">流通积分比例%</td>
+                <td><input type="text" name="ptr6" value="{$data.ptr6}"></td>
+                <td colspan="2">购物积分比例%</td>
+                <td><input type="text" name="ptr7" value="{$data.ptr7}"></td>
+                <td colspan="2">兑换积分比例%</td>
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+
+              <tr>
+                <td colspan="3">公共参数</td>
+                <td><input type="text" name="j16" value="{$data.j16}"></td>
+                <td colspan="2">提现手续费</td>
+                <td><input type="text" name="j17" value="{$data.j17}"></td>
+                <td colspan="2">兑冲手续费</td>
+                <td><input type="text" name="ptr22" value="{$data.ptr22}"></td>
+                <td colspan="2">提现整数倍</td>
+                <td><input type="text" name="ptr23" value="{$data.ptr23}"></td>
+                <td colspan="2">提现日封顶</td>
+              </tr>
+
+              <tr>
+                <td colspan="3">资产兑换</td>
+                <td><input type="text" name="ptr27" value="{$data.ptr27}"></td>
+                <td colspan="2">1流通积分/兑换积分:Hpay</td>
+                <td></td>
+                <td colspan="2"></td>
+                <td></td>
+                <td colspan="2"></td>
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+
+              <tr>
+                <td colspan="3">账户信息</td>
+                <td><input type="text" name="bank_name" value="{$data.bank_name}"></td>
+                <td colspan="2">收款银行</td>
+                <td><input type="text" name="bank_zhi" value="{$data.bank_zhi}"></td>
+                <td colspan="2">银行支行</td>
+                <td><input type="text" name="bank_num" value="{$data.bank_num}"></td>
+                <td colspan="2">银行账户</td>
+                <td><input type="text" name="bank_user" value="{$data.bank_user}"></td>
+                <td colspan="2">开户姓名</td>
+              </tr>
+
+              <tr>
+                <td colspan="3">客服</td>
+                <td><input type="text" name="qq" value="{$data.qq}"></td>
+                <td colspan="2">客服QQ</td>
+                <td></td>
+                <td colspan="2"></td>
+                <td></td>
+                <td colspan="2"></td>
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+              </tbody>
+            </table>
+            <hr>
+              <table class="am-table am-table-striped am-table-hover table-main">
+                <!--<thead>-->
+                <!--</thead>-->
+                <tbody>
+
+                <!--<tr>-->
+                  <!--<div class="am-form-group">-->
+                    <!--<label class="am-u-sm-3 am-form-label">会员转账</label>-->
+                    <!--<div class="am-u-sm-9">-->
+                      <!--<label class="am-radio-inline">-->
+                        <!--<input type="radio" name="ptr81" value="1"  <php>if($data['ptr81'] == 1) echo 'checked'</php> data-am-ucheck checked> 开-->
+
+                      <!--</label>-->
+                      <!--<label class="am-radio-inline">-->
+                        <!--<input type="radio" name="ptr81" value="2" <php>if($data['ptr81'] == 2) echo 'checked'</php> data-am-ucheck > 关-->
+                      <!--</label>-->
+                    <!--</div>-->
+                  <!--</div>-->
+                <!--</tr>-->
+                <tr>
+                  <td colspan="3"> 自动审核</td>
+                  <td style="width: 14rem;">
+                    <label class="am-radio-inline">
+                      <input type="radio" name="ptr98" value="1"  <php>if($data['ptr98'] == 1) echo 'checked'</php> data-am-ucheck checked> 开
+
+                    </label>
+                    <label class="am-radio-inline">
+                      <input type="radio" name="ptr98" value="2" <php>if($data['ptr98'] == 2) echo 'checked'</php> data-am-ucheck > 关
+                    </label>
+                  </td>
+
+                  <td colspan="2">微矿机</td>
+                  <td style="width: 14rem;">
+                    <label class="am-radio-inline">
+                      <input type="radio" name="ptr99" value="1"  <php>if($data['ptr99'] == 1) echo 'checked'</php> data-am-ucheck checked> 未售罄
+
+                    </label>
+                    <label class="am-radio-inline">
+                      <input type="radio" name="ptr99" value="2" <php>if($data['ptr99'] == 2) echo 'checked'</php> data-am-ucheck > 售罄
+                    </label>
+                  </td>
+                </tr>
+
+
+              <tr>
+                <td colspan="3">HAPY</td>
+                <td><input type="text" name="hapy" value="{$data.hapy}"></td>
+                <td colspan="2">HAPY当前价格</td>
+                <td><input type="text" name="hapyfloat" value="{$data.hapyfloat}"></td>
+                <td colspan="2">HAPY涨幅比例</td>
+                <td></td>
+                <td colspan="2"></td>
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+
+              <tr>
+                <td colspan="3">HAPY提币</td>
+
+                <td><input type="text" name="ptr68" value="{$data.ptr68}"></td>
+                <td colspan="2">提币次数</td>
+
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+
+
+              <tr>
+                <td colspan="3">HAPY提币BTC</td>
+                <td><input type="text" name="ptr77" value="{$data.ptr77}"></td>
+                <td colspan="2">最低提币限额</td>
+                <td><input type="text" name="ptr69" value="{$data.ptr69}"></td>
+                <td colspan="2">每日最高提币限额</td>
+                <td><input type="text" name="ptr73" value="{$data.ptr73}"></td>
+                <td colspan="2">提币手续费（0.01表示1%）</td>
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+
+              <tr>
+                <td colspan="3">HAPY提币ETH</td>
+                <td><input type="text" name="ptr78" value="{$data.ptr78}"></td>
+                <td colspan="2">最低提币限额</td>
+                <td><input type="text" name="ptr70" value="{$data.ptr70}"></td>
+                <td colspan="2">每日最高提币限额</td>
+                <td><input type="text" name="ptr74" value="{$data.ptr74}"></td>
+                <td colspan="2">提币手续费（0.01表示1%）</td>
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+
+              <tr>
+                <td colspan="3">HAPY提币USDT</td>
+                <td><input type="text" name="ptr79" value="{$data.ptr79}"></td>
+                <td colspan="2">最低提币限额</td>
+                <td><input type="text" name="ptr71" value="{$data.ptr71}"></td>
+                <td colspan="2">每日最高提币限额</td>
+                <td><input type="text" name="ptr75" value="{$data.ptr75}"></td>
+                <td colspan="2">提币手续费（0.01表示1%）</td>
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+
+              <tr>
+                <td colspan="3">HAPY提币IOTE</td>
+                <td><input type="text" name="ptr80" value="{$data.ptr80}"></td>
+                <td colspan="2">最低提币限额</td>
+                <td><input type="text" name="ptr72" value="{$data.ptr72}"></td>
+                <td colspan="2">每日最高提币限额</td>
+                <td><input type="text" name="ptr76" value="{$data.ptr76}"></td>
+                <td colspan="2">提币手续费（0.01表示1%）</td>
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+              <tr>
+                <td colspan="3">HAPY提币IOTE奖金</td>
+                <td><input type="text" name="ptr94" value="{$data.ptr94}"></td>
+                <td colspan="2">最低提币限额</td>
+                <td><input type="text" name="ptr95" value="{$data.ptr95}"></td>
+                <td colspan="2">每日最高提币限额</td>
+                <td><input type="text" name="ptr96" value="{$data.ptr96}"></td>
+                <td colspan="2">提币手续费（0.01表示1%）</td>
+                <td><input type="text" name="ptr97" value="{$data.ptr97}"></td>
+                <td colspan="2">奖金提币次数</td>
+                <td colspan="2"></td>
+              </tr>
+              <tr>
+                <div class="am-form-group">
+                  <label class="am-u-sm-3 am-form-label">会员转账</label>
+                  <div class="am-u-sm-9">
+                    <label class="am-radio-inline">
+                      <input type="radio" name="ptr81" value="1"  <php>if($data['ptr81'] == 1) echo 'checked'</php> data-am-ucheck checked> 开
+
+                    </label>
+                    <label class="am-radio-inline">
+                      <input type="radio" name="ptr81" value="2" <php>if($data['ptr81'] == 2) echo 'checked'</php> data-am-ucheck > 关
+                    </label>
+                  </div>
+                </div>
+              </tr>
+              <hr>
+<!--              <tr>-->
+<!--                <td colspan="3">分享赚钱</td>-->
+
+<!--                <td><input type="text" name="ptr84" value="{$data.ptr84}"></td>-->
+<!--                <td colspan="2">推荐临时会员赠送奖励</td>-->
+
+<!--                <td></td>-->
+<!--                <td colspan="2"></td>-->
+<!--              </tr>-->
+
+
+              <tr>
+                <td colspan="3">HAPY签到</td>
+
+                <td><input type="text" name="ptr62" value="{$data.ptr62}"></td>
+                <td colspan="2">签到数量/次</td>
+
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+              <tr>
+                <td colspan="3">挖矿算力</td>
+<!--                <td><input type="text" name="ptr85" value="{$data.ptr85}"></td>-->
+<!--                <td colspan="2">临时会员挖矿算力(0.001表示1%)</td>-->
+                <td><input type="text" name="ptr86" value="{$data.ptr86}"></td>
+                <td colspan="2">挖矿算力(0.001表示1%)</td>
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+
+              <tr>
+                <td colspan="3">分享收益</td>
+                <td><input type="text" name="ptr63" value="{$data.ptr63}"></td>
+                <td colspan="2">第一代百分比(0.3表示30%)</td>
+                <td><input type="text" name="ptr64" value="{$data.ptr64}"></td>
+                <td colspan="2">第二代百分比(0.3表示30%)</td>
+<!--                <td><input type="text" name="ptr65" value="{$data.ptr65}"></td>-->
+<!--                <td colspan="2">第三代 - 第六代百分比(0.3表示30%)</td>-->
+<!--                <td><input type="text" name="ptr66" value="{$data.ptr66}"></td>-->
+<!--                <td colspan="2">第七代 - 第十代百分比(0.3表示30%)</td>-->
+<!--                <td><input type="text" name="ptr67" value="{$data.ptr67}"></td>-->
+<!--                <td colspan="2">第五-十代百分比(0.3表示30%)</td>-->
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+
+              <tr>
+                <td colspan="3">团队收益</td>
+                <td><input type="text" name="ptr88" value="{$data.ptr88}"></td>
+                <td colspan="2">v1团队收益比例(0.3表示30%)</td>
+                <td><input type="text" name="ptr89" value="{$data.ptr89}"></td>
+                <td colspan="2">v2团队收益比例(0.3表示30%)</td>
+                <td><input type="text" name="ptr90" value="{$data.ptr90}"></td>
+                <td colspan="2">v3团队收益比例(0.3表示30%)</td>
+                <td><input type="text" name="ptr91" value="{$data.ptr91}"></td>
+                <td colspan="2">v4团队收益比例(0.3表示30%)</td>
+                <td><input type="text" name="ptr92" value="{$data.ptr92}"></td>
+                <td colspan="2">v5团队收益比例(0.3表示30%)</td>
+                <td><input type="text" name="ptr93" value="{$data.ptr93}"></td>
+                <td colspan="2">v6团队收益比例(0.3表示30%)</td>
+              </tr>
+
+              <tr>
+                <td colspan="3">兑换比例</td>
+                <td colspan="2">100 USDT = </td>
+                <td><input type="text" name="ptr87" value="{$data.ptr87}"></td>
+                <td colspan="2">IOTE</td>
+<!--                <td><input type="text" name="ptr86" value="{$data.ptr86}"></td>-->
+<!--                <td colspan="2">会员挖矿算力(0.001表示1%)</td>-->
+                <td></td>
+                <td colspan="2"></td>
+              </tr>
+                <tr>
+                  <td colspan="3">商城支付钱包地址</td>
+                  <td colspan="6"><input type="text" name="pay_address" value="{$data.pay_address}"></td>
+                </tr>
+                <!-- <tr>
+                  <td colspan="3">烧伤开关</td>
+                  <td colspan="6">
+                    <select name="sskg">
+                      <option value="1" <if condition="$data.sskg eq 1">selected</if>>开</option>
+                      <option value="0" <if condition="$data.sskg eq 0">selected</if>>关</option>
+                    </select>
+                  </td>
+                </tr>-->
+              </tbody>
+            </table>
+            <tr>
+              <td><button type="submit" id="btn" class="am-btn am-btn-primary">提交</button></td>
+            </tr>
+          </form>
+        </div>
+
+      </div>
+    </div>
+    <footer class="admin-content-footer">
+      <hr>
+      <p class="am-padding-left">© 2019 AllMobilize, Inc. Licensed under MIT license.</p>
+    </footer>
+  </div>
+</block>
+<block name="js">
+<script>
+   $(function () {
+       var form = $('form');
+       $('form').submit(function (e) {
+           e.preventDefault();
+           var btn = $('#sub');
+           btn.button('loading');
+           $.post(form.attr('action'),form.serialize(),function (data) {
+               btn.button('reset');
+               layer.msg(data.msg,{time:1000},function () {
+                   if(data.code){
+                       return false;
+                   }else{
+                       window.location.href=data.data;
+                   }
+               })
+           },'json')
+       })
+   })
+</script>
+</block>
