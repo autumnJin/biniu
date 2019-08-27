@@ -1,77 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>HPAY</title>
-	<link rel="stylesheet" href="__WAPCSS__/login.css">
-	<script src="__WAPJS__/1.js"></script>
+  <meta charset=utf-8>
+  <meta name=viewport content="width=device-width,initial-scale=1">
+  <title>kc</title>
+  <link href=__WAPCSS__/app.88d95e525e9275504ff8d1521930aeac.css rel=stylesheet>
 </head>
 
 <body>
-
-	<div class="header">
-		<a href="{:U('Index/index')}"><img src="__IMG__/Return.png" alt=""></a>
-		登录
-	</div>
-	<div class="logo">
-		<img src="__IMG__/logo@3x.png" alt="">
-	</div>
-	<div class="logo2">
-		<img src="__IMG__/HPAY@3x.png" alt="">
-	</div>
-	<div class="user">
-		<input type="text"  id="username" placeholder="请输入账号">
-		<img src="__IMG__/user.png" alt="">
-	</div>
-	<div class="password">
-		<input type="password" id="password" placeholder="密码">
-		<img src="__IMG__/Pass.png" alt="">
-	</div>
-	<button id="sub">登录</button>
-	<div class="other">
-		<a href="find_password.html">忘记密码 ?</a>
-		<a href="{:U('Public/register')}">注册</a>
-	</div>
-
-</body>	
-</html>
-
-<style>
-	.user input,.password input{
-		color: #fff;
-		line-height: 1rem;
-		font-size: 17px
-	}
-	.other{
-		font-size: 17px
-	}
-
-	body .other a{
-		margin-right:0;
-	}
-</style>
-
-<script src="__COMMON__/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    $('#sub').click(function(){
-        $.ajax({
-            type:"post",
-            url:"{:U('Public/login')}",
-            data:{
-                username:$('#username').val(),
-                password:$('#password').val(),
-            },
-            dataType:"json",
-            success:function(data){
-                if(data.code==1){
-                    alert(data.msg);
-                }else{
-                    alert(data.msg);
-                    window.location.href=data.data;
-                }
-            }
-        });
-    });
-</script>
+    <div id="app">
+        <div data-v-b604e3ec="" class="login"><img data-v-b604e3ec="" src='__IMG__/logo.ba459fb.png' alt=""
+            class="logo">
+          <div data-v-b604e3ec="" class="login_form">
+            <div data-v-b604e3ec=""><input data-v-b604e3ec="" type="text" placeholder="请输入手机号码"></div>
+            <div data-v-b604e3ec=""><input data-v-b604e3ec="" type="password" placeholder="密码"></div>
+          </div>
+          <div data-v-b604e3ec="" class="login_btn">登录</div>
+          <p data-v-b604e3ec="" class="login_other"><span data-v-b604e3ec=""><a data-v-b604e3ec="" href="#/"
+                class="router-link-exact-active router-link-active">忘记密码</a></span>
+            |
+            <span data-v-b604e3ec=""><a data-v-b604e3ec="" href="./register.html" class="">注册账号</a></span></p>
+        </div>
+      </div>
+<!-- 
+  <script type=text/javascript src=static/js/manifest.3ad1d5771e9b13dbdad2.js> </script> 
+  <script type=text/javascript src=static/js/vendor.2b98c6a7b254934683f2.js> </script> 
+  <script type=text/javascript src=static/js/app.473875272b1b80bcd88c.js> </script> -->
+   </body>
+    </html>
