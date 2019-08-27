@@ -1,120 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>HPAY</title>
-	<link rel="stylesheet" href="__WAPCSS__/register.css">
-	<script src="__WAPJS__/1.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>kc</title>
+  <link href="__WAPCSS__/app.88d95e525e9275504ff8d1521930aeac.css" rel="stylesheet">
+  <style>
+   .login_btn[data-v-425c9866]{
+      margin-left:80px;
+    }
+    .getCode p{
+      width: 90px;
+      height: 35px;
+      background-color: rgb(86, 160, 245);
+      color: #ffffff;
+      border-radius:6px;
+      line-height: 35px;
+      text-indent: 10px;
+    }
+  </style>
 </head>
 
 <body>
-<div class="header">
-	<a href="login.html"><img src="__IMG__/Return.png" alt=""></a>
-	注册
-</div>
-<h2>欢迎注册HAPY</h2>
-<div class="nickname">
-	<input type="text" placeholder="昵称" id="username">
-	<img src="__IMG__/user.png" alt="">
-</div>
-<div class="tel">
-	<input type="text" placeholder="手机号" id="phone">
-	<img src="__IMG__/Cell.png" alt="">
-</div>
-<div class="code">
-	<input type="text" placeholder="验证码" id="code">
-	<img src="__IMG__/A.png" alt="">
-	<a id="getCode" class="getCode"  href="javascript:void(0);">获取验证码</a>
-</div>
-<div class="password">
-	<input type="password" placeholder="密码" id="password">
-	<img src="__IMG__/Pass.png" alt="">
-</div>
-<div class="paypwd">
-	<input type="password" placeholder="支付密码" id="password2">
-	<img src="__IMG__/Pass.png" alt="">
-</div>
-<div class="recommend">
-	<!--<input type="text" placeholder="推荐节点" id="higher">-->
-	<input type="text" placeholder="推荐节点" id="higher" value="{$username}">
-	<img src="__IMG__/tg.png" alt="">
-</div>
-<button id="sub">注册</button>
-<div class="other">
-	<a href="#">已有账号 ?</a>
-	<a href="{:U('Public/login')}">立即登录</a>
-</div>
-<style>
-    .other{
-        font-size: 17px;
-    }
-    input{
-        line-height: 1rem;
-        font-size: 17px;
-        color: #fff;
-    }
-</style>
+  <div id="app">
+    <div data-v-425c9866="" class="login">
+      <a href="./index.html"><img data-v-425c9866=""
+        src="data:image/png;base64,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"
+        alt="" class="back" > 
+      </a>
+        <img data-v-425c9866="" src="__IMG__/logo.ba459fb.png" alt="" class="logo">
+      <div data-v-425c9866="" class="login_form">
+        <div data-v-425c9866=""><input data-v-425c9866="" type="text" id="phone" placeholder="请输入手机号码"></div>
+        <div data-v-425c9866="" class="vertify"><input data-v-425c9866="" type="text" placeholder="请输入验证码">
+          <div data-v-425c9866="">
+            <div data-v-425c9866="" id="getCode" class="getCode"  href="javascript:void(0)"><p>发送验证码</p></div>
+          </div>
+        </div>
+        <div data-v-425c9866=""><input data-v-425c9866="" type="password" placeholder="密码"></div>
+      </div>
+      <button data-v-425c9866="" id="sub" class="login_btn">注册</button>
+    </div>
+  </div>
+  <!-- <script type="text/javascript" src="./static/js/manifest.3ad1d5771e9b13dbdad2.js"></script> -->
+  <!-- <script type="text/javascript" src="./static/js/vendor.2b98c6a7b254934683f2.js"></script> -->
+  <!-- <script type="text/javascript" src="./static/js/app.473875272b1b80bcd88c.js"></script> -->
 </body>
+<script src="__WAPJS__/jquery-1.10.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+  $(function () {
+    // $(document).on('click','#getCode',function(){
+    $("#getCode").on('click', function () {
+      var num = 59;
+      var that = $(this);
+      var phone = $('#phone').val();
+      if (phone == '') {
+        alert('请输入注册的手机号码');
+      } else if (!(/^1[34578]\d{9}$/.test(phone))) {
+        alert('手机号码格式不正确');
+      } else {
+        $.post("{:U('Public/sendCode')}", {
+          "phone": phone
+        }, function (data) {
+          alert(data.message);
+          console.log(data);
+          $(".getCode").attr("disabled", true).css("pointer-events", "none");
+          var timer = setInterval(function () {
+            that.attr('id', '');
+            that.text(num + 's');
+            that.addClass('active');
+            num--;
+            if (num == 0) {
+              that.attr('id', 'getCode');
+              clearInterval(timer);
+              that.text('重新发送验证码');
+            }
+          }, 1000);
+        })
+      }
+    });
+
+    $('#sub').click(function () {
+      $.ajax({
+        type: "post",
+        url: "{:U('')}",
+        data: {
+          username: $('#username').val(),
+          phone: $('#phone').val(),
+          code: $('#code').val(),
+          password: $('#password').val(),
+          password2: $('#password2').val(),
+          higher: $('#higher').val(),
+        },
+        dataType: "json",
+        success: function (data) {
+          if (data.code == 1) {
+            alert(data.msg);
+          } else {
+            alert(data.msg);
+            window.location.href = data.data;
+          }
+        }
+      });
+    });
+  })
+</script>
 
 </html>
-
-<script src="__COMMON__/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-<script>
-    $(function() {
-        // $(document).on('click','#getCode',function(){
-        $("#getCode").on('click', function () {
-            var num = 59;
-            var that = $(this);
-            var phone = $('#phone').val();
-            if (phone == '') {
-                alert('请输入注册的手机号码');
-            } else if (!(/^1[34578]\d{9}$/.test(phone))) {
-                alert('手机号码格式不正确');
-            } else {
-                $.post("{:U('Public/sendCode')}", {"phone": phone}, function (data) {
-                    alert(data.message);
-                    console.log(data);
-					$(".getCode").attr("disabled",true).css("pointer-events","none");
-					var timer = setInterval(function () {
-                        that.attr('id', '');
-                        that.text(num + 's');
-                        that.addClass('active');
-                        num--;
-                        if (num == 0) {
-                            that.attr('id', 'getCode');
-                            clearInterval(timer);
-                            that.text('重新发送验证码');
-                        }
-                    }, 1000);
-                })
-            }
-        });
-
-        $('#sub').click(function(){
-            $.ajax({
-                type:"post",
-                url:"{:U('')}",
-                data:{
-                    username:$('#username').val(),
-                    phone:$('#phone').val(),
-                    code:$('#code').val(),
-                    password:$('#password').val(),
-                    password2:$('#password2').val(),
-                    higher:$('#higher').val(),
-                },
-                dataType:"json",
-                success:function(data){
-                    if(data.code==1){
-                        alert(data.msg);
-                    }else{
-                        alert(data.msg);
-                        window.location.href=data.data;
-                    }
-                }
-            });
-        });
-    })
-</script>
